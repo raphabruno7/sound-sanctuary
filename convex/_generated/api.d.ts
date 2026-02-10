@@ -8,7 +8,9 @@
  * @module
  */
 
+import type * as portfolio from "../portfolio.js";
 import type * as subscribers from "../subscribers.js";
+import type * as testimonials from "../testimonials.js";
 
 import type {
   ApiFromModules,
@@ -17,7 +19,9 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  portfolio: typeof portfolio;
   subscribers: typeof subscribers;
+  testimonials: typeof testimonials;
 }>;
 
 /**
