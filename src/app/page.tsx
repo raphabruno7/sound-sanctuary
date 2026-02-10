@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 export default function Home() {
   return (
@@ -50,9 +51,10 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-8 md:px-10 pb-24" id="contact">
         <h2 className="text-2xl md:text-3xl tracking-tight">Contact</h2>
         <p className="mt-4 text-neutral-700 leading-relaxed max-w-2xl">
-          For sessions, collaborations, or events, reach out via WhatsApp or email. Newsletter
-          signup will be added in M2.
+          For sessions, collaborations, or events, reach out via WhatsApp or email.
         </p>
+
+        <NewsletterForm source="home" />
       </section>
     </main>
   );
