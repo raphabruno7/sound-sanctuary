@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { PortfolioPreview } from "@/components/PortfolioPreview";
+import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 
 export default function Home() {
   return (
@@ -47,6 +49,9 @@ export default function Home() {
           <li>Numerology (integrative)</li>
         </ul>
       </section>
+
+      <PortfolioPreview />
+      <TestimonialsPreview />
 
       <section className="max-w-5xl mx-auto px-8 md:px-10 pb-24" id="contact">
         <h2 className="text-2xl md:text-3xl tracking-tight">Contact</h2>
