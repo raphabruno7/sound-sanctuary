@@ -4,6 +4,7 @@ import { v } from "convex/values";
 export default defineSchema({
   subscribers: defineTable({
     email: v.string(),
+    name: v.optional(v.string()),
     createdAt: v.number(),
     status: v.union(v.literal("active"), v.literal("unsubscribed")),
     source: v.optional(v.string()),
@@ -11,4 +12,3 @@ export default defineSchema({
     .index("by_email", ["email"])
     .index("by_createdAt", ["createdAt"]),
 });
-

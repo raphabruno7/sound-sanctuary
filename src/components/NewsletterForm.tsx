@@ -10,6 +10,7 @@ type Status = "idle" | "loading" | "success" | "exists" | "error";
 export function NewsletterForm({ source = "home" }: { source?: string }) {
   const subscribe = useMutation(api.subscribers.subscribe);
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
@@ -22,13 +23,14 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
     setMessage("");
 
     try {
-      const res = await subscribe({ email, source });
+      const res = await subscribe({ email, name: name.trim() || undefined, source });
       if (res.alreadySubscribed) {
         setStatus("exists");
         setMessage("You're already subscribed.");
       } else {
         setStatus("success");
         setMessage("Welcome. You're in.");
+        setName("");
         setEmail("");
       }
     } catch (err: unknown) {
@@ -42,6 +44,18 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
       <label className="block text-sm text-neutral-700" htmlFor="email">
         Newsletter (quiet updates)
       </label>
+      <div className="mt-3">
+        <input
+          id="name"
+          type="text"
+          autoComplete="name"
+          placeholder="Name (optional)"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-neutral-900 outline-none focus:border-neutral-400"
+          disabled={disabled}
+        />
+      </div>
       <div className="mt-2 flex gap-2">
         <input
           id="email"
