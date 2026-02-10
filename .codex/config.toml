@@ -1,19 +1,22 @@
 # Project-local Codex configuration (safe defaults).
-# Put secrets in environment variables, not here.
+# Do NOT commit secrets here. Use environment variables.
 
 [project]
 name = "sound-sanctuary"
 
-# MCP servers (placeholders). Enable the ones you actually use.
-# IMPORTANT: Only run MCP servers you trust.
+# MCP servers (optional). Enable only what you actually trust and use.
+# The examples below are placeholders.
 
 [mcp_servers]
 
-# Figma MCP (use when you have a Figma file as source of truth)
+# --- Figma MCP ---
+# Use when you have a Figma file as the design source of truth.
 # figma = { command = "npx", args = ["-y", "figma-mcp-server"], env = { FIGMA_ACCESS_TOKEN = "${FIGMA_ACCESS_TOKEN}" } }
 
-# Playwright MCP (use for QA & regression checks)
+# --- Playwright MCP ---
+# Use for QA/regression checks; agent can open pages, check layout, etc.
 # playwright = { command = "npx", args = ["-y", "@playwright/mcp"] }
 
-# Docs MCP (optional, for pulling official docs context)
+# --- Docs MCP ---
+# Optional helper to pull official docs context.
 # docs = { command = "npx", args = ["-y", "docs-mcp"] }
