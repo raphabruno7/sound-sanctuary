@@ -8,6 +8,15 @@ export function SiteHeader() {
           Sound Sanctuary
         </Link>
         <nav aria-label="Primary navigation" className="flex gap-4 text-sm text-neutral-700">
+          <Link className="hover:text-neutral-950" href="/sound-healing">
+            Sound Healing
+          </Link>
+          <Link className="hover:text-neutral-950" href="/sessions">
+            Sessions
+          </Link>
+          <Link className="hover:text-neutral-950" href="/contact">
+            Contact
+          </Link>
           <Link className="hover:text-neutral-950" href="/portfolio">
             Portfolio
           </Link>
