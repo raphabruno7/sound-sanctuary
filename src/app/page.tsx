@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
@@ -7,8 +8,16 @@ export default function Home() {
   return (
     <main className="min-h-dvh">
       <section className="relative h-dvh overflow-hidden flex items-end">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.35),transparent_55%)]" />
-        <div className="absolute inset-0 bg-neutral-900/20" />
+        <Image
+          src="/hero.jpg"
+          alt="Soft natural landscape evoking calm and rest"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-neutral-900/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/35 via-neutral-900/10 to-transparent" />
 
         <div className="relative z-10 p-10 md:p-16 max-w-xl">
           <h1 className="text-4xl md:text-6xl tracking-tight text-white">
