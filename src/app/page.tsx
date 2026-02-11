@@ -7,7 +7,7 @@ import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 export default function Home() {
   return (
     <main className="min-h-dvh">
-      <section className="relative h-dvh overflow-hidden flex items-end">
+      <section className="relative min-h-[80svh] overflow-hidden flex items-end">
         <Image
           src="/hero.jpg"
           alt="Soft natural landscape evoking calm and rest"
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-neutral-900/15" />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/35 via-neutral-900/10 to-transparent" />
 
-        <div className="relative z-10 p-10 md:p-16 max-w-2xl">
+        <div className="relative z-10 max-w-xl px-6 py-10 sm:px-8 md:px-10 md:py-16">
           <h1 className="text-4xl md:text-6xl tracking-tight text-white">
             Sound Healing
           </h1>
@@ -27,7 +27,7 @@ export default function Home() {
             Through tone, vibration, and intentional rest, each session is designed to help your
             body move from overload into regulation and presence.
           </p>
-          <div className="mt-6 flex gap-4 text-white/90">
+          <div className="mt-6 flex flex-wrap gap-4 text-white/90">
             <Link className="underline underline-offset-4" href="/contact">
               Book a session
             </Link>
