@@ -18,13 +18,12 @@ This is Information Architecture + structural copy only.
 ---
 
 ## Primary user intent
-- A visitor arrives from Instagram or after an in-person session.
-- They should immediately understand:
-  1) This is Sound Healing
-  2) It relates to nervous system regulation
-  3) What happens in a session
-  4) What formats exist
-  5) How to contact/book
+A visitor arrives from Instagram or after an in-person session and should immediately understand:
+1) This is Sound Healing  
+2) It relates to nervous system regulation  
+3) What happens in a session  
+4) What formats exist  
+5) How to contact/book  
 
 ---
 
@@ -45,7 +44,7 @@ Heading: Sound and the Nervous System
   - rhythm
   - settling
   - felt sense / integration
-- Avoid poetic language; keep “authority but human”.
+- Avoid poetic language; keep authority but human.
 
 ### Section 3 — What Happens in a Session
 Heading: What Happens in a Session
@@ -58,7 +57,7 @@ Heading: What Happens in a Session
 
 ### Section 4 — Session Formats
 Heading: Session Formats
-- Two cards/blocks:
+- Two blocks:
   - 1:1 Sound Therapy
   - Group Sound Journey
 - Each includes: 1 line “for whom” + duration placeholder.
@@ -88,10 +87,14 @@ Heading: Who It Is For
 - No style system changes (no globals overhaul).
 - `./scripts/agent_check.sh` passes.
 - PR references this spec file.
+- After opening a PR: agents do NOT ask for merge approval; wait for Supervisor review.
 
 ---
 
-## Notes for agents
-After opening a PR:
-- Do NOT ask for merge approval.
-- Wait for Supervisor review.
+## Supervisor review checklist (for the PR implementing this spec)
+- [ ] H1 is exactly “Sound Healing”
+- [ ] Sections 1–5 exist with required headings
+- [ ] Session steps include Arrival/Grounding/Immersion/Integration/Closing
+- [ ] CTA points to /contact (primary)
+- [ ] No new deps, no schema/Convex changes
+- [ ] agent_check.sh passes
