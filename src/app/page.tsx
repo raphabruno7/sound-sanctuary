@@ -16,15 +16,17 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-center"
         />
+        <div className="absolute inset-0 bg-neutral-900/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/35 via-neutral-900/10 to-transparent" />
         <div className="relative z-10 max-w-xl px-6 py-10 sm:px-8 md:px-10 md:py-16">
-          <h1 className="text-4xl text-white md:text-6xl">
+          <h1 className="text-4xl md:text-6xl tracking-tight text-white">
             A place to slow down and listen.
           </h1>
-          <p className="mt-4 text-base text-white md:text-lg">
+          <p className="mt-4 text-base md:text-lg text-white/80 leading-relaxed">
             Through sound, stillness, and simple practices, this space supports your nervous system
             and helps you return to a steadier rhythm.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4 text-white">
+          <div className="mt-6 flex flex-wrap gap-4 text-white/90">
             <a className="underline underline-offset-4" href="#contact">
               Get in touch
             </a>

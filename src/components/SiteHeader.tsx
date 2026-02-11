@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-50">
+    <header className="sticky top-0 z-50 backdrop-blur bg-neutral-50/70 border-b border-neutral-200">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6 sm:px-8 md:px-10">
         <Link href="/" className="text-sm tracking-wide">
           Sound Sanctuary
