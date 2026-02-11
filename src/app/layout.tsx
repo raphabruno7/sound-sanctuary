@@ -5,8 +5,12 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Sound Sanctuary",
-  description: "A calm space for sound, presence, and nervous system support.",
+  title: {
+    default: "Sound Sanctuary",
+    template: "%s | Sound Sanctuary",
+  },
+  description:
+    "Sound healing, contemplative practices, and grounded sessions to support calm and nervous system regulation.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

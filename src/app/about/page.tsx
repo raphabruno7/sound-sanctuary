@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about the sound healing and contemplative approach behind Sound Sanctuary sessions.",
+};
+
 export default function About() {
   return (
     <main className="max-w-5xl mx-auto px-8 md:px-10 py-16">
