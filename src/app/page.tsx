@@ -7,7 +7,7 @@ import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 export default function Home() {
   return (
     <main className="min-h-dvh">
-      <section className="relative min-h-[80svh] overflow-hidden">
+      <section className="relative min-h-[80svh] overflow-hidden flex items-end">
         <Image
           src="/hero.jpg"
           alt="Soft natural landscape evoking calm and rest"
@@ -16,18 +16,15 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-neutral-900/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 via-neutral-900/20 to-transparent" />
-
-        <div className="relative z-10 max-w-xl px-6 py-10 sm:px-8 sm:py-12 md:px-10 md:py-16">
-          <h1 className="text-4xl text-white sm:text-5xl md:text-6xl">
+        <div className="relative z-10 max-w-xl px-6 py-10 sm:px-8 md:px-10 md:py-16">
+          <h1 className="text-4xl text-white md:text-6xl">
             A place to slow down and listen.
           </h1>
-          <p className="mt-4 text-base text-white/85 sm:text-lg">
+          <p className="mt-4 text-base text-white md:text-lg">
             Through sound, stillness, and simple practices, this space supports your nervous system
             and helps you return to a steadier rhythm.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4 text-sm text-white/90 sm:text-base">
+          <div className="mt-6 flex flex-wrap gap-4 text-white">
             <a className="underline underline-offset-4" href="#contact">
               Get in touch
             </a>
