@@ -52,24 +52,31 @@ export const seedDemo = mutation({
   handler: async (ctx) => {
     const demo = [
       {
-        name: "Client",
-        text: "I felt my whole system slow down. The night after, I slept deeply.",
-        source: "Online session",
+        name: "Ana M.",
+        text: "After our third 1:1, my sleep stabilized and I could feel my body settle much faster.",
+        source: "Private session · Lisbon",
         order: 10,
         published: true,
       },
       {
-        name: "Participant",
-        text: "A gentle journey — grounding, clarity, and a sense of safety in my body.",
-        source: "Event",
+        name: "Retreat participant",
+        text: "The evening sound journey helped me release tension I had been carrying for months.",
+        source: "Sintra retreat · June 2025",
         order: 20,
         published: true,
       },
       {
-        name: "Therapist",
-        text: "Professional, sensitive, and very precise with the sound field.",
-        source: "Collaboration",
+        name: "Ines R.",
+        text: "Raphael brings calm structure and listens deeply to the room before every intervention.",
+        source: "Yoga collaboration · Lisbon",
         order: 30,
+        published: true,
+      },
+      {
+        name: "Corporate participant",
+        text: "Clear guidance, no mysticism, and practical tools I still use before difficult meetings.",
+        source: "Workplace event · Porto",
+        order: 40,
         published: true,
       },
     ];
@@ -88,4 +95,3 @@ export const seedDemo = mutation({
     return { ok: true, insertedIfMissing: demo.length };
   },
 });
-
