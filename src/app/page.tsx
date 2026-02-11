@@ -21,10 +21,11 @@ export default function Home() {
 
         <div className="relative z-10 p-10 md:p-16 max-w-xl">
           <h1 className="text-4xl md:text-6xl tracking-tight text-white">
-            Sound. Silence. Sanctuary.
+            A place to slow down and listen.
           </h1>
           <p className="mt-4 text-base md:text-lg text-white/80 leading-relaxed">
-            A calm space for regulation, presence, and deep rest.
+            Through sound, stillness, and simple practices, this space supports your nervous system
+            and helps you return to a steadier rhythm.
           </p>
           <div className="mt-6 flex gap-4 text-white/90">
             <a className="underline underline-offset-4" href="#contact">
@@ -40,8 +41,8 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-8 md:px-10 py-16">
         <h2 className="text-2xl md:text-3xl tracking-tight">About</h2>
         <p className="mt-4 text-neutral-700 leading-relaxed max-w-2xl">
-          Sound healing, music, and contemplative practices designed to support the nervous system
-          with a minimal, grounded approach.
+          I offer sound-based and contemplative sessions with a simple, grounded approach, so you
+          can soften, settle, and feel more at home in your body.
         </p>
         <div className="mt-6">
           <Link className="underline underline-offset-4" href="/about">
