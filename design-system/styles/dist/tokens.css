@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════════════════════
+   RAFAEL — Design Tokens · Semente V5.0
+   Single Source of Truth for App + Website
+   ═══════════════════════════════════════════════════════════
+   
+   COMO USAR:
+   1. Importe este arquivo no seu projeto: @import 'rafael-tokens.css';
+   2. Use as variáveis no CSS: color: var(--gold);
+   3. Ou acesse via JS: getComputedStyle(root).getPropertyValue('--gold')
+   
+   PROPAGAÇÃO:
+   - App (React Native / Flutter): extraia os valores hex para o theme
+   - Website (CSS/Tailwind): importe diretamente
+   - Instagram templates: use a paleta hex para Figma/Canva
+   
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ══════════════════════════════════════════
+     CORES — LIQUID GLASS + OURO + OCEANO
+     ══════════════════════════════════════════ */
+
+  /* Liquid Glass — Primária (da fotografia de folha backlit) */
+  --liquid-glass-deep:     #1A3A2A;   /* Forest element, deep backgrounds */
+  --liquid-glass-forest:   #2D5A3E;   /* Dark green, secondary depth */
+  --liquid-glass-emerald:  #3B7A54;   /* Primary green, leaf venation */
+  --liquid-glass-leaf:     #5A9E6F;   /* Mid-tone, text accent */
+  --liquid-glass-light:    #8BC4A0;   /* Light green, highlights */
+  --liquid-glass-ghost:    #C8E6D0;   /* Moon element, ghost overlay */
+
+  /* Gold — Acentos (tradição islâmica) */
+  --gold:                  #C4A35A;   /* Sun element, CTAs, labels, glow */
+  --gold-light:            #E0C97F;   /* Light gold, hover states */
+  --gold-glow:             rgba(196, 163, 90, 0.15);  /* Ambient glow */
+
+  /* Ocean — Acentos (herança azulejo portuguesa) */
+  --ocean:                 #5A8A8A;   /* Ocean element, secondary accent */
+  --sage-sea:              #7AAA9A;   /* Tertiary, soft teal */
+  --cobalt:                #2A4A8A;   /* Deep blue, azulejo accent */
+
+  /* Neutros */
+  --bone:                  #F2EFE8;   /* Light background */
+  --bone-warm:             #F8F6F1;   /* Warmest light, body bg */
+  --charcoal:              #1A1A16;   /* Dark mode, primary text */
+  --charcoal-soft:         #2A2A24;   /* Dark mode, elevated surfaces */
+
+
+  /* ══════════════════════════════════════════
+     ALIASES SEMÂNTICOS
+     ══════════════════════════════════════════ */
+
+  --bg-primary:            var(--bone-warm);
+  --bg-secondary:          var(--bone);
+  --bg-dark:               var(--charcoal);
+  --bg-dark-elevated:      var(--charcoal-soft);
+
+  --text-primary:          var(--charcoal);
+  --text-secondary:        rgba(26, 26, 22, 0.55);
+  --text-muted:            rgba(26, 26, 22, 0.35);
+  --text-on-dark:          var(--bone);
+  --text-on-dark-secondary: rgba(242, 239, 232, 0.7);
+  --text-on-dark-muted:    rgba(242, 239, 232, 0.5);
+
+  --accent-primary:        var(--gold);
+  --accent-secondary:      var(--ocean);
+  --accent-tertiary:       var(--liquid-glass-emerald);
+
+
+  /* ══════════════════════════════════════════
+     CORES ELEMENTAIS (4 Forças do Som)
+     ══════════════════════════════════════════ */
+
+  --el-sun:                var(--gold);           /* heals, charges, warms */
+  --el-moon:               var(--liquid-glass-ghost); /* connects, manifests, unlocks */
+  --el-ocean:              var(--ocean);           /* cleanses, refreshes, opens */
+  --el-forest:             var(--liquid-glass-deep);  /* grounds, balances, stabilizes */
+
+
+  /* ══════════════════════════════════════════
+     GLASS MORPHISM
+     ══════════════════════════════════════════ */
+
+  /* Light Glass (bone context) */
+  --glass-bg:              rgba(242, 239, 232, 0.45);
+  --glass-bg-hover:        rgba(242, 239, 232, 0.65);
+  --glass-border:          rgba(196, 163, 90, 0.12);
+  --glass-border-hover:    rgba(196, 163, 90, 0.28);
+  --glass-shadow:          0 4px 24px rgba(26, 58, 42, 0.06);
+  --glass-shadow-hover:    0 8px 40px rgba(26, 58, 42, 0.1);
+  --glass-blur:            16px;
+  --glass-glow:            0 0 20px rgba(196, 163, 90, 0.08);
+  --glass-glow-pulse:      0 0 30px rgba(196, 163, 90, 0.15);
+
+  /* Dark Glass (charcoal context) */
+  --glass-dark-bg:         rgba(26, 26, 22, 0.6);
+  --glass-dark-bg-hover:   rgba(26, 26, 22, 0.75);
+  --glass-dark-border:     rgba(196, 163, 90, 0.15);
+  --glass-dark-border-hover: rgba(196, 163, 90, 0.3);
+
+
+  /* ══════════════════════════════════════════
+     TIPOGRAFIA
+     ══════════════════════════════════════════ */
+
+  --font-display:          'Cormorant Garamond', Georgia, serif;
+  --font-body:             'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic:           'Noto Naskh Arabic', serif;
+  --font-mono:             'DM Mono', 'Fira Code', monospace;
+
+  /* Scale (Major Third — 1.25) */
+  --text-xs:               0.75rem;    /* 12px — labels, tokens */
+  --text-sm:               0.875rem;   /* 14px — meta, captions */
+  --text-base:             1rem;       /* 16px — body */
+  --text-lg:               1.125rem;   /* 18px — lead body */
+  --text-xl:               1.25rem;    /* 20px — small headings */
+  --text-2xl:              1.5rem;     /* 24px — section titles */
+  --text-3xl:              2rem;       /* 32px — page sections */
+  --text-4xl:              2.5rem;     /* 40px — major headings */
+  --text-5xl:              3.25rem;    /* 52px — hero secondary */
+  --text-6xl:              4rem;       /* 64px — hero primary */
+  --text-7xl:              5.5rem;     /* 88px — wordmark */
+
+  /* Line Height */
+  --leading-tight:         1.15;       /* headings */
+  --leading-normal:        1.5;        /* default */
+  --leading-relaxed:       1.7;        /* body text */
+  --leading-breath:        1.9;        /* poetic / verse */
+
+  /* Letter Spacing */
+  --tracking-tight:        -0.02em;    /* large display */
+  --tracking-normal:       0;          /* default */
+  --tracking-wide:         0.06em;     /* buttons */
+  --tracking-wider:        0.12em;     /* labels */
+  --tracking-widest:       0.2em;      /* section labels */
+
+
+  /* ══════════════════════════════════════════
+     ESPAÇAMENTO (Grid de 8px)
+     ══════════════════════════════════════════ */
+
+  --space-1:               0.25rem;    /* 4px */
+  --space-2:               0.5rem;     /* 8px */
+  --space-3:               0.75rem;    /* 12px */
+  --space-4:               1rem;       /* 16px */
+  --space-5:               1.5rem;     /* 24px */
+  --space-6:               2rem;       /* 32px */
+  --space-8:               3rem;       /* 48px */
+  --space-10:              4rem;       /* 64px */
+  --space-12:              5rem;       /* 80px */
+  --space-16:              7rem;       /* 112px */
+  --space-20:              9rem;       /* 144px */
+
+
+  /* ══════════════════════════════════════════
+     BORDER RADIUS
+     ══════════════════════════════════════════ */
+
+  --radius-sm:             6px;        /* small elements */
+  --radius-md:             12px;       /* inputs, small cards */
+  --radius-lg:             20px;       /* cards, containers */
+  --radius-xl:             28px;       /* panels, modals */
+  --radius-full:           9999px;     /* buttons, pills */
+
+
+  /* ══════════════════════════════════════════
+     ANIMAÇÃO
+     ══════════════════════════════════════════ */
+
+  /* Easing — cada curva tem propósito nervoso */
+  --ease-breath:           cubic-bezier(0.37, 0, 0.63, 1);   /* respiratory cycle */
+  --ease-nerve:            cubic-bezier(0.16, 1, 0.3, 1);    /* impulse: fast attack, slow decay */
+  --ease-flow:             cubic-bezier(0.33, 0, 0.67, 1);   /* fluid, water-like */
+
+  /* Duration */
+  --dur-instant:           100ms;      /* micro-interactions */
+  --dur-fast:              200ms;      /* hover, focus */
+  --dur-normal:            350ms;      /* transitions */
+  --dur-slow:              600ms;      /* page transitions */
+  --dur-breath:            4500ms;     /* respiratory opacity cycle (4-6s) */
+  --dur-nerve:             800ms;      /* nerve impulse propagation */
+  --dur-draw:              4500ms;     /* logo draw-on full body */
+
+
+  /* ══════════════════════════════════════════
+     Z-INDEX
+     ══════════════════════════════════════════ */
+
+  --z-fluid:               -1;         /* background shader layer */
+  --z-base:                0;          /* default content */
+  --z-content:             10;         /* elevated content */
+  --z-card:                20;         /* glass cards */
+  --z-nav:                 100;        /* navigation */
+  --z-modal:               200;        /* modals, drawers */
+  --z-overlay:             300;        /* full overlays */
+
+
+  /* ══════════════════════════════════════════
+     BREAKPOINTS (referência — use em @media)
+     ══════════════════════════════════════════ */
+
+  /* --bp-sm:  640px;   mobile landscape */
+  /* --bp-md:  768px;   tablet */
+  /* --bp-lg:  1024px;  desktop */
+  /* --bp-xl:  1280px;  wide desktop */
+  /* --bp-2xl: 1536px;  ultra-wide */
+}
+
+
+/* ══════════════════════════════════════════
+   GOOGLE FONTS IMPORT
+   Inclua no <head> do HTML:
+   ══════════════════════════════════════════
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+*/
