@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SessionsPage() {
   return (
     <main>
@@ -13,6 +15,11 @@ export default function SessionsPage() {
 
       <section>
         <h2>Booking Process</h2>
+        <p>
+          <Link href="/contact" className="underline underline-offset-4">
+            Book a session
+          </Link>
+        </p>
       </section>
 
       <section>
