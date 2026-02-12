@@ -5,6 +5,11 @@ import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 
 export default function Home() {
+  const primaryCta =
+    "inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  const secondaryCta =
+    "inline-flex items-center justify-center rounded-full border border-border bg-popover px-4 py-2 text-sm font-medium text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
   return (
     <main className="min-h-dvh">
       <section className="relative min-h-[80svh] overflow-hidden flex items-end">
@@ -27,11 +32,11 @@ export default function Home() {
             Through tone, vibration, and intentional rest, each session is designed to help your
             body move from overload into regulation and presence.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4 text-white/90">
-            <Link className="underline underline-offset-4" href="/contact">
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link className={primaryCta} href="/contact">
               Book a session
             </Link>
-            <Link className="underline underline-offset-4" href="/portfolio">
+            <Link className={secondaryCta} href="/portfolio">
               Explore portfolio
             </Link>
           </div>
