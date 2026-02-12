@@ -10,7 +10,8 @@ Inputs:
 - `docs/architecture/CONTENT_ARCHITECTURE_v1.md`
 - `docs/architecture/ROUTE_STRUCTURE_v1.md`
 - `docs/specs/SPEC_HOME_SOUND_HEALING_v1.md`
-- `docs/briefing/BRIEFING_v5_RAW.md` (source snapshot)
+- `docs/briefing/BRIEFING_v5_RAW.md` (source snapshot: design system v5.3)
+- `Branding/design_system/raphael-design-system-v5.3.html` (canonical design system snapshot)
 
 ## Purpose / Core Positioning (Sound Healing + Nervous System)
 - Core offer: Sound Healing, framed as nervous system support and regulation (no clinical claims).
@@ -94,4 +95,3 @@ No schema changes in v5 planning. Data needs are "future" and can stay as static
 - No new dependencies.
 - No schema/Convex changes.
 - No refactors outside task scope.
-
