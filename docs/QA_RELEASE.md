@@ -34,3 +34,4 @@ Dependency order: `S03-0009` -> `S03-0010` -> `S03-0011`.
 
 - PR #23 (`S03-0009`, recipes/tokens apply) MERGED: https://github.com/raphabruno7/sound-sanctuary/pull/23
 - PR #24 (`S03-0010`, QA checklist doc-only) MERGED: https://github.com/raphabruno7/sound-sanctuary/pull/24
+- Checklist file: `docs/SPRINTS/S03_QA_CHECKLIST.md`
