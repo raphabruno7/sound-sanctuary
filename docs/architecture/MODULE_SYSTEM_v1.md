@@ -30,6 +30,14 @@
 - Modules should maintain consistent heading hierarchy to support mobile scanning.
 - Modules should expose placeholders where operational copy is still pending.
 
+## Design System Source Of Truth
+- Design tokens and base styles are sourced exclusively from the `./design-system` submodule.
+- Canonical token source for web consumers: `design-system/styles/dist/tokens.css`.
+- Canonical base-style source for web consumers: `design-system/styles/dist/base.css`.
+- Consumer repositories must import canonical files and must not duplicate token definitions.
+- Consumer repositories must not define local `:root` token blocks or alternate token registries.
+- Any token change request must be implemented in the central `design-system` repository, not in this repo.
+
 ## What Modules Must NOT Contain (Design Logic)
 - No styling system decisions (color, spacing, typography specs).
 - No animation behavior definitions.
