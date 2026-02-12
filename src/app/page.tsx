@@ -5,11 +5,6 @@ import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 
 export default function Home() {
-  const primaryCta =
-    "inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-  const secondaryCta =
-    "inline-flex items-center justify-center rounded-full border border-border bg-popover px-4 py-2 text-sm font-medium text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-
   return (
     <main className="min-h-dvh">
       <section className="relative min-h-[80svh] overflow-hidden flex items-end">
@@ -25,18 +20,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/35 via-neutral-900/10 to-transparent" />
 
         <div className="relative z-10 max-w-xl px-6 py-10 sm:px-8 md:px-10 md:py-16">
-          <h1 className="text-4xl md:text-6xl tracking-tight text-white">
+          <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-tracking-tight text-white">
             Sound Healing
           </h1>
           <p className="mt-4 text-base md:text-lg text-white/80 leading-relaxed">
             Through tone, vibration, and intentional rest, each session is designed to help your
             body move from overload into regulation and presence.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link className={primaryCta} href="/contact">
+          <div className="btn-row">
+            <Link className="btn btn-primary" href="/contact">
               Book a session
             </Link>
-            <Link className={secondaryCta} href="/portfolio">
+            <Link className="btn btn-secondary" href="/portfolio">
               Explore portfolio
             </Link>
           </div>
