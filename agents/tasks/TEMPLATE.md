@@ -1,5 +1,13 @@
 # Task: <short title>
 
+```autopilot
+BASE=main
+BRANCH=feat/<task-id>
+COMMIT_MSG=feat: <short commit message>
+PR_TITLE=feat: <PR title>
+CHECK_CMD=./scripts/agent_check.sh
+```
+
 ## Context
 <what is happening and why>
 
@@ -19,3 +27,11 @@
 - Links:
 - Screenshots:
 
+## PR Body
+```md
+## Summary
+- <what changed>
+
+## Verification
+- ./scripts/agent_check.sh
+```

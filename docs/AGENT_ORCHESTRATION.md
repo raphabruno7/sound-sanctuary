@@ -24,6 +24,13 @@ This repo is designed to be worked on by multiple agents (or multiple Codex sess
 ## Task intake format
 Every new piece of work should start as a task file in `agents/tasks/` (see templates).
 
+## PR Autopilot (recommended)
+To reduce operator back-and-forth, task files should include an `autopilot` block (see `agents/tasks/TEMPLATE.md`).
+
+You can use:
+- `./scripts/pr_autopilot.sh start agents/tasks/.../<task>.md` (creates branch from `BASE`)
+- `./scripts/pr_autopilot.sh finish agents/tasks/.../<task>.md` (runs checks, commits staged changes, pushes, opens PR)
+
 ## Definition of Done (DoD)
 A PR is Done when:
 - passes `npm run lint` and `npm run build`
@@ -36,4 +43,3 @@ A PR is Done when:
 2) UI + Backend take sub-tasks, each in their own branches.
 3) QA validates with checklist.
 4) Release verifies env + SEO + deploy steps.
-
