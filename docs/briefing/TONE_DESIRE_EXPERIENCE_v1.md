@@ -9,6 +9,18 @@ Purpose: define the **tone** and the **emotional arc** of the site so a first-ti
 
 This document is **copy + UX direction** (visual + textual), written for 2026 expectations: fast clarity, calm authority, minimal friction, high trust.
 
+## Design-System Anchors (Canonical)
+The design-system repo is the **single source of truth** for visual design. This brief defines the narrative/UX arc, but all visual execution should be constrained to what the design-system publishes.
+
+Canonical consumer imports (website):
+- `design-system/styles/dist/tokens.css`
+- `design-system/styles/dist/base.css`
+- `design-system/styles/dist/typography.css`
+- `design-system/styles/dist/components.css`
+
+Reference (visual baseline, not imported into the app):
+- `design-system/examples/web/raphael-design-system-v5.3.html`
+
 ---
 
 ## North Star (One Sentence)
