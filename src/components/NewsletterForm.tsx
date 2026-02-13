@@ -41,7 +41,7 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
 
   return (
     <form onSubmit={onSubmit} className="mt-6 max-w-md">
-      <label className="block text-sm text-neutral-700" htmlFor="email">
+      <label className="block text-sm text-muted-foreground" htmlFor="email">
         Newsletter (quiet updates)
       </label>
       <div className="mt-3">
@@ -52,7 +52,7 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
           placeholder="Name (optional)"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-neutral-900 outline-none focus:border-neutral-400"
+          className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
           disabled={disabled}
         />
       </div>
@@ -65,13 +65,13 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-neutral-900 outline-none focus:border-neutral-400"
+          className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
           required
           disabled={disabled}
         />
         <button
           type="submit"
-          className="rounded-xl border border-neutral-900 bg-neutral-900 px-4 py-3 text-white hover:bg-neutral-800 disabled:opacity-60"
+          className="btn btn-primary disabled:opacity-60"
           disabled={disabled}
         >
           Join
@@ -80,14 +80,14 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
 
       {message ? (
         <p
-          className={["mt-3 text-sm", status === "error" ? "text-red-600" : "text-neutral-700"].join(
+          className={["mt-3 text-sm", status === "error" ? "text-red-600" : "text-muted-foreground"].join(
             " "
           )}
         >
           {message}
         </p>
       ) : (
-        <p className="mt-3 text-xs text-neutral-500">No spam. Unsubscribe anytime.</p>
+        <p className="mt-3 text-xs text-muted-foreground">No spam. Unsubscribe anytime.</p>
       )}
     </form>
   );

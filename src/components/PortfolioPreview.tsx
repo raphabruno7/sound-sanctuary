@@ -12,7 +12,7 @@ export function PortfolioPreview() {
       <div className="flex items-end justify-between gap-6">
         <div>
           <h2 className="text-2xl md:text-3xl tracking-tight">Portfolio</h2>
-          <p className="mt-3 text-neutral-700 max-w-2xl leading-relaxed">
+          <p className="mt-3 text-muted-foreground max-w-2xl leading-relaxed">
             Selected sessions, events, retreats, and collaborations.
           </p>
         </div>
@@ -23,20 +23,20 @@ export function PortfolioPreview() {
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         {(items ?? []).map((it) => (
-          <article key={it._id} className="rounded-2xl border border-neutral-200 bg-white p-5">
-            <p className="text-xs tracking-wide text-neutral-500 uppercase">{it.type}</p>
+          <article key={it._id} className="rounded-2xl border border-border bg-card p-5">
+            <p className="text-xs tracking-wide text-muted-foreground uppercase">{it.type}</p>
             <h3 className="mt-2 text-lg tracking-tight">{it.title}</h3>
             {it.excerpt ? (
-              <p className="mt-2 text-sm text-neutral-700 leading-relaxed">{it.excerpt}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{it.excerpt}</p>
             ) : null}
-            <div className="mt-4 text-xs text-neutral-500">
+            <div className="mt-4 text-xs text-muted-foreground">
               {it.location ? <span>{it.location}</span> : null}
               {it.date ? <span>{it.location ? " • " : ""}{it.date}</span> : null}
             </div>
           </article>
         ))}
 
-        {items === undefined ? <p className="text-sm text-neutral-500">Loading...</p> : null}
+        {items === undefined ? <p className="text-sm text-muted-foreground">Loading...</p> : null}
       </div>
     </section>
   );
