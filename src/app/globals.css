@@ -1,5 +1,7 @@
 @import "../../design-system/styles/dist/tokens.css";
 @import "../../design-system/styles/dist/base.css";
+@import "../../design-system/styles/dist/typography.css";
+@import "../../design-system/styles/dist/components.css";
 @import "tailwindcss";
 @import "tw-animate-css";
 
