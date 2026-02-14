@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en" data-studio="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sound Sanctuary — Site Preview v1.3</title>
+
+    <!-- Canonical design-system imports (single source of truth) -->
+    <link rel="stylesheet" href="../../design-system/styles/dist/tokens.css" />
+    <link rel="stylesheet" href="../../design-system/styles/dist/base.css" />
+    <link rel="stylesheet" href="../../design-system/styles/dist/typography.css" />
+    <link rel="stylesheet" href="../../design-system/styles/dist/components.css" />
+
+    <style>
+      :root {
+        --page-max: 1040px;
+        --page-pad: var(--space-6);
+        --focus-ring: 0 0 0 2px rgba(196, 163, 90, 0.25);
+      }
+
+      html.dark {
+        --bg-primary: var(--bg-dark);
+        --bg-secondary: var(--bg-dark-elevated);
+
+        --text-primary: var(--text-on-dark);
+        --text-secondary: var(--text-on-dark-secondary);
+        --text-muted: var(--text-on-dark-muted);
+      }
+
+      .container {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 0 var(--page-pad);
+      }
+
+      .header-actions {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        flex-wrap: wrap;
+      }
+
+      .studio-switch {
+        display: inline-flex;
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.02);
+      }
+
+      .studio-switch button {
+        border-radius: 0;
+        padding: var(--space-2) var(--space-4);
+      }
+
+      .studio-switch button[aria-pressed="true"] {
+        background: var(--glass-bg-hover);
+        color: var(--text-primary);
+      }
+
+      .page {
+        padding: var(--space-12) 0;
+      }
+
+      .page + .page {
+        border-top: 1px solid var(--glass-border);
+      }
+
+      .page-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+        flex-wrap: wrap;
+      }
+
+      .page-head .ds-title {
+        margin-bottom: 0;
+      }
+
+      .note {
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: var(--space-8);
+        align-items: center;
+        margin-bottom: var(--space-12);
+      }
+
+      .hero-media {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        border-radius: var(--radius-lg);
+      }
+
+      .media-placeholder {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(900px 400px at 30% 30%, rgba(196, 163, 90, 0.18), transparent 55%),
+          radial-gradient(700px 450px at 70% 55%, rgba(90, 138, 138, 0.18), transparent 60%),
+          linear-gradient(180deg, rgba(26, 58, 42, 0.08), rgba(26, 26, 22, 0.02));
+        display: grid;
+        place-items: end start;
+        padding: var(--space-5);
+      }
+
+      .media-label {
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+        color: var(--text-primary);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--radius-full);
+      }
+
+      .hero-copy h1 {
+        margin: 0 0 var(--space-3);
+        letter-spacing: 0.08em;
+      }
+
+      .hero-mantra {
+        margin: 0 0 var(--space-4);
+        color: var(--text-secondary);
+      }
+
+      .hero-sub {
+        margin: 0 0 var(--space-5);
+        max-width: 36ch;
+        color: var(--text-secondary);
+      }
+
+      .section {
+        margin: var(--space-12) 0;
+      }
+
+      .section .ds-title {
+        margin-bottom: var(--space-3);
+      }
+
+      .section p {
+        margin: 0 0 var(--space-4);
+        max-width: 72ch;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        align-items: start;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-5);
+        align-items: stretch;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-5);
+        align-items: stretch;
+      }
+
+      .card {
+        padding: var(--space-6);
+      }
+
+      .card h3 {
+        margin: 0 0 var(--space-2);
+        font-family: var(--font-display);
+        font-weight: 300;
+        font-size: var(--text-2xl);
+        line-height: var(--leading-tight);
+      }
+
+      .card .sub {
+        margin: 0 0 var(--space-3);
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+      }
+
+      .card .desc {
+        margin: 0;
+        color: var(--text-secondary);
+      }
+
+      .quote p {
+        margin: 0 0 var(--space-3);
+        max-width: 70ch;
+      }
+
+      .quote strong {
+        font-family: var(--font-display);
+        font-weight: 300;
+        font-size: var(--text-xl);
+      }
+
+      .steps {
+        margin: 0;
+        padding-left: 1.2rem;
+        color: var(--text-secondary);
+      }
+
+      .steps li {
+        margin: 0 0 var(--space-2);
+      }
+
+      .bullets {
+        margin: 0;
+        padding-left: 1.2rem;
+        color: var(--text-secondary);
+        columns: 2;
+        column-gap: var(--space-10);
+      }
+
+      .bullets li {
+        margin: 0 0 var(--space-2);
+      }
+
+      .cta-strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-6);
+        flex-wrap: wrap;
+        padding: var(--space-6);
+        margin-top: var(--space-10);
+      }
+
+      .cta-strip p {
+        margin: 0;
+        max-width: 52ch;
+        color: var(--text-secondary);
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--glass-border);
+        margin: var(--space-12) 0;
+      }
+
+      .form {
+        display: grid;
+        gap: var(--space-4);
+        max-width: 560px;
+      }
+
+      .field label {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: var(--space-2);
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--glass-border);
+        background: var(--glass-bg);
+        padding: var(--space-3) var(--space-4);
+        color: var(--text-primary);
+        outline: none;
+      }
+
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus,
+      button:focus,
+      a.btn:focus {
+        box-shadow: var(--focus-ring);
+      }
+
+      .studio-panels {
+        position: relative;
+      }
+
+      .studio-panel {
+        transition: opacity 260ms var(--ease-nerve, cubic-bezier(0.16, 1, 0.3, 1)),
+          transform 260ms var(--ease-nerve, cubic-bezier(0.16, 1, 0.3, 1));
+      }
+
+      .studio-panel[aria-hidden="true"] {
+        opacity: 0;
+        transform: translateY(10px);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .hero-3d {
+        transform-style: preserve-3d;
+      }
+
+      .hero-3d .hero-media {
+        transform: perspective(900px) rotateX(var(--hero-rx, 0deg)) rotateY(var(--hero-ry, 0deg));
+        transition: transform 200ms ease-out;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .studio-panel {
+          transition: none;
+        }
+        .hero-3d .hero-media {
+          transition: none;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .bullets {
+          columns: 1;
+        }
+        .header-actions {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="ds-header">
+      <div class="ds-header__inner container">
+        <div class="ds-header__brand">
+          Sound Sanctuary <span style="color: var(--gold); font-weight: 400">•</span>
+        </div>
+        <nav class="ds-header__nav" aria-label="Primary">
+          <a class="ds-header__link" href="#home">Home</a>
+          <a class="ds-header__link" href="#sound-healing">Sound Healing</a>
+          <a class="ds-header__link" href="#sessions">Sessions</a>
+          <a class="ds-header__link" href="#portfolio">Portfolio</a>
+          <a class="ds-header__link" href="#about">About</a>
+          <a class="ds-header__link" href="#contact">Contact</a>
+          <a class="ds-header__link" href="#newsletter">Newsletter</a>
+          <a class="ds-header__link" href="#privacy">Privacy</a>
+        </nav>
+        <div class="header-actions">
+          <div class="studio-switch" role="group" aria-label="Studio switch">
+            <button class="btn btn-ghost" type="button" data-studio-btn="ca" aria-pressed="true">California</button>
+            <button class="btn btn-ghost" type="button" data-studio-btn="lisbon" aria-pressed="false">Lisboa</button>
+          </div>
+          <button class="btn btn-secondary" type="button" id="themeToggle">Dark</button>
+          <a class="btn btn-primary" href="#contact">Book 1:1</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section class="page" id="home">
+        <div class="container hero-3d" data-hero>
+          <div class="page-head">
+            <div>
+              <div class="ds-label">00 — Home</div>
+              <div class="ds-title">Home as the core offer</div>
+            </div>
+            <div class="note">Preview v1.3 · photo-led + DS text</div>
+          </div>
+
+          <div class="hero-grid">
+            <div class="hero-media ds-glass" aria-label="Hero image slot">
+              <div class="media-placeholder">
+                <div class="media-label">PHOTO 02 — forest wide (hero)</div>
+              </div>
+            </div>
+
+            <div class="hero-copy">
+              <h1 class="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">Sound Healing</h1>
+              <p class="hero-mantra ds-font-display ds-italic ds-weight-light ds-size-xl">O prana canta enquanto flui</p>
+              <p class="hero-sub ds-font-body ds-weight-light ds-size-lg">
+                Regulation practice for modern life: rhythm, rest, and integration.
+              </p>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#contact">Book a 1:1</a>
+                <a class="btn btn-secondary" href="#live">Join Sound Healing Live</a>
+              </div>
+              <div class="note">Upstream care · regulation before breakdown</div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">01 — What It Is</div>
+            <h2 class="ds-title">A calm, structured sound practice</h2>
+            <p class="ds-sub">
+              Sound Healing uses resonance, rhythm, and guided rest to help the nervous system downshift without
+              performance.
+            </p>
+            <div class="grid-2">
+              <p>
+                It is simple: you arrive, you settle, sound creates a field, and your body has room to integrate.
+                Nothing to “achieve”. No optimization culture.
+              </p>
+              <p>
+                The promise is not medical treatment. It is training capacity: downshifting, returning to rhythm, and
+                leaving with more space inside.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">02 — Sound and the Nervous System</div>
+            <h2 class="ds-title">Princípio fundador</h2>
+            <div class="ds-glass card quote">
+              <p>O corpo humano é 70% água. O som viaja pela água.</p>
+              <p>O sistema nervoso está imerso nessa água.</p>
+              <p>Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança cada nervo por dentro.</p>
+              <strong>O som reconstrói o sistema nervoso.</strong>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">03 — What Happens in a Session</div>
+            <h2 class="ds-title">Five steps, no mystery</h2>
+            <div class="grid-2">
+              <div class="ds-glass card">
+                <ol class="steps">
+                  <li>Arrival</li>
+                  <li>Grounding</li>
+                  <li>Sound immersion</li>
+                  <li>Integration</li>
+                  <li>Closing</li>
+                </ol>
+              </div>
+              <div class="hero-media ds-glass" aria-label="Session detail image slot" style="aspect-ratio: 4 / 3">
+                <div class="media-placeholder">
+                  <div class="media-label">PHOTO 03 — bowls detail</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">04 — Session Formats</div>
+            <h2 class="ds-title">Choose depth</h2>
+            <div class="grid-2">
+              <div class="ds-glass card">
+                <h3>1:1 Sound Therapy</h3>
+                <div class="sub">For whom: deeper pacing + integration support · Duration: placeholder</div>
+                <p class="desc">Personalized support for transitions, sleep stress, and chronic overstimulation (support language only).</p>
+                <div class="btn-row" style="margin-top: var(--space-4); margin-bottom: 0">
+                  <a class="btn btn-primary" href="#contact">Book a 1:1</a>
+                  <a class="btn btn-ghost" href="#sessions">See session details</a>
+                </div>
+              </div>
+              <div class="ds-glass card">
+                <h3>Group Sound Journey</h3>
+                <div class="sub">For whom: collective rest without performance · Duration: placeholder</div>
+                <p class="desc">A shared field for settling and connection. Low barrier. High felt-sense.</p>
+                <div class="btn-row" style="margin-top: var(--space-4); margin-bottom: 0">
+                  <a class="btn btn-secondary" href="#live">See next live</a>
+                  <a class="btn btn-ghost" href="#contact">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">05 — Framework Elemental</div>
+            <h2 class="ds-title">Quatro forças do som</h2>
+            <div class="grid-4">
+              <div class="ds-glass card">
+                <h3>☉ The Sun</h3>
+                <div class="sub" style="color: var(--gold)">heals, charges, warms</div>
+                <p class="desc">Frequência do fogo. Calor que dissolve. Carrega o sistema nervoso.</p>
+              </div>
+              <div class="ds-glass card">
+                <h3>☽ The Moon</h3>
+                <div class="sub" style="color: var(--liquid-glass-forest)">connects, manifests, unlocks</div>
+                <p class="desc">Frequência da água interna. Subconsciente. Ritmo do corpo sutil.</p>
+              </div>
+              <div class="ds-glass card">
+                <h3>〰 The Ocean</h3>
+                <div class="sub" style="color: var(--ocean)">cleanses, refreshes, opens</div>
+                <p class="desc">Ondulação que limpa. Maré que abre centros de energia.</p>
+              </div>
+              <div class="ds-glass card">
+                <h3>⌇ The Forest</h3>
+                <div class="sub" style="color: var(--liquid-glass-deep)">grounds, balances, stabilizes</div>
+                <p class="desc">Raiz. Aterramento. Som grave que ancora na terra.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section" id="live">
+            <div class="ds-label">06 — Live</div>
+            <h2 class="ds-title">Sound Healing Live</h2>
+            <p class="ds-sub">A weekly ritual to keep your nervous system tended. Join for a reset. Return for rhythm.</p>
+            <div class="cta-strip ds-glass">
+              <p>
+                <span class="ds-font-display ds-italic">Nada é inerte.</span>
+                Texts breathe. Elements ignite like nervous impulse. Keep it minimal. Keep it calm.
+              </p>
+              <div class="btn-row" style="margin: 0">
+                <a class="btn btn-primary" href="#newsletter">Join the loop</a>
+                <a class="btn btn-secondary" href="#sessions">See sessions</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">07 — Who It’s For</div>
+            <h2 class="ds-title">When life runs hot</h2>
+            <ul class="bullets">
+              <li>stress / anxiety</li>
+              <li>sleep</li>
+              <li>overstimulation</li>
+              <li>integration after intense periods</li>
+              <li>attention fatigue</li>
+              <li>transition seasons</li>
+            </ul>
+          </div>
+
+          <div class="cta-strip ds-glass">
+            <p>Ready to downshift? Two paths. Same intention: rhythm and regulation.</p>
+            <div class="btn-row" style="margin: 0">
+              <a class="btn btn-primary" href="#contact">Book a 1:1</a>
+              <a class="btn btn-secondary" href="#portfolio">Explore portfolio</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOUND HEALING -->
+      <section class="page" id="sound-healing">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">01 — Sound Healing</div>
+              <div class="ds-title">Reduce skepticism with grounded clarity</div>
+            </div>
+            <div class="note">Photo slot + principle + elemental grid</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="hero-media ds-glass" aria-label="Sound healing hero image slot" style="aspect-ratio: 4 / 3">
+              <div class="media-placeholder">
+                <div class="media-label">PHOTO 01 — instruments + presence</div>
+              </div>
+            </div>
+            <div class="ds-glass card">
+              <div class="ds-label">Três escritas, uma respiração</div>
+              <h2 class="ds-title" style="margin-top: 0">Sound as liquid light</h2>
+              <p class="ds-sub" style="margin-bottom: 0">
+                O som das tigelas percorre o sistema nervoso como a seiva percorre as nervuras de uma folha —
+                encontrando caminhos, restaurando conexões. <em>Becomes liquid light</em>, nourishes your entire being.
+              </p>
+              <p class="note" style="margin-top: var(--space-4)">Arabic accent: الصوت يعيد بناء الجهاز العصبي</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section">
+            <div class="ds-label">Princípio fundador</div>
+            <h2 class="ds-title">Mechanism, without hype</h2>
+            <p class="ds-sub">
+              Rhythm, resonance, and structured stillness create conditions where the system can settle and integrate.
+            </p>
+            <div class="ds-glass card quote">
+              <p>O corpo humano é 70% água. O som viaja pela água.</p>
+              <p>O sistema nervoso está imerso nessa água.</p>
+              <p>Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança cada nervo por dentro.</p>
+              <strong>O som reconstrói o sistema nervoso.</strong>
+            </div>
+          </div>
+
+          <div class="cta-strip ds-glass">
+            <p>Want to feel this in your body?</p>
+            <div class="btn-row" style="margin: 0">
+              <a class="btn btn-primary" href="#contact">Book a 1:1</a>
+              <a class="btn btn-secondary" href="#sessions">See formats</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SESSIONS -->
+      <section class="page" id="sessions">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">02 — Sessions</div>
+              <div class="ds-title">California ↔ Lisboa</div>
+            </div>
+            <div class="note">Tab transition + DS card copy</div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">Studio</div>
+            <h2 class="ds-title">Select your context</h2>
+            <p class="ds-sub">Availability, timezone, and format adapt to your studio choice.</p>
+
+            <div class="studio-panels" aria-live="polite">
+              <div class="studio-panel ds-glass card" data-studio-panel="ca" aria-hidden="false">
+                <h3>California</h3>
+                <div class="sub">Timezone: PT · In-person + remote · Availability: placeholder</div>
+                <p class="desc">A calm studio context for regular regulation practice.</p>
+              </div>
+
+              <div class="studio-panel ds-glass card" data-studio-panel="lisbon" aria-hidden="true">
+                <h3>Lisboa</h3>
+                <div class="sub">Timezone: WET · In-person + remote · Availability: placeholder</div>
+                <p class="desc">Lisbon sessions align with the “Semente V5.3 · Lisboa 2026” lineage.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="ds-label">Formats</div>
+            <h2 class="ds-title">Pontos de decisão</h2>
+            <p class="ds-sub">Glow ao hover, ripple ao click. Cada botão é uma sinapse.</p>
+
+            <div class="grid-2">
+              <div class="ds-glass card">
+                <h3>Sound Bath</h3>
+                <div class="sub">Sessão individual · 60min</div>
+                <p class="desc">Peter Hess bowls sobre o corpo. O som encontra a água.</p>
+                <div class="btn-row" style="margin-top: var(--space-4); margin-bottom: 0">
+                  <a class="btn btn-primary" href="#contact">Book 1:1</a>
+                  <a class="btn btn-ghost" href="#sound-healing">How it works</a>
+                </div>
+              </div>
+              <div class="ds-glass card">
+                <h3>Group Sound Journey</h3>
+                <div class="sub">Evento / ritual · Duration placeholder</div>
+                <p class="desc">Collective rest and connection without performance.</p>
+                <div class="btn-row" style="margin-top: var(--space-4); margin-bottom: 0">
+                  <a class="btn btn-secondary" href="#live">Join Live</a>
+                  <a class="btn btn-ghost" href="#contact">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="page" id="portfolio">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">03 — Portfolio</div>
+              <div class="ds-title">Proof without noise</div>
+            </div>
+            <div class="note">Calm grid</div>
+          </div>
+
+          <div class="grid-3">
+            <div class="ds-glass card"><h3>Portfolio item</h3><p class="desc">Title · one line · link</p></div>
+            <div class="ds-glass card"><h3>Portfolio item</h3><p class="desc">Title · one line · link</p></div>
+            <div class="ds-glass card"><h3>Portfolio item</h3><p class="desc">Title · one line · link</p></div>
+          </div>
+
+          <div class="cta-strip ds-glass">
+            <p>Proof is useful. Experience is the point.</p>
+            <div class="btn-row" style="margin: 0">
+              <a class="btn btn-primary" href="#contact">Book a 1:1</a>
+              <a class="btn btn-secondary" href="#sessions">See sessions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="page" id="about">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">04 — About</div>
+              <div class="ds-title">Calm authority, authored presence</div>
+            </div>
+            <div class="note">Short story + approach</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="hero-media ds-glass" aria-label="About photo slot" style="aspect-ratio: 4 / 5">
+              <div class="media-placeholder">
+                <div class="media-label">PHOTO — authored portrait (session)</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="ds-glass card">
+                <div class="ds-label">Verse</div>
+                <p class="ds-sub" style="margin-bottom: 0">
+                  Power sings as it flows,<br />
+                  electrifies the organs of sensing,<br />
+                  becomes <em>liquid light</em>,<br />
+                  nourishes your entire being.
+                </p>
+                <p class="note" style="margin-top: var(--space-4)">Semente V5.3 · Lisboa 2026</p>
+              </div>
+
+              <div class="section">
+                <div class="ds-label">Approach</div>
+                <h2 class="ds-title">Structure creates safety</h2>
+                <p>
+                  Short story placeholder. What you do. Why sound. Why nervous system regulation. How you guide without
+                  forcing outcomes.
+                </p>
+                <div class="btn-row" style="margin-bottom: 0">
+                  <a class="btn btn-primary" href="#contact">Book a 1:1</a>
+                  <a class="btn btn-secondary" href="#live">Join Live</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="page" id="contact">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">05 — Contact</div>
+              <div class="ds-title">Book a 1:1</div>
+            </div>
+            <div class="note">3 questions · low friction</div>
+          </div>
+
+          <div class="ds-glass card">
+            <p class="ds-sub" style="margin: 0">Three questions. I reply within X hours. Choose California or Lisboa.</p>
+          </div>
+
+          <div class="section">
+            <form class="form" onsubmit="return false;">
+              <div class="field">
+                <label for="intent">What are you seeking?</label>
+                <textarea id="intent" rows="3" placeholder="Sleep, overstimulation, integration, transition…"></textarea>
+              </div>
+              <div class="field">
+                <label for="preferredStudio">Preferred studio</label>
+                <select id="preferredStudio">
+                  <option>California</option>
+                  <option>Lisboa</option>
+                  <option>Remote</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="contactInfo">Email or WhatsApp</label>
+                <input id="contactInfo" type="text" placeholder="you@email.com" />
+              </div>
+              <div class="btn-row" style="margin-bottom: 0">
+                <button class="btn btn-primary" type="submit">Send</button>
+                <a class="btn btn-ghost" href="#privacy">Privacy</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="page" id="newsletter">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">06 — Newsletter</div>
+              <div class="ds-title">Short notes, calm frequency</div>
+            </div>
+            <div class="note">Low commitment loop</div>
+          </div>
+
+          <div class="ds-glass card">
+            <p class="ds-sub" style="margin: 0">
+              Notes on rhythm, rest, and regulation. No spam. No performance. One email field.
+            </p>
+          </div>
+
+          <div class="section">
+            <form class="form" onsubmit="return false;">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="email@domain.com" />
+              </div>
+              <div class="btn-row" style="margin-bottom: 0">
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+                <a class="btn btn-secondary" href="#home">Back to Home</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIVACY -->
+      <section class="page" id="privacy">
+        <div class="container">
+          <div class="page-head">
+            <div>
+              <div class="ds-label">07 — Privacy</div>
+              <div class="ds-title">Trust + consent</div>
+            </div>
+            <div class="note">Plain language</div>
+          </div>
+
+          <div class="ds-glass card">
+            <p class="ds-sub" style="margin-bottom: var(--space-4)">
+              Privacy placeholder. Keep it simple. Confirm what is stored and why. Confirm consent for images and
+              participants.
+            </p>
+            <p class="note" style="margin: 0">No medical claims · Support language only</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ds-glass" style="margin-top: var(--space-12)">
+      <div class="container" style="padding: var(--space-8) var(--page-pad)">
+        <div class="grid-2">
+          <div>
+            <div class="ds-header__brand" style="margin-bottom: var(--space-2)">Sound Sanctuary</div>
+            <div class="note">Sound Healing · Nervous System Regulation · Lisboa 2026</div>
+          </div>
+          <div class="btn-row" style="justify-content: flex-end; margin: 0">
+            <a class="btn btn-primary" href="#contact">Book 1:1</a>
+            <a class="btn btn-secondary" href="#live">Join Live</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+
+        function applyTheme(theme) {
+          var isDark = theme === "dark";
+          root.classList.toggle("dark", isDark);
+          localStorage.setItem("theme", theme);
+          var btn = document.getElementById("themeToggle");
+          if (btn) btn.textContent = isDark ? "Light" : "Dark";
+        }
+
+        function initTheme() {
+          var saved = localStorage.getItem("theme");
+          if (saved === "dark" || saved === "light") {
+            applyTheme(saved);
+            return;
+          }
+          var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          applyTheme(prefersDark ? "dark" : "light");
+        }
+
+        function applyStudio(studio) {
+          root.setAttribute("data-studio", studio);
+          var btns = document.querySelectorAll("[data-studio-btn]");
+          btns.forEach(function (b) {
+            b.setAttribute("aria-pressed", b.getAttribute("data-studio-btn") === studio ? "true" : "false");
+          });
+          var panels = document.querySelectorAll("[data-studio-panel]");
+          panels.forEach(function (p) {
+            var active = p.getAttribute("data-studio-panel") === studio;
+            p.setAttribute("aria-hidden", active ? "false" : "true");
+          });
+          localStorage.setItem("studio", studio);
+        }
+
+        function initStudio() {
+          var saved = localStorage.getItem("studio");
+          applyStudio(saved === "lisbon" ? "lisbon" : "ca");
+          document.querySelectorAll("[data-studio-btn]").forEach(function (b) {
+            b.addEventListener("click", function () {
+              applyStudio(b.getAttribute("data-studio-btn"));
+            });
+          });
+        }
+
+        function initHero3D() {
+          var hero = document.querySelector("[data-hero]");
+          if (!hero) return;
+          var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (reduce) return;
+
+          hero.addEventListener("mousemove", function (e) {
+            var r = hero.getBoundingClientRect();
+            var dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+            var dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+
+            var rx = (dy * -4).toFixed(2) + "deg";
+            var ry = (dx * 6).toFixed(2) + "deg";
+            hero.style.setProperty("--hero-rx", rx);
+            hero.style.setProperty("--hero-ry", ry);
+          });
+
+          hero.addEventListener("mouseleave", function () {
+            hero.style.setProperty("--hero-rx", "0deg");
+            hero.style.setProperty("--hero-ry", "0deg");
+          });
+        }
+
+        initTheme();
+        initStudio();
+        initHero3D();
+
+        var themeBtn = document.getElementById("themeToggle");
+        if (themeBtn) {
+          themeBtn.addEventListener("click", function () {
+            var next = root.classList.contains("dark") ? "light" : "dark";
+            applyTheme(next);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
+
