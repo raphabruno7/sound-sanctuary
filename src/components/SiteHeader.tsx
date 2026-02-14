@@ -10,17 +10,31 @@ export function SiteHeader() {
         </Link>
         <div className="flex items-center gap-5">
           <nav aria-label="Primary navigation" className="flex gap-4">
+            <Link className="ds-header__link" href="/sound-healing">
+              Sound Healing
+            </Link>
+            <Link className="ds-header__link" href="/sessions">
+              Sessions
+            </Link>
             <Link className="ds-header__link" href="/portfolio">
               Portfolio
             </Link>
             <Link className="ds-header__link" href="/about">
               About
             </Link>
+            <Link className="ds-header__link" href="/contact">
+              Contact
+            </Link>
             <Link className="ds-header__link" href="/privacy">
               Privacy
             </Link>
           </nav>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Link className="btn btn-primary" href="/contact">
+              Book 1:1
+            </Link>
+          </div>
         </div>
       </div>
     </header>
