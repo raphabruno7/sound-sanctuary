@@ -29,17 +29,7 @@
   --radius: var(--radius-md);
 }
 
-.dark {
-  --bg-primary: var(--bg-dark);
-  --bg-secondary: var(--bg-dark-elevated);
-  --text-primary: var(--text-on-dark);
-  --text-secondary: var(--text-on-dark-secondary);
-  --text-muted: var(--text-on-dark-muted);
-  --glass-bg: var(--glass-dark-bg);
-  --glass-bg-hover: var(--glass-dark-bg-hover);
-  --glass-border: var(--glass-dark-border);
-  --glass-border-hover: var(--glass-dark-border-hover);
-}
+/* Dark mode remap is canonical in design-system v5.6+ (styles/src/dark-mode.css). */
 
 @layer base {
   * {
@@ -123,7 +113,7 @@
   background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.95), transparent);
   transform: translateX(-60%);
   opacity: 0;
-  animation: journey-axon-flash 7.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation: sh-axon-flash 7500ms var(--ease-nerve, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
 }
 
 .journey-node {
@@ -136,7 +126,8 @@
   transform: translateY(-50%);
   opacity: 0.3;
   box-shadow: 0 0 0 0 rgba(196, 163, 90, 0.15);
-  animation: journey-node-pulse 5.2s ease-in-out infinite;
+  animation: sh-node-pulse var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  will-change: opacity, transform;
 }
 
 .journey-node.left {
@@ -149,7 +140,7 @@
 }
 
 .journey-breathe {
-  animation: journey-text-breathe 5.4s ease-in-out infinite;
+  animation: sh-text-breathe var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
 }
 
 .journey-grid-2 {
@@ -180,7 +171,8 @@
   border-radius: var(--radius-full);
   background: var(--gold);
   opacity: 0.2;
-  animation: journey-node-pulse 6.4s ease-in-out infinite;
+  animation: sh-node-pulse var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  will-change: opacity, transform;
 }
 
 .impulse-plate {
@@ -215,67 +207,14 @@
   fill: none;
   stroke-dasharray: 220;
   stroke-dashoffset: 220;
-  animation: journey-svg-impulse 6.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation: sh-svg-impulse 7500ms var(--ease-nerve, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
 }
 
 .impulse-svg .node {
   fill: var(--gold);
   opacity: 0.24;
-  animation: journey-node-pulse 5.5s ease-in-out infinite;
-}
-
-@keyframes journey-text-breathe {
-  0%,
-  100% {
-    opacity: 0.58;
-  }
-  50% {
-    opacity: 0.95;
-  }
-}
-
-@keyframes journey-node-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.16;
-    box-shadow: 0 0 0 0 rgba(196, 163, 90, 0.1);
-  }
-  50% {
-    transform: scale(1.45);
-    opacity: 0.48;
-    box-shadow: 0 0 0 14px rgba(196, 163, 90, 0);
-  }
-}
-
-@keyframes journey-axon-flash {
-  0%,
-  72% {
-    opacity: 0;
-    transform: translateX(-60%);
-  }
-  74% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(220%);
-  }
-}
-
-@keyframes journey-svg-impulse {
-  0%,
-  70% {
-    stroke-dashoffset: 220;
-    opacity: 0;
-  }
-  74% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: -220;
-    opacity: 0;
-  }
+  animation: sh-node-pulse var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  will-change: opacity, transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
