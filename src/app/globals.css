@@ -8,25 +8,25 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--bg-primary);
-  --color-foreground: var(--text-primary);
-  --color-muted: var(--bg-secondary);
-  --color-muted-foreground: var(--text-muted);
-  --color-card: var(--bg-secondary);
-  --color-card-foreground: var(--text-primary);
-  --color-popover: var(--glass-bg);
-  --color-popover-foreground: var(--text-primary);
-  --color-border: var(--glass-border);
-  --color-input: var(--glass-border);
-  --color-ring: var(--accent-primary);
-  --color-primary: var(--accent-primary);
-  --color-primary-foreground: var(--charcoal);
-  --color-accent: var(--glass-bg-hover);
-  --color-accent-foreground: var(--text-primary);
+  --color-background: var(--sh-semantic-bg-primary);
+  --color-foreground: var(--sh-semantic-text-primary);
+  --color-muted: var(--sh-semantic-bg-secondary);
+  --color-muted-foreground: var(--sh-semantic-text-muted);
+  --color-card: var(--sh-semantic-bg-secondary);
+  --color-card-foreground: var(--sh-semantic-text-primary);
+  --color-popover: var(--sh-glass-light-bg);
+  --color-popover-foreground: var(--sh-semantic-text-primary);
+  --color-border: var(--sh-glass-light-border);
+  --color-input: var(--sh-glass-light-border);
+  --color-ring: var(--sh-semantic-accent-primary);
+  --color-primary: var(--sh-semantic-accent-primary);
+  --color-primary-foreground: var(--sh-organic-charcoal-deep);
+  --color-accent: var(--sh-glass-light-bg-hover);
+  --color-accent-foreground: var(--sh-semantic-text-primary);
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--sh-font-family-body);
 
-  --radius: var(--radius-md);
+  --radius: var(--sh-radius-md);
 }
 
 /* Dark mode remap is canonical in design-system v5.6+ (styles/src/dark-mode.css). */
@@ -51,25 +51,25 @@
 }
 
 .journey-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
+  font-family: var(--sh-font-family-mono);
+  font-size: var(--sh-font-size-xs);
+  letter-spacing: var(--sh-letter-spacing-wider);
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--sh-semantic-text-muted);
 }
 
 .journey-title {
   margin-top: 0.75rem;
-  font-family: var(--font-display);
+  font-family: var(--sh-font-family-display);
   font-weight: 300;
   font-size: clamp(1.8rem, 4.2vw, 3.3rem);
-  line-height: var(--leading-tight);
+  line-height: var(--sh-leading-tight);
 }
 
 .journey-sub {
   margin-top: 1rem;
   max-width: 68ch;
-  color: var(--text-secondary);
+  color: var(--sh-semantic-text-secondary);
 }
 
 .journey-hero-grid {
@@ -83,7 +83,7 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 3 / 2;
-  border-radius: var(--radius-lg);
+  border-radius: var(--sh-radius-lg);
 }
 
 .journey-photo-vignette {
@@ -100,7 +100,7 @@
   position: relative;
   height: 2px;
   margin: 1.5rem 0 1.25rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--sh-radius-full);
   background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.28), transparent);
   overflow: hidden;
 }
@@ -113,7 +113,7 @@
   background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.95), transparent);
   transform: translateX(-60%);
   opacity: 0;
-  animation: sh-axon-flash 7500ms var(--ease-nerve, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+  animation: sh-axon-flash 7500ms var(--sh-motion-easing-nerve) infinite;
 }
 
 .journey-node {
@@ -121,12 +121,12 @@
   top: 50%;
   width: 8px;
   height: 8px;
-  border-radius: var(--radius-full);
-  background: var(--gold);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-organic-gold-primary);
   transform: translateY(-50%);
   opacity: 0.3;
   box-shadow: 0 0 0 0 rgba(196, 163, 90, 0.15);
-  animation: sh-node-pulse var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  animation: sh-node-pulse var(--sh-motion-duration-breath) var(--sh-motion-easing-breath) infinite;
   will-change: opacity, transform;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .journey-breathe {
-  animation: sh-text-breathe var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  animation: sh-text-breathe var(--sh-motion-duration-breath) var(--sh-motion-easing-breath) infinite;
 }
 
 .journey-grid-2 {
@@ -168,10 +168,10 @@
   right: 1rem;
   width: 7px;
   height: 7px;
-  border-radius: var(--radius-full);
-  background: var(--gold);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-organic-gold-primary);
   opacity: 0.2;
-  animation: sh-node-pulse var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  animation: sh-node-pulse var(--sh-motion-duration-breath) var(--sh-motion-easing-breath) infinite;
   will-change: opacity, transform;
 }
 
@@ -207,13 +207,13 @@
   fill: none;
   stroke-dasharray: 220;
   stroke-dashoffset: 220;
-  animation: sh-svg-impulse 7500ms var(--ease-nerve, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+  animation: sh-svg-impulse 7500ms var(--sh-motion-easing-nerve) infinite;
 }
 
 .impulse-svg .node {
-  fill: var(--gold);
+  fill: var(--sh-organic-gold-primary);
   opacity: 0.24;
-  animation: sh-node-pulse var(--dur-breath, 4500ms) var(--ease-breath, cubic-bezier(0.37, 0, 0.63, 1)) infinite;
+  animation: sh-node-pulse var(--sh-motion-duration-breath) var(--sh-motion-easing-breath) infinite;
   will-change: opacity, transform;
 }
 
