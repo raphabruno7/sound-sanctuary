@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Sound Healing",
+  description:
+    "How sound travels through the nervous system. The practice behind Sound Sanctuary sessions.",
+};
 
 export default function SoundHealingPage() {
   return (

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { NewsletterForm } from "@/components/NewsletterForm";
+
+export const metadata: Metadata = {
+  title: "Newsletter",
+  description: "Quiet updates on session availability and reflective notes on sound and regulation.",
+};
 
 export default function NewsletterPage() {
   return (

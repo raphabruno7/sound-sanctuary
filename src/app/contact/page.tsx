@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Book a 1:1 sound healing session or ask a question. Three questions. Reply within 48 hours.",
+};
 
 export default function ContactPage() {
   return (
