@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Newsletter",
+  description: "Quiet updates on session availability and reflective notes on sound and regulation.",
+};
+
 export default function NewsletterPage() {
   return (
     <main className="max-w-5xl mx-auto px-8 md:px-10 py-16 space-y-12">

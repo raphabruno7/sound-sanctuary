@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Sessions",
+  description: "1:1 Sound Therapy and Group Sound Journey — formats, durations, and how to book.",
+};
 
 export default function SessionsPage() {
   return (
