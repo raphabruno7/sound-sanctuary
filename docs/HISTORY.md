@@ -66,3 +66,10 @@ This is a lightweight log of major repo milestones so the project can be continu
 - PR #54 — Sound-healing: draw-on-nervura + jornada-sonora + vine divider.
 - PR #55 — Sessions: DS timeline + CSS-only accordion.
 - PR #56 — About: journey layout + neuron-field background + vine divider.
+
+### S05 — Content polish + SEO + layout alignment
+- PR #58 — Placeholders: durations + response time + privacy notice.
+- PR #59 — Newsletter: connect form + journey layout.
+- PR #60 — Portfolio: journey layout + ScapesEmpty + skeletons.
+- PR #61 — Nav: move Privacy to footer.
+- PR #62 — SEO: metadata + App Router sitemap/robots.
