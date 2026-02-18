@@ -8,29 +8,30 @@ This file captures the current state of the repo so work can continue across Cod
 - Default branch: `main`
 
 ## Current Sprint
-- Last completed sprint: `S03` (DONE, 2026-02-12)
-- Current sprint: `S04` (IN PROGRESS) — DS v8.9 integration + visual polish
+- Current sprint: none (maintenance mode)
+- Last completed sprint(s): `S03` + `S04` (DONE)
+- Summary: design-system is centralized via submodule, dark-mode is delivered, and the v1.5 “journey” pass is implemented across core pages.
 
 ## Major Milestones / PRs
 - `#20` — `feat(ui): propagate design-system v5.3 + dark mode` (S03 baseline)
 - `#23` — `feat(ui): apply canonical token recipes to header/footer/CTAs` (S03 UI alignment)
 - `#25` — `docs(release): S03 closeout (dependencies merged)` (S03 complete)
-- `#46` — bump design-system to v8.3.0
-- `#47` — bump design-system to v8.4.0
-- `#48` — bump design-system to v8.7.0
-- `#49` — bump design-system to v8.8.0
-- `#50` — bump design-system to v8.9.0
-- `#51` — docs: refresh project status (post-S04 + ds v8.9.0) (merged; this file supersedes it for S04 execution)
+- `#29` — `feat(ui): adopt design-system v5.3 typography recipes` (S04 start)
+- `#31` — `feat(ui): apply v5.3 recipes to secondary routes` (S04 recipes pass)
+- `#32` — `feat(ui): recipes on static pages` (S04 continued)
+- `#34` — `feat(ui): portfolio recipes` (S04 continued)
+- `#35` — `docs: tone + desire experience v1` (copy/UX direction)
+- `#36` — `feat(ui): implement v1.5 journey across core pages` (core UX pass)
+- `#50` — `chore: bump design-system to v8.9.0` (design-system maintenance)
 
 ## Design System Source Of Truth
 - Centralized design system is integrated via git submodule at `./design-system`.
-- DS version: `v8.9.0` (submodule pinned in `main`).
-- Canonical consumer imports (website, in order):
+- Current submodule pin: `4ff32e2c47af72f850456b44aec495bb55c0bc95` (main as of 2026-02-18).
+- Canonical consumer imports (website):
   - `design-system/styles/dist/tokens.css`
   - `design-system/styles/dist/base.css`
   - `design-system/styles/dist/typography.css`
   - `design-system/styles/dist/components.css`
-  - `design-system/styles/dist/animations.css` (S04-PR1)
 - Consumer repo rule: do not define local token registries (no local `:root` token blocks).
 - Dark-mode toggle is delivered in the shared shell (`src/components/ThemeToggle.tsx`).
 
@@ -39,15 +40,15 @@ This file captures the current state of the repo so work can continue across Cod
 - Convex integrated (client provider + functions)
 - Newsletter subscribe flow (Convex subscribers table + mutations)
 - Portfolio + Testimonials tables + read paths
-- Minimal header/footer navigation
+- Shared shell (header/footer) + theme toggle + v1.5 journey styling across core pages
 
 ## Key Docs
 - `docs/HIGH_LEVEL.md` — product direction
 - `docs/AGENT_ORCHESTRATION.md` — PR-first multi-agent workflow
-- `docs/SPRINTS/S03.md` — last completed sprint (DONE)
-- `docs/prompts/CODEX_EXEC_S04.md` — execution plan for S04
+- `docs/SPRINTS/S03.md` — historical sprint doc (DONE)
 - `agents/ASYNC_CONTRACT.md` — agent rules in async mode
 - `agents/tasks/S03/*` — sprint tasks and closeout artifacts
+- `agents/tasks/S04/*` — post-S03 adoption + hardening tasks (recipes, dark-mode legibility, QA gates)
 
 ## How To Run (local)
 1) Install deps:
