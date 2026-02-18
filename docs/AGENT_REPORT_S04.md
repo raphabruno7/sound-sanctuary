@@ -6,12 +6,12 @@
 ## PRs entregues
 | PR | Branch | Merge commit | Status |
 |----|--------|-------------|--------|
-| PR-1 | `feat/s04-pr1-base` | TBD | OPEN |
-| PR-2 | `feat/s04-pr2-home` | TBD | OPEN |
-| PR-3 | `feat/s04-pr3-sound-healing` | TBD | OPEN |
-| PR-4 | `feat/s04-pr4-sessions` | TBD | OPEN |
-| PR-5 | `feat/s04-pr5-about` | TBD | OPEN |
-| PR-6 | `feat/s04-pr6-docs` | TBD | OPEN |
+| PR-1 | `feat/s04-pr1-base` | `3b0fcc4` | MERGED |
+| PR-2 | `feat/s04-pr2-home` | `adf6ec8` | MERGED |
+| PR-3 | `feat/s04-pr3-sound-healing` | `4e910d2` | MERGED |
+| PR-4 | `feat/s04-pr4-sessions` | `26bc13d` | MERGED |
+| PR-5 | `feat/s04-pr5-about` | `7e91084` | MERGED |
+| PR-6 | `feat/s04-pr6-docs` | `7f46c46` | MERGED |
 
 Links:
 - PR-1: https://github.com/raphabruno7/sound-sanctuary/pull/52
@@ -19,6 +19,7 @@ Links:
 - PR-3: https://github.com/raphabruno7/sound-sanctuary/pull/54
 - PR-4: https://github.com/raphabruno7/sound-sanctuary/pull/55
 - PR-5: https://github.com/raphabruno7/sound-sanctuary/pull/56
+- PR-6: https://github.com/raphabruno7/sound-sanctuary/pull/57
 
 ## Gates
 - `bash scripts/agent_check.sh` → PASS (lint ✓ + build ✓) on each PR branch.

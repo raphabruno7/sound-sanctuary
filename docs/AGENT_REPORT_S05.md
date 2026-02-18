@@ -8,12 +8,12 @@ Date: 2026-02-18
 ## PRs entregues
 | PR | Branch | Merge commit | Status |
 |----|--------|-------------|--------|
-| PR-1 | `feat/s05-pr1-placeholders` | TBD | OPEN |
-| PR-2 | `feat/s05-pr2-newsletter`   | TBD | OPEN |
-| PR-3 | `feat/s05-pr3-portfolio`    | TBD | OPEN |
-| PR-4 | `feat/s05-pr4-nav`          | TBD | OPEN |
-| PR-5 | `feat/s05-pr5-seo`          | TBD | OPEN |
-| PR-6 | `feat/s05-pr6-docs`         | TBD | OPEN |
+| PR-1 | `feat/s05-pr1-placeholders` | `41d7143` | MERGED |
+| PR-2 | `feat/s05-pr2-newsletter`   | `fcd47bf` | MERGED |
+| PR-3 | `feat/s05-pr3-portfolio`    | `4cc6de7` | MERGED |
+| PR-4 | `feat/s05-pr4-nav`          | `8b0d8b0` | MERGED |
+| PR-5 | `feat/s05-pr5-seo`          | `8f73286` | MERGED |
+| PR-6 | `feat/s05-pr6-docs`         | `686c83b` | MERGED |
 
 Links:
 - PR-1: https://github.com/raphabruno7/sound-sanctuary/pull/58
@@ -21,6 +21,7 @@ Links:
 - PR-3: https://github.com/raphabruno7/sound-sanctuary/pull/60
 - PR-4: https://github.com/raphabruno7/sound-sanctuary/pull/61
 - PR-5: https://github.com/raphabruno7/sound-sanctuary/pull/62
+- PR-6: https://github.com/raphabruno7/sound-sanctuary/pull/63
 
 ## Gates
 - `bash scripts/agent_check.sh` → PASS (lint ✓ + build ✓) on each PR branch.
