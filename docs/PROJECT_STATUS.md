@@ -8,8 +8,8 @@ This file captures the current state of the repo so work can continue across Cod
 - Default branch: `main`
 
 ## Current Sprint
-- Current sprint: none (maintenance mode)
-- Last completed sprint(s): `S03` + `S04` (DONE)
+- Last completed sprint: `S03` (DONE, 2026-02-12)
+- Current sprint: `S04` (IN PROGRESS) — DS v8.9 integration + visual polish
 - Summary: design-system is centralized via submodule, dark-mode is delivered, and the v1.5 “journey” pass is implemented across core pages.
 
 ## Major Milestones / PRs
@@ -32,6 +32,7 @@ This file captures the current state of the repo so work can continue across Cod
   - `design-system/styles/dist/base.css`
   - `design-system/styles/dist/typography.css`
   - `design-system/styles/dist/components.css`
+  - `design-system/styles/dist/animations.css` (S04)
 - Consumer repo rule: do not define local token registries (no local `:root` token blocks).
 - Dark-mode toggle is delivered in the shared shell (`src/components/ThemeToggle.tsx`).
 
