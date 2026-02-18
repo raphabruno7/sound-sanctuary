@@ -69,6 +69,40 @@ export default function Home() {
         </div>
       </section>
 
+      <div aria-hidden="true" className="journey-container">
+        <svg
+          className="vine-divider"
+          viewBox="0 0 400 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
+          </defs>
+          <path
+            className="vine-path"
+            d="M10 58C38 22 72 20 98 46C124 72 152 74 178 48C204 22 236 22 262 48C288 74 322 76 390 44"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="620"
+            strokeDashoffset="620"
+          />
+          <path
+            className="vine-path"
+            d="M10 74C44 38 76 36 102 60C126 84 150 84 174 62C198 40 228 40 252 62C276 84 308 84 390 56"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.85"
+            strokeDasharray="620"
+            strokeDashoffset="620"
+          />
+        </svg>
+      </div>
+
       <section className="journey-container journey-section">
         <div className="journey-label">02 - Sound and the Nervous System</div>
         <h2 className="journey-title">Principio fundador</h2>
@@ -183,11 +217,45 @@ export default function Home() {
         </div>
       </section>
 
+      <div aria-hidden="true" className="journey-container">
+        <svg
+          className="vine-divider"
+          viewBox="0 0 400 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
+          </defs>
+          <path
+            className="vine-path"
+            d="M10 58C38 22 72 20 98 46C124 72 152 74 178 48C204 22 236 22 262 48C288 74 322 76 390 44"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="620"
+            strokeDashoffset="620"
+          />
+          <path
+            className="vine-path"
+            d="M10 74C44 38 76 36 102 60C126 84 150 84 174 62C198 40 228 40 252 62C276 84 308 84 390 56"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.85"
+            strokeDasharray="620"
+            strokeDashoffset="620"
+          />
+        </svg>
+      </div>
+
       <section className="journey-container journey-section">
         <div className="journey-label">07 - Animacao · Impulsos</div>
         <h2 className="journey-title">Nada e inerte</h2>
         <div className="impulse-plate ds-glass mt-6">
-          <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light journey-breathe">
+          <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light sh-breath-pulse">
             Nada e inerte.
           </p>
           <p className="journey-sub mt-3">
@@ -207,6 +275,46 @@ export default function Home() {
               <circle className="node" cx="340" cy="160" r="3" />
               <circle className="node" cx="560" cy="140" r="3" />
               <circle className="node" cx="740" cy="310" r="3" />
+            </svg>
+          </div>
+          <div className="strike-wave-art" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Strike wave ripple">
+              <defs>
+                <style>{`
+                  .ring {
+                    fill: none;
+                    stroke-width: 2;
+                    transform-origin: 150px 150px;
+                    animation: strikeWave 6000ms cubic-bezier(0.33, 0, 0.67, 1) infinite;
+                  }
+                  .r1 { stroke: var(--sh-organic-gold-primary, #C4A35A); animation-delay: 0ms; }
+                  .r2 { stroke: var(--sh-organic-gold-light, #E0C97F); animation-delay: 800ms; }
+                  .r3 { stroke: var(--sh-organic-liquid-glass-light, #8BC4A0); animation-delay: 1600ms; }
+                  .r4 { stroke: var(--sh-organic-liquid-glass-ghost, #C8E6D0); animation-delay: 2400ms; }
+                  .r5 { stroke: var(--sh-organic-ocean-primary, #5A8A8A); animation-delay: 3200ms; }
+                  .core {
+                    fill: var(--sh-organic-gold-primary, #C4A35A);
+                    animation: strikeFlash 6000ms cubic-bezier(0.16, 1, 0.3, 1) infinite;
+                  }
+                  @keyframes strikeWave {
+                    0% { opacity: 0; transform: scale(0.2); }
+                    15% { opacity: 0.9; }
+                    100% { opacity: 0; transform: scale(1.7); }
+                  }
+                  @keyframes strikeFlash {
+                    0%, 70%, 100% { opacity: 0.25; r: 5px; }
+                    74% { opacity: 1; r: 12px; }
+                  }
+                `}</style>
+              </defs>
+
+              <rect width="300" height="300" fill="transparent" />
+              <circle className="ring r5" cx="150" cy="150" r="80" />
+              <circle className="ring r4" cx="150" cy="150" r="65" />
+              <circle className="ring r3" cx="150" cy="150" r="50" />
+              <circle className="ring r2" cx="150" cy="150" r="35" />
+              <circle className="ring r1" cx="150" cy="150" r="20" />
+              <circle className="core" cx="150" cy="150" r="6" />
             </svg>
           </div>
         </div>
