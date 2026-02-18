@@ -155,7 +155,7 @@ export default function Home() {
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-2xl ds-weight-light">1:1 Sound Therapy</h3>
             <p className="mt-2 text-sm text-secondary">
-              For whom: deeper pacing + integration support · Duration: placeholder
+              For whom: deeper pacing + integration support · 60 min
             </p>
             <p className="mt-3 text-secondary">
               Personalized support for transitions, sleep stress, and chronic overstimulation.
@@ -173,7 +173,7 @@ export default function Home() {
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-2xl ds-weight-light">Group Sound Journey</h3>
             <p className="mt-2 text-sm text-secondary">
-              For whom: collective rest without performance · Duration: placeholder
+              For whom: collective rest without performance · 90 min
             </p>
             <p className="mt-3 text-secondary">
               A shared field for settling and connection. Low barrier and high felt sense.
@@ -370,7 +370,7 @@ export default function Home() {
       <section className="journey-container journey-section" id="contact">
         <div className="journey-label">Contact</div>
         <h2 className="journey-title">Book a 1:1</h2>
-        <p className="journey-sub">Three questions. I reply within X hours.</p>
+        <p className="journey-sub">Three questions. I reply within 48 hours.</p>
         <div className="mt-6">
           <Link className="btn btn-primary" href="/contact">
             Start with a session

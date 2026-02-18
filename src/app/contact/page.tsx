@@ -6,7 +6,7 @@ export default function ContactPage() {
       <section className="journey-container journey-section">
         <div className="journey-label">Contact</div>
         <h1 className="journey-title">Book a 1:1</h1>
-        <p className="journey-sub">Three questions. I reply within X hours.</p>
+        <p className="journey-sub">Three questions. I reply within 48 hours.</p>
       </section>
 
       <section className="journey-container journey-section">

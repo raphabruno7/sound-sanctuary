@@ -35,7 +35,7 @@ export default function SessionsPage() {
 
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-2xl ds-weight-light">Group Sound Journey</h3>
-            <p className="mt-2 text-sm text-secondary">Evento ritual · Duration placeholder</p>
+            <p className="mt-2 text-sm text-secondary">Evento ritual · 90 min</p>
             <p className="mt-3 text-secondary">Collective rest and connection without performance.</p>
             <div className="btn-row mt-5">
               <Link className="btn btn-secondary" href="/newsletter">
