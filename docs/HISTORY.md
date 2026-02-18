@@ -33,3 +33,27 @@ This is a lightweight log of major repo milestones so the project can be continu
 ### Notes / decisions
 - Build uses webpack mode in this environment: `npm run build` runs `next build --webpack` (Turbopack had sandbox/permission issues).
 
+## 2026-02-12
+
+### S03 closeout
+- PR #20 — Design-system v5.3 propagation + dark-mode foundation.
+- PR #23 — Apply canonical token recipes to header/footer/primary CTAs.
+- PR #24 — S03 light/dark checklist for PR #23.
+- PR #25 — S03 dependency-ordered closeout docs.
+- PR #27 — Project status snapshot updated post-S03.
+
+### S04 kickoff (tasks + adoption)
+- PR #28 — Add S04 design propagation tasks (UI/QA/release cards).
+- PR #29 — Adopt design-system typography recipes (consumer import expansion).
+- PR #30 / #31 / #32 / #34 — Continue recipes adoption across routes and portfolio.
+
+## 2026-02-13
+
+### UX direction + “journey” pass
+- PR #35 — Add tone/desire experience brief (copy + UX arc).
+- PR #36 — Implement v1.5 journey across core pages.
+
+## 2026-02-17
+
+### Design-system maintenance
+- PR #50 — Bump `./design-system` submodule to v8.9.0.
