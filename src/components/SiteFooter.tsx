@@ -16,6 +16,14 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="mt-6">© {new Date().getFullYear()} Sound Sanctuary</p>
+        <div className="mt-3 flex gap-4 text-xs">
+          <Link href="/privacy" className="transition-colors hover:text-foreground">
+            Privacy
+          </Link>
+          <Link href="/newsletter" className="transition-colors hover:text-foreground">
+            Newsletter
+          </Link>
+        </div>
       </div>
     </footer>
   );

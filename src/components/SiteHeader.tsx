@@ -25,9 +25,6 @@ export function SiteHeader() {
             <Link className="ds-header__link" href="/contact">
               Contact
             </Link>
-            <Link className="ds-header__link" href="/privacy">
-              Privacy
-            </Link>
           </nav>
           <div className="flex items-center gap-2">
             <ThemeToggle />
