@@ -57,3 +57,12 @@ This is a lightweight log of major repo milestones so the project can be continu
 
 ### Design-system maintenance
 - PR #50 — Bump `./design-system` submodule to v8.9.0.
+
+## 2026-02-18
+
+### S04 — DS v8.9 integration + visual polish
+- PR #52 — Base: import `animations.css` + project status refresh.
+- PR #53 — Home: vine dividers + strike-wave + breath pulse.
+- PR #54 — Sound-healing: draw-on-nervura + jornada-sonora + vine divider.
+- PR #55 — Sessions: DS timeline + CSS-only accordion.
+- PR #56 — About: journey layout + neuron-field background + vine divider.
