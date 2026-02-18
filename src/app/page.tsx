@@ -12,7 +12,7 @@ export default function Home() {
         <div className="journey-hero-grid mt-6">
           <div>
             <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">Sound Healing</h1>
-            <p className="mt-3 ds-font-display ds-italic ds-weight-light ds-size-xl journey-breathe text-secondary">
+            <p className="mt-3 ds-font-display ds-italic ds-weight-light ds-size-xl journey-breathe sh-breath-pulse text-secondary">
               O prana canta enquanto flui
             </p>
             <p className="journey-sub ds-size-lg">
@@ -255,7 +255,7 @@ export default function Home() {
         <div className="journey-label">07 - Animacao · Impulsos</div>
         <h2 className="journey-title">Nada e inerte</h2>
         <div className="impulse-plate ds-glass mt-6">
-          <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light sh-breath-pulse">
+          <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light journey-breathe">
             Nada e inerte.
           </p>
           <p className="journey-sub mt-3">
