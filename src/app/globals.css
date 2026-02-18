@@ -60,20 +60,31 @@
   pointer-events: none;
 }
 
-.neuron-field-bg {
-  position: fixed;
+.nervura-art {
+  position: absolute;
+  top: 0;
+  right: -5%;
+  width: 45%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.12;
+  overflow: hidden;
+}
+
+@media (max-width: 980px) {
+  .nervura-art {
+    display: none;
+  }
+}
+
+.jornada-art {
+  position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
-  opacity: 0.06;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .neuron-field-bg {
-    opacity: 0.03;
-  }
+  opacity: 0.09;
+  object-fit: cover;
 }
 
 .journey-label {
