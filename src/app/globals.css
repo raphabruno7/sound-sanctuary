@@ -32,6 +32,11 @@
 
 /* Dark mode remap is canonical in design-system v5.6+ (styles/src/dark-mode.css). */
 
+:root:not(.dark) {
+  --sh-glass-light-border: rgba(196, 163, 90, 0.28);
+  --sh-glass-light-border-hover: rgba(196, 163, 90, 0.45);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -201,6 +206,13 @@
     linear-gradient(180deg, rgba(26, 58, 42, 0.06), rgba(26, 26, 22, 0));
 }
 
+:root:not(.dark) .journey-photo-vignette {
+  background:
+    radial-gradient(700px 340px at 70% 25%, rgba(196, 163, 90, 0.18), transparent 60%),
+    radial-gradient(600px 380px at 30% 70%, rgba(196, 163, 90, 0.1), transparent 65%),
+    linear-gradient(180deg, rgba(196, 163, 90, 0.06), rgba(248, 246, 241, 0));
+}
+
 .journey-axon {
   position: relative;
   height: 2px;
@@ -278,6 +290,10 @@
   opacity: 0.2;
   animation: sh-node-pulse var(--sh-motion-duration-breath) var(--sh-motion-easing-breath) infinite;
   will-change: opacity, transform;
+}
+
+:root:not(.dark) .journey-card::after {
+  opacity: 0.35;
 }
 
 .impulse-plate {
