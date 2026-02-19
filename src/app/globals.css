@@ -97,6 +97,23 @@
   opacity: 0.06;
 }
 
+/* ── Artwork: Dark mode opacity overrides ── */
+.dark .nervura-art {
+  opacity: 0.2;
+}
+
+.dark .jornada-art {
+  opacity: 0.15;
+}
+
+.dark .vine-divider {
+  opacity: 0.22;
+}
+
+.dark .neuron-field-bg {
+  opacity: 0.1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .neuron-field-bg {
     opacity: 0.03;
