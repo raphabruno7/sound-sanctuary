@@ -7,10 +7,20 @@ import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 export default function Home() {
   return (
     <main className="min-h-dvh pb-24">
-      <section className="journey-container journey-section">
-        <div className="journey-label">00 - Home</div>
-        <div className="journey-hero-grid mt-6">
-          <div>
+      <section className="home-hero">
+        <Image
+          src="/media/hero/2627.jpg"
+          alt="Sound healing session outdoors with bowls and gong"
+          fill
+          priority
+          sizes="100vw"
+          className="home-hero__image"
+        />
+        <div className="home-hero__overlay" aria-hidden="true" />
+        <div className="home-hero__vignette" aria-hidden="true" />
+
+        <div className="home-hero__content journey-container">
+          <div className="home-hero__copy">
             <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">Sound Healing</h1>
             <p className="mt-3 ds-font-display ds-italic ds-weight-light ds-size-xl journey-breathe sh-breath-pulse text-secondary">
               O prana canta enquanto flui
@@ -30,28 +40,12 @@ export default function Home() {
                 Join Sound Healing Live
               </Link>
             </div>
-            <p className="journey-label mt-4">Upstream care · regulation before breakdown</p>
-          </div>
-
-          <div className="journey-hero-media ds-glass">
-            <Image
-              src="/media/hero/2627.jpg"
-              alt="Sound healing session outdoors with bowls and gong"
-              fill
-              priority
-              sizes="(max-width: 980px) 100vw, 55vw"
-              className="object-cover"
-            />
-            <div className="journey-photo-vignette" aria-hidden="true" />
-            <div className="absolute left-4 bottom-4 z-10 rounded-full border border-border bg-popover px-3 py-2 text-xs uppercase tracking-[0.2em] text-foreground">
-              Photo 01 - 2627
-            </div>
           </div>
         </div>
       </section>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">01 - What It Is</div>
+        <div className="journey-label">Upstream care · regulation before breakdown</div>
         <h2 className="journey-title">A calm, structured sound practice</h2>
         <p className="journey-sub">
           Sound Healing uses resonance, rhythm, and guided rest to help the nervous system
