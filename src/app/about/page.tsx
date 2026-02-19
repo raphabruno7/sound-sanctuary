@@ -19,9 +19,8 @@ export default function About() {
       >
         <defs>
           <style>{`
-            .bg { fill: #F8F6F1; }
-            .dendrite { fill: none; stroke: rgba(59, 122, 84, 0.18); stroke-width: 1.2; }
-            .node { fill: rgba(196, 163, 90, 0.75); animation: glowPulse 4000ms ease-in-out infinite; }
+            .dendrite { fill: none; stroke: var(--sh-organic-liquid-glass-forest, #2D5A3E); stroke-width: 1.2; opacity: 0.25; }
+            .node { fill: var(--sh-organic-gold-primary, #C4A35A); animation: glowPulse 4000ms ease-in-out infinite; }
             .n2 { animation-delay: 500ms; }
             .n3 { animation-delay: 1000ms; }
             .n4 { animation-delay: 1500ms; }
@@ -32,7 +31,6 @@ export default function About() {
             }
           `}</style>
         </defs>
-        <rect className="bg" width="600" height="400" />
         <path className="dendrite" d="M60 300 C140 220, 220 260, 300 180 C370 120, 450 140, 540 90" />
         <path className="dendrite" d="M70 120 C160 170, 220 120, 310 200 C390 270, 460 250, 550 310" />
         <path className="dendrite" d="M80 210 C170 200, 250 220, 340 170 C430 120, 500 150, 570 130" />
