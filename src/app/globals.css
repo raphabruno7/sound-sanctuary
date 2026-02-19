@@ -60,6 +60,41 @@
   pointer-events: none;
 }
 
+.scapes-art {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 200px;
+  pointer-events: none;
+  opacity: 0.08;
+}
+
+.dark .scapes-art {
+  opacity: 0.13;
+}
+
+@media (max-width: 768px) {
+  .scapes-art {
+    display: none;
+  }
+}
+
+.venation-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.06;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.dark .venation-art {
+  opacity: 0.1;
+}
+
 .nervura-art {
   position: absolute;
   top: 0;

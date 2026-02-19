@@ -219,6 +219,8 @@ export default function SoundHealingPage() {
           viewBox="0 0 400 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Decorative vine islimi divider"
         >
           <defs>
             <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
@@ -243,6 +245,26 @@ export default function SoundHealingPage() {
             opacity="0.85"
             strokeDasharray="620"
             strokeDashoffset="620"
+          />
+          <path
+            d="M72 38C78 28 90 28 96 38C90 48 78 48 72 38Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M146 64C152 54 164 54 170 64C164 74 152 74 146 64Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M218 40C224 30 236 30 242 40C236 50 224 50 218 40Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M292 66C298 56 310 56 316 66C310 76 298 76 292 66Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
           />
         </svg>
       </div>
