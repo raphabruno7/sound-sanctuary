@@ -121,7 +121,7 @@ export default function Home() {
 
       <section className="journey-container journey-section">
         <div className="journey-label">02 - Sound and the Nervous System</div>
-        <h2 className="journey-title">Princípio fundador</h2>
+        <h2 className="journey-title journey-title-regular">Princípio fundador</h2>
         <div className="ds-glass journey-card mt-6">
           <p className="text-secondary">O corpo humano é 70% água. O som viaja pela água.</p>
           <p className="text-secondary mt-2">O sistema nervoso está imerso nessa água.</p>
@@ -129,7 +129,7 @@ export default function Home() {
             Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança
             cada nervo por dentro.
           </p>
-          <p className="mt-3 ds-font-display ds-size-2xl ds-weight-light">
+          <p className="mt-3 ds-text-overline journey-breathe">
             O som reconstrói o sistema nervoso.
           </p>
         </div>
@@ -163,7 +163,7 @@ export default function Home() {
 
       <section className="journey-container journey-section">
         <div className="journey-label">04 - Session Formats</div>
-        <h2 className="journey-title">Choose depth</h2>
+        <h2 className="journey-title journey-title-regular">Choose depth</h2>
         <div className="journey-grid-2 mt-6">
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-2xl ds-weight-light">1:1 Sound Therapy</h3>
@@ -423,7 +423,7 @@ export default function Home() {
 
       <section className="journey-container journey-section">
         <div className="journey-label">08 - Who It Is For</div>
-        <h2 className="journey-title">When life runs hot</h2>
+        <h2 className="journey-title journey-title-regular">When life runs hot</h2>
         <ul className="mt-4 list-disc pl-6 space-y-2 text-secondary">
           <li>anxiety / stress</li>
           <li>sleep</li>
