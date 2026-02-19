@@ -102,13 +102,10 @@ export default function SoundHealingPage() {
               className="object-cover"
             />
             <div className="journey-photo-vignette" aria-hidden="true" />
-            <div className="absolute left-4 bottom-4 z-10 rounded-full border border-border bg-popover px-3 py-2 text-xs uppercase tracking-[0.2em] text-foreground">
-              Photo 02 - 2633
-            </div>
           </div>
 
           <article className="ds-glass journey-card">
-            <div className="journey-label">Principio fundador</div>
+            <div className="journey-label">Princípio fundador</div>
             <h2 className="mt-3 ds-font-display ds-size-3xl ds-weight-light">Mechanism, without hype</h2>
             <p className="mt-4 text-secondary">
               Rhythm, resonance, and structured stillness create conditions where the system can
@@ -201,10 +198,10 @@ export default function SoundHealingPage() {
             <circle className="node d5" cx="410" cy="188" r="3" />
             <circle className="node d6" cx="500" cy="210" r="3" />
           </svg>
-          <p className="text-secondary">O corpo humano e 70% agua. O som viaja pela agua.</p>
-          <p className="text-secondary mt-2">O sistema nervoso esta imerso nessa agua.</p>
+          <p className="text-secondary">O corpo humano é 70% água. O som viaja pela água.</p>
+          <p className="text-secondary mt-2">O sistema nervoso está imerso nessa água.</p>
           <p className="text-secondary mt-2">
-            Quando a tigela toca, a vibracao encontra o liquido, se propaga como onda, e alcanca
+            Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança
             cada nervo por dentro.
           </p>
           <p className="mt-3 ds-font-display ds-size-2xl ds-weight-light">
