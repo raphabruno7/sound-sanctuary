@@ -121,12 +121,12 @@ export default function Home() {
 
       <section className="journey-container journey-section">
         <div className="journey-label">02 - Sound and the Nervous System</div>
-        <h2 className="journey-title">Principio fundador</h2>
+        <h2 className="journey-title">Princípio fundador</h2>
         <div className="ds-glass journey-card mt-6">
-          <p className="text-secondary">O corpo humano e 70% agua. O som viaja pela agua.</p>
-          <p className="text-secondary mt-2">O sistema nervoso esta imerso nessa agua.</p>
+          <p className="text-secondary">O corpo humano é 70% água. O som viaja pela água.</p>
+          <p className="text-secondary mt-2">O sistema nervoso está imerso nessa água.</p>
           <p className="text-secondary mt-2">
-            Quando a tigela toca, a vibracao encontra o liquido, se propaga como onda, e alcanca
+            Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança
             cada nervo por dentro.
           </p>
           <p className="mt-3 ds-font-display ds-size-2xl ds-weight-light">
@@ -157,9 +157,6 @@ export default function Home() {
               className="object-cover"
             />
             <div className="journey-photo-vignette" aria-hidden="true" />
-            <div className="absolute left-4 bottom-4 z-10 rounded-full border border-border bg-popover px-3 py-2 text-xs uppercase tracking-[0.2em] text-foreground">
-              Photo 03 - 2641
-            </div>
           </div>
         </div>
       </section>
@@ -207,18 +204,18 @@ export default function Home() {
       </section>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">06 - Framework Elemental</div>
-        <h2 className="journey-title">Quatro forcas do som</h2>
+        <div className="journey-label">05 - Framework Elemental</div>
+        <h2 className="journey-title">Quatro forças do som</h2>
         <div className="journey-grid-4 mt-6">
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-xl ds-weight-light">The Sun</h3>
             <p className="mt-2 text-sm text-secondary">heals, charges, warms</p>
-            <p className="mt-3 text-secondary">Frequencia do fogo. Calor que dissolve.</p>
+            <p className="mt-3 text-secondary">Frequência do fogo. Calor que dissolve.</p>
           </article>
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-xl ds-weight-light">The Moon</h3>
             <p className="mt-2 text-sm text-secondary">connects, manifests, unlocks</p>
-            <p className="mt-3 text-secondary">Frequencia da agua interna e ritmo do corpo sutil.</p>
+            <p className="mt-3 text-secondary">Frequência da água interna e ritmo do corpo sutil.</p>
           </article>
           <article className="ds-glass journey-card relative overflow-hidden">
             <svg
@@ -283,7 +280,7 @@ export default function Home() {
             <div className="relative z-10">
               <h3 className="ds-font-display ds-size-xl ds-weight-light">The Ocean</h3>
               <p className="mt-2 text-sm text-secondary">cleanses, refreshes, opens</p>
-              <p className="mt-3 text-secondary">Ondulacao que limpa e abre centros de energia.</p>
+              <p className="mt-3 text-secondary">Ondulação que limpa e abre centros de energia.</p>
             </div>
           </article>
           <article className="ds-glass journey-card">
@@ -351,11 +348,11 @@ export default function Home() {
       </div>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">07 - Animacao · Impulsos</div>
-        <h2 className="journey-title">Nada e inerte</h2>
+        <div className="journey-label">07 - Animação · Impulsos</div>
+        <h2 className="journey-title">Nada é inerte</h2>
         <div className="impulse-plate ds-glass mt-6">
           <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light journey-breathe">
-            Nada e inerte.
+            Nada é inerte.
           </p>
           <p className="journey-sub mt-3">
             Textos respiram. Cards pulsam como nos nervosos. Elementos acendem como impulso nervoso.
