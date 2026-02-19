@@ -154,7 +154,7 @@
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  opacity: 0.14;
+  opacity: 0.22;
   display: block;
   pointer-events: none;
 }
@@ -166,11 +166,11 @@
   width: 240px;
   height: 200px;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.12;
 }
 
 .dark .scapes-art {
-  opacity: 0.13;
+  opacity: 0.2;
 }
 
 @media (max-width: 768px) {
@@ -185,13 +185,13 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.1;
   object-fit: contain;
   z-index: 0;
 }
 
 .dark .venation-art {
-  opacity: 0.1;
+  opacity: 0.16;
 }
 
 .nervura-art {
@@ -201,7 +201,7 @@
   width: 45%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.18;
   overflow: hidden;
 }
 
@@ -217,7 +217,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.09;
+  opacity: 0.14;
   object-fit: cover;
 }
 
@@ -228,24 +228,24 @@
   height: 100%;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.06;
+  opacity: 0.1;
 }
 
 /* ── Artwork: Dark mode opacity overrides ── */
 .dark .nervura-art {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .dark .jornada-art {
-  opacity: 0.15;
+  opacity: 0.24;
 }
 
 .dark .vine-divider {
-  opacity: 0.22;
+  opacity: 0.35;
 }
 
 .dark .neuron-field-bg {
-  opacity: 0.1;
+  opacity: 0.16;
 }
 
 @media (prefers-reduced-motion: reduce) {
