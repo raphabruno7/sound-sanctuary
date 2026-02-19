@@ -33,8 +33,10 @@
 /* Dark mode remap is canonical in design-system v5.6+ (styles/src/dark-mode.css). */
 
 :root:not(.dark) {
-  --sh-glass-light-border: rgba(196, 163, 90, 0.28);
-  --sh-glass-light-border-hover: rgba(196, 163, 90, 0.45);
+  --sh-glass-light-bg: rgba(242, 239, 232, 0.6);
+  --sh-glass-light-border: rgba(196, 163, 90, 0.18);
+  --sh-glass-light-border-hover: rgba(196, 163, 90, 0.3);
+  --sh-glass-light-shadow: rgba(26, 58, 42, 0.1);
 }
 
 .dark {
