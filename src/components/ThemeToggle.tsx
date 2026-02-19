@@ -31,7 +31,7 @@ function readStoredPreference(): ThemePreference | null {
 }
 
 export function ThemeToggle() {
-  const [preference, setPreference] = useState<ThemePreference>("system");
+  const [preference, setPreference] = useState<ThemePreference>("dark");
 
   const label = useMemo(() => {
     if (preference === "system") return "Theme: System";
@@ -41,7 +41,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const stored = readStoredPreference();
-    const initial = stored ?? "system";
+    const initial = stored ?? "dark";
     applyThemeClass(initial);
     // Defer the state sync to avoid synchronous setState inside the effect body.
     Promise.resolve().then(() => {
