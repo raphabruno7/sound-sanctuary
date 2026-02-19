@@ -186,6 +186,28 @@
   pointer-events: none;
 }
 
+.vine-path {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: sh-vine-grow 2.5s var(--sh-motion-easing-flow) forwards;
+  animation-play-state: paused;
+  animation-timeline: view();
+  animation-range: entry 0% entry 80%;
+}
+
+@keyframes sh-vine-grow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .vine-path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
+
 .scapes-art {
   position: absolute;
   top: 0;
@@ -256,6 +278,7 @@
   pointer-events: none;
   z-index: -1;
   opacity: 0.1;
+  filter: blur(1px);
 }
 
 /* ── Artwork: Dark mode opacity overrides ── */
@@ -279,6 +302,10 @@
   .neuron-field-bg {
     opacity: 0.03;
   }
+  .vine-path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
 }
 
 .journey-label {
@@ -287,6 +314,26 @@
   letter-spacing: var(--sh-letter-spacing-wider);
   text-transform: uppercase;
   color: var(--sh-semantic-text-muted);
+}
+
+@supports (animation-timeline: view()) {
+  .journey-label {
+    opacity: 0;
+    animation: sh-label-in 600ms var(--sh-motion-easing-breath) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+@keyframes sh-label-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .journey-title {
