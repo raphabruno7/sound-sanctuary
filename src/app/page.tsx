@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="journey-container journey-section">
+      <section className="journey-container journey-section journey-section-lg">
         <div className="journey-label">Upstream care · regulation before breakdown</div>
         <h2 className="journey-title">A calm, structured sound practice</h2>
         <p className="journey-sub">
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div aria-hidden="true" className="journey-container">
+      <div aria-hidden="true" className="journey-container journey-divider">
         <svg
           className="vine-divider"
           viewBox="0 0 400 100"
@@ -291,7 +291,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div aria-hidden="true" className="journey-container">
+      <div aria-hidden="true" className="journey-container journey-divider">
         <svg
           className="vine-divider"
           viewBox="0 0 400 100"
@@ -347,16 +347,21 @@ export default function Home() {
         </svg>
       </div>
 
-      <section className="journey-container journey-section">
-        <div className="journey-label">07 - Animação · Impulsos</div>
-        <h2 className="journey-title">Nada é inerte</h2>
+      <section className="journey-section impulse-section">
+        <div className="journey-container">
+          <div className="journey-label">07 - Animação · Impulsos</div>
+          <h2 className="journey-title">Nada é inerte</h2>
+        </div>
+
         <div className="impulse-plate ds-glass mt-6">
-          <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light journey-breathe">
-            Nada é inerte.
-          </p>
-          <p className="journey-sub mt-3">
-            Textos respiram. Cards pulsam como nos nervosos. Elementos acendem como impulso nervoso.
-          </p>
+          <div className="journey-container impulse-inner">
+            <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light journey-breathe">
+              Nada é inerte.
+            </p>
+            <p className="journey-sub mt-3">
+              Textos respiram. Cards pulsam como nos nervosos. Elementos acendem como impulso nervoso.
+            </p>
+          </div>
           <div className="impulse-art" aria-hidden="true">
             <svg className="impulse-svg" viewBox="0 0 800 420" preserveAspectRatio="none">
               <path
@@ -417,7 +422,7 @@ export default function Home() {
       </section>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">09 - Who It Is For</div>
+        <div className="journey-label">08 - Who It Is For</div>
         <h2 className="journey-title">When life runs hot</h2>
         <ul className="mt-4 list-disc pl-6 space-y-2 text-secondary">
           <li>anxiety / stress</li>
