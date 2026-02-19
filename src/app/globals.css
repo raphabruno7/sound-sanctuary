@@ -37,6 +37,38 @@
   --sh-glass-light-border-hover: rgba(196, 163, 90, 0.45);
 }
 
+.dark {
+  --color-background: var(--sh-semantic-bg-primary);
+  --color-foreground: var(--sh-semantic-text-primary);
+  --color-muted: var(--sh-semantic-bg-secondary);
+  --color-muted-foreground: var(--sh-semantic-text-muted);
+  --color-card: var(--sh-semantic-bg-secondary);
+  --color-card-foreground: var(--sh-semantic-text-primary);
+  --color-popover: var(--sh-glass-light-bg);
+  --color-popover-foreground: var(--sh-semantic-text-primary);
+  --color-border: var(--sh-glass-light-border);
+  --color-input: var(--sh-glass-light-border);
+
+  --sh-semantic-text-secondary: rgba(242, 239, 232, 0.82);
+  --sh-semantic-text-muted: rgba(242, 239, 232, 0.62);
+
+  --sh-glass-light-border: rgba(196, 163, 90, 0.25);
+  --sh-glass-light-bg: rgba(26, 26, 22, 0.7);
+}
+
+.dark .ds-glass {
+  box-shadow: var(--sh-glass-surface-shadow), 0 0 20px rgba(196, 163, 90, 0.06);
+}
+
+.dark .btn-secondary {
+  border-color: rgba(196, 163, 90, 0.35);
+  color: var(--sh-semantic-text-primary);
+}
+
+.dark .btn-ghost {
+  color: rgba(242, 239, 232, 0.9);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
