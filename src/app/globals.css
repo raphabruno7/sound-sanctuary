@@ -90,6 +90,31 @@
   margin: 5rem 0;
 }
 
+.journey-section-lg {
+  margin-top: 8rem;
+}
+
+.journey-divider {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.impulse-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.impulse-section .impulse-plate {
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.impulse-inner {
+  padding: 2rem 1.5rem;
+}
+
 .home-hero {
   position: relative;
   min-height: 70vh;
