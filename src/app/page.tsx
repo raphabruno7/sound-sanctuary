@@ -75,6 +75,8 @@ export default function Home() {
           viewBox="0 0 400 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Decorative vine islimi divider"
         >
           <defs>
             <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
@@ -99,6 +101,26 @@ export default function Home() {
             opacity="0.85"
             strokeDasharray="620"
             strokeDashoffset="620"
+          />
+          <path
+            d="M72 38C78 28 90 28 96 38C90 48 78 48 72 38Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M146 64C152 54 164 54 170 64C164 74 152 74 146 64Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M218 40C224 30 236 30 242 40C236 50 224 50 218 40Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M292 66C298 56 310 56 316 66C310 76 298 76 292 66Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
           />
         </svg>
       </div>
@@ -204,10 +226,71 @@ export default function Home() {
             <p className="mt-2 text-sm text-secondary">connects, manifests, unlocks</p>
             <p className="mt-3 text-secondary">Frequencia da agua interna e ritmo do corpo sutil.</p>
           </article>
-          <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-xl ds-weight-light">The Ocean</h3>
-            <p className="mt-2 text-sm text-secondary">cleanses, refreshes, opens</p>
-            <p className="mt-3 text-secondary">Ondulacao que limpa e abre centros de energia.</p>
+          <article className="ds-glass journey-card relative overflow-hidden">
+            <svg
+              className="venation-art"
+              width="300"
+              height="300"
+              viewBox="0 0 300 300"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <style>{`
+                  .segment-fill { fill: var(--sh-organic-liquid-glass-ghost, #C8E6D0); opacity: 0.08; }
+                  .membrane     { stroke: var(--sh-organic-liquid-glass-forest, #2D5A3E); stroke-width: 1.6; fill: none; }
+                  .vein         { stroke: var(--sh-organic-liquid-glass-leaf, #5A9E6F); stroke-width: 0.8; fill: none; opacity: 0.5; }
+                  .core         { fill: var(--sh-organic-gold-primary, #C4A35A); opacity: 0.7; }
+                `}</style>
+              </defs>
+              <path className="segment-fill" d="M150,150 L270,150 A120,120 0 0,1 234.85,234.85 Z" />
+              <path className="membrane" d="M150,150 L270,150 A120,120 0 0,1 234.85,234.85 Z" />
+              <line className="vein" x1="150" y1="150" x2="260.3" y2="169.45" />
+              <line className="vein" x1="150" y1="150" x2="253.47" y2="192.86" />
+              <line className="vein" x1="150" y1="150" x2="241.75" y2="214.24" />
+              <path className="segment-fill" d="M150,150 L234.85,234.85 A120,120 0 0,1 150,270 Z" />
+              <path className="membrane" d="M150,150 L234.85,234.85 A120,120 0 0,1 150,270 Z" />
+              <line className="vein" x1="150" y1="150" x2="214.24" y2="241.75" />
+              <line className="vein" x1="150" y1="150" x2="192.86" y2="253.47" />
+              <line className="vein" x1="150" y1="150" x2="169.45" y2="260.3" />
+              <path className="segment-fill" d="M150,150 L150,270 A120,120 0 0,1 65.15,234.85 Z" />
+              <path className="membrane" d="M150,150 L150,270 A120,120 0 0,1 65.15,234.85 Z" />
+              <line className="vein" x1="150" y1="150" x2="130.55" y2="260.3" />
+              <line className="vein" x1="150" y1="150" x2="107.14" y2="253.47" />
+              <line className="vein" x1="150" y1="150" x2="85.76" y2="241.75" />
+              <path className="segment-fill" d="M150,150 L65.15,234.85 A120,120 0 0,1 30,150 Z" />
+              <path className="membrane" d="M150,150 L65.15,234.85 A120,120 0 0,1 30,150 Z" />
+              <line className="vein" x1="150" y1="150" x2="58.25" y2="214.24" />
+              <line className="vein" x1="150" y1="150" x2="46.53" y2="192.86" />
+              <line className="vein" x1="150" y1="150" x2="39.7" y2="169.45" />
+              <path className="segment-fill" d="M150,150 L30,150 A120,120 0 0,1 65.15,65.15 Z" />
+              <path className="membrane" d="M150,150 L30,150 A120,120 0 0,1 65.15,65.15 Z" />
+              <line className="vein" x1="150" y1="150" x2="39.7" y2="130.55" />
+              <line className="vein" x1="150" y1="150" x2="46.53" y2="107.14" />
+              <line className="vein" x1="150" y1="150" x2="58.25" y2="85.76" />
+              <path className="segment-fill" d="M150,150 L65.15,65.15 A120,120 0 0,1 150,30 Z" />
+              <path className="membrane" d="M150,150 L65.15,65.15 A120,120 0 0,1 150,30 Z" />
+              <line className="vein" x1="150" y1="150" x2="85.76" y2="58.25" />
+              <line className="vein" x1="150" y1="150" x2="107.14" y2="46.53" />
+              <line className="vein" x1="150" y1="150" x2="130.55" y2="39.7" />
+              <path className="segment-fill" d="M150,150 L150,30 A120,120 0 0,1 234.85,65.15 Z" />
+              <path className="membrane" d="M150,150 L150,30 A120,120 0 0,1 234.85,65.15 Z" />
+              <line className="vein" x1="150" y1="150" x2="169.45" y2="39.7" />
+              <line className="vein" x1="150" y1="150" x2="192.86" y2="46.53" />
+              <line className="vein" x1="150" y1="150" x2="214.24" y2="58.25" />
+              <path className="segment-fill" d="M150,150 L234.85,65.15 A120,120 0 0,1 270,150 Z" />
+              <path className="membrane" d="M150,150 L234.85,65.15 A120,120 0 0,1 270,150 Z" />
+              <line className="vein" x1="150" y1="150" x2="241.75" y2="85.76" />
+              <line className="vein" x1="150" y1="150" x2="253.47" y2="107.14" />
+              <line className="vein" x1="150" y1="150" x2="260.3" y2="130.55" />
+              <circle className="core" cx="150" cy="150" r="8" />
+            </svg>
+            <div className="relative z-10">
+              <h3 className="ds-font-display ds-size-xl ds-weight-light">The Ocean</h3>
+              <p className="mt-2 text-sm text-secondary">cleanses, refreshes, opens</p>
+              <p className="mt-3 text-secondary">Ondulacao que limpa e abre centros de energia.</p>
+            </div>
           </article>
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-xl ds-weight-light">The Forest</h3>
@@ -223,6 +306,8 @@ export default function Home() {
           viewBox="0 0 400 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Decorative vine islimi divider"
         >
           <defs>
             <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
@@ -247,6 +332,26 @@ export default function Home() {
             opacity="0.85"
             strokeDasharray="620"
             strokeDashoffset="620"
+          />
+          <path
+            d="M72 38C78 28 90 28 96 38C90 48 78 48 72 38Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M146 64C152 54 164 54 170 64C164 74 152 74 146 64Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M218 40C224 30 236 30 242 40C236 50 224 50 218 40Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
+          />
+          <path
+            d="M292 66C298 56 310 56 316 66C310 76 298 76 292 66Z"
+            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            opacity="0.2"
           />
         </svg>
       </div>

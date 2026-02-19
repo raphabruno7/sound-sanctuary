@@ -9,7 +9,76 @@ export const metadata: Metadata = {
 export default function SessionsPage() {
   return (
     <main className="min-h-dvh pb-24">
-      <section className="journey-container journey-section">
+      <section className="journey-container journey-section relative">
+        <svg
+          className="scapes-art"
+          width="300"
+          height="200"
+          viewBox="0 0 300 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <style>{`
+              .scape-path { transform-box: fill-box; transform-origin: bottom center; }
+              .scape-path:nth-child(2) { animation-delay: 1.5s; }
+              .scape-path:nth-child(3) { animation-delay: 3s; }
+            `}</style>
+          </defs>
+          <path
+            className="scape-path"
+            d="M52 188C46 140 64 106 92 78C116 54 126 30 120 10"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.45"
+          />
+          <path
+            className="scape-path"
+            d="M146 190C136 146 148 112 178 84C204 60 218 36 210 12"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.4"
+          />
+          <path
+            className="scape-path"
+            d="M234 190C224 154 234 124 254 100C274 76 288 52 286 28"
+            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.35"
+          />
+
+          <circle
+            cx="120"
+            cy="10"
+            r="8"
+            stroke="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            strokeWidth="1.4"
+            opacity="0.45"
+          />
+          <circle
+            cx="210"
+            cy="12"
+            r="7"
+            stroke="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            strokeWidth="1.2"
+            opacity="0.4"
+          />
+          <circle
+            cx="286"
+            cy="28"
+            r="6"
+            stroke="var(--sh-organic-liquid-glass-light, #8BC4A0)"
+            strokeWidth="1.1"
+            opacity="0.35"
+          />
+        </svg>
         <div className="journey-label">Sessions</div>
         <h1 className="journey-title">Choose your depth</h1>
         <p className="journey-sub">
