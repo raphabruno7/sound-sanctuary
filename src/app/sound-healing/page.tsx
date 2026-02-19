@@ -204,7 +204,7 @@ export default function SoundHealingPage() {
             Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança
             cada nervo por dentro.
           </p>
-          <p className="mt-3 ds-font-display ds-size-2xl ds-weight-light">
+          <p className="mt-3 ds-text-overline journey-breathe">
             O som reconstrói o sistema nervoso.
           </p>
         </div>

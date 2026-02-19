@@ -297,6 +297,10 @@
   line-height: var(--sh-leading-tight);
 }
 
+.journey-title-regular {
+  font-weight: 400;
+}
+
 .journey-sub {
   margin-top: 1rem;
   max-width: 68ch;
