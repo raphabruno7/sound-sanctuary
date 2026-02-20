@@ -1,9 +1,23 @@
+ "use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="ds-header">
+    <header className={`ds-header header-transparent ${scrolled ? "header-scrolled" : ""}`}>
       <div className="ds-header__inner mx-auto max-w-5xl">
         <Link href="/" className="ds-header__brand">
           Sound Sanctuary

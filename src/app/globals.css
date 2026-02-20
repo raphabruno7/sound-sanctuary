@@ -71,6 +71,28 @@
   color: rgba(242, 239, 232, 0.9);
 }
 
+/* ── Header: transparent → glass on scroll ── */
+.header-transparent.ds-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+  transition: background-color 400ms ease, backdrop-filter 400ms ease, box-shadow 400ms ease;
+}
+
+.header-transparent.ds-header.header-scrolled {
+  background: rgba(26, 26, 22, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(196, 163, 90, 0.1);
+}
+
+:root:not(.dark) .header-transparent.ds-header.header-scrolled {
+  background: rgba(248, 246, 241, 0.8);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
