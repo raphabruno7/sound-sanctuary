@@ -93,6 +93,24 @@
   background: rgba(248, 246, 241, 0.8);
 }
 
+/* ── Theme toggle button ── */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--sh-radius-full);
+  color: var(--sh-semantic-text-secondary);
+  transition: color 200ms ease, background-color 200ms ease;
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--sh-semantic-text-primary);
+  background: rgba(196, 163, 90, 0.1);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
