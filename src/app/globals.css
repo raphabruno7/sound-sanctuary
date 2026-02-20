@@ -158,13 +158,14 @@
 .home-hero {
   position: relative;
   min-height: 70vh;
+  max-height: 85vh;
   width: 100%;
   overflow: hidden;
 }
 
 .home-hero__image {
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 40%;
 }
 
 .home-hero__overlay {
@@ -174,9 +175,19 @@
   background: linear-gradient(
     to top,
     var(--sh-semantic-bg-primary) 0%,
-    rgba(26, 26, 22, 0.85) 30%,
-    rgba(26, 26, 22, 0.4) 60%,
-    rgba(26, 26, 22, 0.2) 100%
+    rgba(26, 26, 22, 0.88) 25%,
+    rgba(26, 26, 22, 0.55) 55%,
+    rgba(26, 26, 22, 0.35) 100%
+  );
+}
+
+:root:not(.dark) .home-hero__overlay {
+  background: linear-gradient(
+    to top,
+    var(--sh-semantic-bg-primary) 0%,
+    rgba(248, 246, 241, 0.88) 25%,
+    rgba(248, 246, 241, 0.5) 55%,
+    rgba(248, 246, 241, 0.25) 100%
   );
 }
 
@@ -207,9 +218,10 @@
 @media (max-width: 768px) {
   .home-hero {
     min-height: 50vh;
+    max-height: 65vh;
   }
   .home-hero__image {
-    object-position: center 40%;
+    object-position: center 35%;
   }
   .home-hero__content {
     padding-top: 4.5rem;
