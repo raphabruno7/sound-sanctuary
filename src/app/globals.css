@@ -33,6 +33,10 @@
 /* Dark mode remap is canonical in design-system v5.6+ (styles/src/dark-mode.css). */
 
 :root:not(.dark) {
+  /* Map DS base.css tokens for light mode (explicit, not relying on fallbacks) */
+  --text-primary: #2a2a24;
+  --bg-primary: #f8f6f1;
+
   --sh-glass-light-bg: rgba(242, 239, 232, 0.6);
   --sh-glass-light-border: rgba(196, 163, 90, 0.18);
   --sh-glass-light-border-hover: rgba(196, 163, 90, 0.3);
@@ -40,7 +44,13 @@
 }
 
 .dark {
-  /* ── Definitive dark text color (bypass Tailwind v4 @theme inline baking) ── */
+  /* ── ROOT CAUSE FIX: DS base.css uses --text-primary (fallback #111111) and
+       --bg-primary (fallback #ffffff). These are NOT the --sh-* prefixed tokens.
+       Map them here so body picks up the correct dark values. ── */
+  --text-primary: #f2efe8;
+  --bg-primary: #1a1a16;
+
+  /* Direct property override as safety net */
   color: #f2efe8;
   background-color: #1a1a16;
 
@@ -57,7 +67,7 @@
   --sh-glass-light-border: rgba(196, 163, 90, 0.25);
   --sh-glass-light-bg: rgba(26, 26, 22, 0.7);
 
-  /* Tailwind theme vars: use concrete dark values (bypass build-time resolution). */
+  /* Tailwind theme vars: concrete dark values (bypass build-time resolution). */
   --color-foreground: #f2efe8;
   --color-muted-foreground: rgba(242, 239, 232, 0.5);
   --color-card-foreground: #f2efe8;
@@ -203,15 +213,15 @@
 
 .home-hero {
   position: relative;
-  min-height: 70vh;
-  max-height: 85vh;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 80vh;
   overflow: hidden;
 }
 
 .home-hero__image {
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 25%;
 }
 
 .home-hero__overlay {
@@ -296,11 +306,11 @@
 
 @media (max-width: 768px) {
   .home-hero {
-    min-height: 50vh;
-    max-height: 65vh;
+    aspect-ratio: 4 / 3;
+    max-height: 70vh;
   }
   .home-hero__image {
-    object-position: center 35%;
+    object-position: center 25%;
   }
   .home-hero__content {
     padding-top: 4.5rem;
