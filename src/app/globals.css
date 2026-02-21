@@ -40,14 +40,14 @@
 }
 
 .dark {
+  /* ── Definitive dark text color (bypass Tailwind v4 @theme inline baking) ── */
+  color: #f2efe8;
+  background-color: #1a1a16;
+
   --color-background: var(--sh-semantic-bg-primary);
-  --color-foreground: var(--sh-semantic-text-primary);
   --color-muted: var(--sh-semantic-bg-secondary);
-  --color-muted-foreground: var(--sh-semantic-text-muted);
   --color-card: var(--sh-semantic-bg-secondary);
-  --color-card-foreground: var(--sh-semantic-text-primary);
   --color-popover: var(--sh-glass-light-bg);
-  --color-popover-foreground: var(--sh-semantic-text-primary);
   --color-border: var(--sh-glass-light-border);
   --color-input: var(--sh-glass-light-border);
 
@@ -57,12 +57,49 @@
   --sh-glass-light-border: rgba(196, 163, 90, 0.25);
   --sh-glass-light-bg: rgba(26, 26, 22, 0.7);
 
-  /* Force Tailwind theme vars to concrete dark values (bypass build-time resolution). */
+  /* Tailwind theme vars: use concrete dark values (bypass build-time resolution). */
   --color-foreground: #f2efe8;
   --color-muted-foreground: rgba(242, 239, 232, 0.5);
   --color-card-foreground: #f2efe8;
   --color-popover-foreground: #f2efe8;
   --color-accent-foreground: #f2efe8;
+}
+
+.dark body {
+  color: inherit;
+  background-color: inherit;
+}
+
+/* ── Dark mode: force light text on all content elements ── */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark p,
+.dark li,
+.dark span,
+.dark a {
+  color: inherit;
+}
+
+.dark .journey-title {
+  color: #f2efe8;
+}
+
+.dark .journey-sub {
+  color: rgba(242, 239, 232, 0.82);
+}
+
+.dark .journey-label {
+  color: rgba(242, 239, 232, 0.62);
+}
+
+.dark .text-secondary {
+  color: rgba(242, 239, 232, 0.82);
+}
+
+.dark .text-muted {
+  color: rgba(242, 239, 232, 0.62);
 }
 
 .dark .ds-glass {
@@ -444,6 +481,10 @@
 
 .text-secondary {
   color: var(--sh-semantic-text-secondary);
+}
+
+.text-muted {
+  color: var(--sh-semantic-text-muted);
 }
 
 .journey-sub {
