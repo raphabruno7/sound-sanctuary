@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "soundHealing": "Sound Healing",
+    "sessions": "Sessões",
+    "portfolio": "Portfólio",
+    "about": "Sobre",
+    "contact": "Contato",
+    "book": "Agendar 1:1",
+    "langToggle": "EN"
+  },
+  "home": {
+    "hero": {
+      "title": "Sound Healing",
+      "poetic": "O prana canta enquanto flui",
+      "sub": "Uma prática de regulação para a vida moderna: ritmo, descanso e integração.",
+      "cta_primary": "Agendar 1:1",
+      "cta_secondary": "Entrar no Sound Healing Live"
+    },
+    "forWhom": {
+      "label": "Para quem é",
+      "title": "Quando a vida acelera demais",
+      "annotation": "você",
+      "items": [
+        "ansiedade / estresse",
+        "dificuldades com o sono",
+        "superestimulação",
+        "integração após períodos intensos"
+      ],
+      "cta_prompt": "Pronto para desacelerar? Dois caminhos. Mesma intenção.",
+      "cta_primary": "Agendar 1:1",
+      "cta_secondary": "Ver portfólio"
+    },
+    "whatItIs": {
+      "label": "Cuidado preventivo",
+      "title": "Uma prática sonora calma e estruturada",
+      "sub": "O Sound Healing usa ressonância, ritmo e descanso guiado para ajudar o sistema nervoso a desacelerar sem performance.",
+      "p1": "É simples: você chega, se instala, o som cria um campo e o seu corpo tem espaço para integrar. Nada a atingir.",
+      "p2": "A promessa não é tratamento médico. É treinar capacidade: desacelerar, voltar ao ritmo e sair com mais espaço interno."
+    },
+    "whyItWorks": {
+      "label": "Som e Sistema Nervoso",
+      "title": "Por que funciona",
+      "p1": "O corpo humano é 70% água. O som viaja pela água.",
+      "p2": "O sistema nervoso está imerso nessa água.",
+      "p3": "Quando a tigela toca, a vibração encontra o líquido, se propaga como onda e alcança cada nervo por dentro.",
+      "overline": "O som reconstrói o sistema nervoso.",
+      "framework_label": "Framework Elemental",
+      "sun_name": "O Sol",
+      "sun_sub": "cura, carrega, aquece",
+      "sun_body": "Frequência do fogo. Calor que dissolve.",
+      "moon_name": "A Lua",
+      "moon_sub": "conecta, manifesta, desbloqueia",
+      "moon_body": "Frequência da água interna e ritmo do corpo sutil.",
+      "ocean_name": "O Oceano",
+      "ocean_sub": "limpa, refresca, abre",
+      "ocean_body": "Ondulação que limpa e abre centros de energia.",
+      "forest_name": "A Floresta",
+      "forest_sub": "enraíza, equilibra, estabiliza",
+      "forest_body": "Raiz. Aterramento. Som grave que ancora na terra."
+    },
+    "howItWorks": {
+      "label": "O que acontece em uma sessão",
+      "title": "Cinco etapas, sem mistério",
+      "step1": "Chegada",
+      "step2": "Enraizamento",
+      "step3": "Imersão sonora",
+      "step4": "Integração",
+      "step5": "Encerramento"
+    },
+    "practitioner": {
+      "label": "Sobre",
+      "title": "[Nome do Praticante]",
+      "identity": "[Uma linha — quem você é e o que faz]",
+      "p1": "[Trajetória: como você chegou ao som]",
+      "p2": "[Abordagem: o que guia sua prática]",
+      "cta": "História completa"
+    },
+    "formats": {
+      "label": "Formatos de Sessão",
+      "title": "Escolha a profundidade",
+      "oneOnOne_title": "1:1 Terapia Sonora",
+      "oneOnOne_duration": "60 min",
+      "oneOnOne_for": "Para suporte de integração mais profundo",
+      "oneOnOne_body": "Suporte personalizado para transições, estresse do sono e superestimulação crônica.",
+      "oneOnOne_cta_primary": "Agendar 1:1",
+      "oneOnOne_cta_secondary": "Ver detalhes da sessão",
+      "group_title": "Jornada Sonora em Grupo",
+      "group_duration": "90 min",
+      "group_for": "Descanso coletivo sem performance",
+      "group_body": "Um campo compartilhado para aquietar e conectar. Baixa barreira, alto senso de pertencimento.",
+      "group_cta_primary": "Ver próximo ao vivo",
+      "group_cta_secondary": "Contato"
+    },
+    "live": {
+      "label": "Ao Vivo",
+      "title": "Sound Healing Live",
+      "sub": "Um ritual semanal para cuidar do seu sistema nervoso. Venha para um reset e volte para o ritmo.",
+      "body": "Baixo compromisso. Alto retorno. Apareça, deite, deixe o som trabalhar.",
+      "cta_primary": "Entrar no loop",
+      "cta_secondary": "Ver sessões"
+    },
+    "contact": {
+      "label": "Contato",
+      "title": "Agendar 1:1",
+      "sub": "Três perguntas. Respondo em até 48 horas.",
+      "cta_primary": "Começar com uma sessão",
+      "cta_secondary": "Abrir contato"
+    }
+  }
+}
