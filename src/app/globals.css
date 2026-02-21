@@ -56,6 +56,13 @@
 
   --sh-glass-light-border: rgba(196, 163, 90, 0.25);
   --sh-glass-light-bg: rgba(26, 26, 22, 0.7);
+
+  /* Force Tailwind theme vars to concrete dark values (bypass build-time resolution). */
+  --color-foreground: #f2efe8;
+  --color-muted-foreground: rgba(242, 239, 232, 0.5);
+  --color-card-foreground: #f2efe8;
+  --color-popover-foreground: #f2efe8;
+  --color-accent-foreground: #f2efe8;
 }
 
 .dark .ds-glass {
