@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "soundHealing": "Sound Healing",
+    "sessions": "Sessions",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "book": "Book 1:1",
+    "langToggle": "PT"
+  },
+  "home": {
+    "hero": {
+      "title": "Sound Healing",
+      "poetic": "O prana canta enquanto flui",
+      "sub": "Regulation practice for modern life: rhythm, rest, and integration.",
+      "cta_primary": "Book a 1:1",
+      "cta_secondary": "Join Sound Healing Live"
+    },
+    "forWhom": {
+      "label": "Who It Is For",
+      "title": "When life runs hot",
+      "annotation": "you",
+      "items": [
+        "anxiety / stress",
+        "sleep issues",
+        "overstimulation",
+        "integration after intense periods"
+      ],
+      "cta_prompt": "Ready to downshift? Two paths. Same intention.",
+      "cta_primary": "Book a 1:1",
+      "cta_secondary": "Explore portfolio"
+    },
+    "whatItIs": {
+      "label": "Upstream Care",
+      "title": "A calm, structured sound practice",
+      "sub": "Sound Healing uses resonance, rhythm, and guided rest to help the nervous system downshift without performance.",
+      "p1": "It is simple: you arrive, you settle, sound creates a field, and your body has room to integrate. Nothing to achieve.",
+      "p2": "The promise is not medical treatment. It is training capacity: downshifting, returning to rhythm, and leaving with more space inside."
+    },
+    "whyItWorks": {
+      "label": "Sound and the Nervous System",
+      "title": "Why it works",
+      "p1": "The human body is 70% water. Sound travels through water.",
+      "p2": "The nervous system is immersed in that water.",
+      "p3": "When the bowl strikes, vibration meets the fluid, propagates as a wave, and reaches every nerve from within.",
+      "overline": "Sound rebuilds the nervous system.",
+      "framework_label": "The Elemental Framework",
+      "sun_name": "The Sun",
+      "sun_sub": "heals, charges, warms",
+      "sun_body": "The frequency of fire. Heat that dissolves.",
+      "moon_name": "The Moon",
+      "moon_sub": "connects, manifests, unlocks",
+      "moon_body": "Internal water frequency and the subtle body's rhythm.",
+      "ocean_name": "The Ocean",
+      "ocean_sub": "cleanses, refreshes, opens",
+      "ocean_body": "Undulation that cleanses and opens energy centers.",
+      "forest_name": "The Forest",
+      "forest_sub": "grounds, balances, stabilizes",
+      "forest_body": "Root. Grounding. Low sound that anchors to earth."
+    },
+    "howItWorks": {
+      "label": "What Happens in a Session",
+      "title": "Five steps, no mystery",
+      "step1": "Arrival",
+      "step2": "Grounding",
+      "step3": "Sound immersion",
+      "step4": "Integration",
+      "step5": "Closing"
+    },
+    "practitioner": {
+      "label": "About",
+      "title": "[Practitioner Name]",
+      "identity": "[One line — who you are and what you do]",
+      "p1": "[Journey: how you arrived at sound healing]",
+      "p2": "[Approach: what guides your practice]",
+      "cta": "Full story"
+    },
+    "formats": {
+      "label": "Session Formats",
+      "title": "Choose depth",
+      "oneOnOne_title": "1:1 Sound Therapy",
+      "oneOnOne_duration": "60 min",
+      "oneOnOne_for": "For deeper pacing + integration support",
+      "oneOnOne_body": "Personalized support for transitions, sleep stress, and chronic overstimulation.",
+      "oneOnOne_cta_primary": "Book a 1:1",
+      "oneOnOne_cta_secondary": "See session details",
+      "group_title": "Group Sound Journey",
+      "group_duration": "90 min",
+      "group_for": "Collective rest without performance",
+      "group_body": "A shared field for settling and connection. Low barrier and high felt sense.",
+      "group_cta_primary": "See next live",
+      "group_cta_secondary": "Contact"
+    },
+    "live": {
+      "label": "Live",
+      "title": "Sound Healing Live",
+      "sub": "A weekly ritual to keep your nervous system tended. Join for a reset and return for rhythm.",
+      "body": "Low commitment. High return. Show up, lie down, let sound do the work.",
+      "cta_primary": "Join the loop",
+      "cta_secondary": "See sessions"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Book a 1:1",
+      "sub": "Three questions. I reply within 48 hours.",
+      "cta_primary": "Start with a session",
+      "cta_secondary": "Open contact"
+    }
+  }
+}
