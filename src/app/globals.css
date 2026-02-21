@@ -83,14 +83,15 @@
 }
 
 .header-transparent.ds-header.header-scrolled {
-  background: rgba(26, 26, 22, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(196, 163, 90, 0.1);
+  background: rgba(26, 26, 22, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(196, 163, 90, 0.14), 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 
 :root:not(.dark) .header-transparent.ds-header.header-scrolled {
-  background: rgba(248, 246, 241, 0.8);
+  background: rgba(248, 246, 241, 0.9);
+  box-shadow: 0 1px 0 rgba(196, 163, 90, 0.18), 0 10px 24px rgba(26, 58, 42, 0.08);
 }
 
 /* ── Theme toggle button ── */
