@@ -1,9 +1,11 @@
 # AGENT REPORT — S08 Header + Hero Polish
 
 Date: 2026-02-20
+Last updated: 2026-02-21
 
 ## Briefing executed
 - `docs/prompts/CODEX_EXEC_S08.md`
+- `docs/prompts/CODEX_EXEC_S08_HOTFIX.md`
 
 ## PRs delivered (created + merged)
 | PR | Branch | Merge commit | Status |
@@ -16,6 +18,7 @@ Date: 2026-02-20
 | PR-6 | `feat/s08-pr6-text-secondary` | `3b889b3` | MERGED |
 | PR-7 | `feat/s08-pr7-header-scrolled` | `4eb192a` | MERGED |
 | PR-8 | `feat/s08-dark-text-hotfix` | `4a66df3` | MERGED |
+| PR-9 | `hotfix/s08-definitive-dark-text` | `3e34ef7` | MERGED |
 
 Links:
 - PR-1: https://github.com/raphabruno7/sound-sanctuary/pull/79
@@ -26,6 +29,7 @@ Links:
 - PR-6: https://github.com/raphabruno7/sound-sanctuary/pull/84
 - PR-7: https://github.com/raphabruno7/sound-sanctuary/pull/85
 - PR-8: https://github.com/raphabruno7/sound-sanctuary/pull/86
+- PR-9: https://github.com/raphabruno7/sound-sanctuary/pull/87
 
 ## Changes delivered
 
@@ -59,8 +63,12 @@ Links:
 ### PR-8 — Dark mode text legibility (Tailwind build-time var resolution)
 - Hotfix: forced Tailwind theme foreground vars to concrete dark values under `.dark` to prevent dark text rendering in dark mode when CSS vars are resolved at build time.
 
+### PR-9 — Definitive dark mode text legibility (baked Tailwind utilities)
+- Hotfix: set inherited `color` + `background-color` under `.dark` and forced key content elements to `color: inherit`, bypassing Tailwind v4 `@theme inline` build-time color baking.
+- Added `.dark body { color: inherit; background-color: inherit }` to override the baked `@apply text-foreground` on `body`.
+
 ## Verification evidence
-- Final gate after all merges (including PR-5..8): `bash scripts/agent_check.sh` → PASS (lint ✓ + build ✓) on `main`.
+- Final gate after all merges (including PR-5..9): `bash scripts/agent_check.sh` → PASS (lint ✓ + build ✓) on `main`.
 
 ## Deviations
-- None (implementation matches the prompt’s architecture and constraints: CSS + component-level only, no new deps, DS untouched).
+- None (implementation matches the prompt’s architecture and constraints: CSS-only, no new deps, DS untouched).
