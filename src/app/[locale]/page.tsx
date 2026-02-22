@@ -1,16 +1,116 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
+import { PractitionerSection } from "@/components/PractitionerSection";
 
-export default function Home() {
+// Reusable vine divider SVG — copy from existing page.tsx
+function VineDivider() {
+  return (
+    <div aria-hidden="true" className="journey-container journey-divider">
+      <svg
+        className="vine-divider"
+        viewBox="0 0 400 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Decorative vine divider"
+      >
+        <defs>
+          <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
+        </defs>
+        <path
+          className="vine-path"
+          d="M10 58C38 22 72 20 98 46C124 72 152 74 178 48C204 22 236 22 262 48C288 74 322 76 390 44"
+          stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="620"
+          strokeDashoffset="620"
+        />
+        <path
+          className="vine-path"
+          d="M10 74C44 38 76 36 102 60C126 84 150 84 174 62C198 40 228 40 252 62C276 84 308 84 390 56"
+          stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.85"
+          strokeDasharray="620"
+          strokeDashoffset="620"
+        />
+        <path d="M72 38C78 28 90 28 96 38C90 48 78 48 72 38Z" fill="var(--sh-organic-liquid-glass-light, #8BC4A0)" opacity="0.2" />
+        <path d="M146 64C152 54 164 54 170 64C164 74 152 74 146 64Z" fill="var(--sh-organic-liquid-glass-light, #8BC4A0)" opacity="0.2" />
+        <path d="M218 40C224 30 236 30 242 40C236 50 224 50 218 40Z" fill="var(--sh-organic-liquid-glass-light, #8BC4A0)" opacity="0.2" />
+        <path d="M292 66C298 56 310 56 316 66C310 76 298 76 292 66Z" fill="var(--sh-organic-liquid-glass-light, #8BC4A0)" opacity="0.2" />
+      </svg>
+    </div>
+  );
+}
+
+// Silent visual separator — impulso section stripped of copy
+function ImpulseSeparator() {
+  return (
+    <div aria-hidden="true" className="impulse-section">
+      <div className="impulse-plate ds-glass">
+        <div className="impulse-art">
+          <svg className="impulse-svg" viewBox="0 0 800 420" preserveAspectRatio="none">
+            <path
+              className="path"
+              d="M60,60 C220,50 260,140 340,160 C420,180 480,110 560,140 C640,170 640,270 740,310"
+            />
+            <path
+              className="flash"
+              d="M60,60 C220,50 260,140 340,160 C420,180 480,110 560,140 C640,170 640,270 740,310"
+            />
+            <circle className="node" cx="60" cy="60" r="3" />
+            <circle className="node" cx="340" cy="160" r="3" />
+            <circle className="node" cx="560" cy="140" r="3" />
+            <circle className="node" cx="740" cy="310" r="3" />
+          </svg>
+        </div>
+        <div className="strike-wave-art">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+            <defs>
+              <style>{`
+                .ring { fill: none; stroke-width: 2; transform-origin: 150px 150px; animation: strikeWave 6000ms cubic-bezier(0.33, 0, 0.67, 1) infinite; }
+                .r1 { stroke: var(--sh-organic-gold-primary, #C4A35A); animation-delay: 0ms; }
+                .r2 { stroke: var(--sh-organic-gold-light, #E0C97F); animation-delay: 800ms; }
+                .r3 { stroke: var(--sh-organic-liquid-glass-light, #8BC4A0); animation-delay: 1600ms; }
+                .r4 { stroke: var(--sh-organic-liquid-glass-ghost, #C8E6D0); animation-delay: 2400ms; }
+                .r5 { stroke: var(--sh-organic-ocean-primary, #5A8A8A); animation-delay: 3200ms; }
+                .core { fill: var(--sh-organic-gold-primary, #C4A35A); animation: strikeFlash 6000ms cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+                @keyframes strikeWave { 0% { opacity: 0; transform: scale(0.2); } 15% { opacity: 0.9; } 100% { opacity: 0; transform: scale(1.7); } }
+                @keyframes strikeFlash { 0%, 70%, 100% { opacity: 0.25; r: 5px; } 74% { opacity: 1; r: 12px; } }
+              `}</style>
+            </defs>
+            <rect width="300" height="300" fill="transparent" />
+            <circle className="ring r5" cx="150" cy="150" r="80" />
+            <circle className="ring r4" cx="150" cy="150" r="65" />
+            <circle className="ring r3" cx="150" cy="150" r="50" />
+            <circle className="ring r2" cx="150" cy="150" r="35" />
+            <circle className="ring r1" cx="150" cy="150" r="20" />
+            <circle className="core" cx="150" cy="150" r="6" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default async function Home() {
+  const t = await getTranslations("home");
+
   return (
     <main className="min-h-dvh pb-24">
+      {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="home-hero">
         <Image
           src="/media/hero/2627.jpg"
-          alt="Sound healing session outdoors with bowls and gong"
+          alt="Sound healing session in the forest"
           fill
           priority
           sizes="100vw"
@@ -18,215 +118,126 @@ export default function Home() {
         />
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="home-hero__vignette" aria-hidden="true" />
-
         <div className="home-hero__content journey-container">
           <div className="home-hero__copy">
-            <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">Sound Healing</h1>
+            <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">
+              {t("hero.title")}
+            </h1>
             <p className="mt-3 ds-font-display ds-italic ds-weight-light ds-size-xl journey-breathe sh-breath-pulse text-secondary">
-              O prana canta enquanto flui
+              {t("hero.poetic")}
             </p>
-            <p className="journey-sub ds-size-lg">
-              Regulation practice for modern life: rhythm, rest, and integration.
-            </p>
+            <p className="journey-sub ds-size-lg">{t("hero.sub")}</p>
             <div className="journey-axon" aria-hidden="true">
               <span className="journey-node left" />
               <span className="journey-node right" />
             </div>
             <div className="btn-row">
               <Link className="btn btn-primary" href="/contact">
-                Book a 1:1
+                {t("hero.cta_primary")}
               </Link>
               <Link className="btn btn-secondary" href="/sessions">
-                Join Sound Healing Live
+                {t("hero.cta_secondary")}
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="journey-container journey-section journey-section-lg">
-        <div className="journey-label">Upstream care · regulation before breakdown</div>
-        <h2 className="journey-title">A calm, structured sound practice</h2>
-        <p className="journey-sub">
-          Sound Healing uses resonance, rhythm, and guided rest to help the nervous system
-          downshift without performance.
-        </p>
-        <div className="journey-grid-2 mt-6 text-secondary leading-relaxed">
-          <p>
-            It is simple: you arrive, you settle, sound creates a field, and your body has room to
-            integrate. Nothing to achieve.
-          </p>
-          <p>
-            The promise is not medical treatment. It is training capacity: downshifting, returning
-            to rhythm, and leaving with more space inside.
-          </p>
-        </div>
-      </section>
-
-      <div aria-hidden="true" className="journey-container journey-divider">
-        <svg
-          className="vine-divider"
-          viewBox="0 0 400 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Decorative vine islimi divider"
-        >
-          <defs>
-            <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
-          </defs>
-          <path
-            className="vine-path"
-            d="M10 58C38 22 72 20 98 46C124 72 152 74 178 48C204 22 236 22 262 48C288 74 322 76 390 44"
-            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeDasharray="620"
-            strokeDashoffset="620"
-          />
-          <path
-            className="vine-path"
-            d="M10 74C44 38 76 36 102 60C126 84 150 84 174 62C198 40 228 40 252 62C276 84 308 84 390 56"
-            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity="0.85"
-            strokeDasharray="620"
-            strokeDashoffset="620"
-          />
-          <path
-            d="M72 38C78 28 90 28 96 38C90 48 78 48 72 38Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-          <path
-            d="M146 64C152 54 164 54 170 64C164 74 152 74 146 64Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-          <path
-            d="M218 40C224 30 236 30 242 40C236 50 224 50 218 40Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-          <path
-            d="M292 66C298 56 310 56 316 66C310 76 298 76 292 66Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-        </svg>
-      </div>
-
+      {/* ── 2. FOR WHOM — "you →" photo annotation ──────────────── */}
       <section className="journey-container journey-section">
-        <div className="journey-label">02 - Sound and the Nervous System</div>
-        <h2 className="journey-title journey-title-regular">Princípio fundador</h2>
-        <div className="ds-glass journey-card mt-6">
-          <p className="text-secondary">O corpo humano é 70% água. O som viaja pela água.</p>
-          <p className="text-secondary mt-2">O sistema nervoso está imerso nessa água.</p>
-          <p className="text-secondary mt-2">
-            Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança
-            cada nervo por dentro.
-          </p>
-          <p className="mt-3 ds-text-overline journey-breathe">
-            O som reconstrói o sistema nervoso.
-          </p>
-        </div>
-      </section>
-
-      <section className="journey-container journey-section">
-        <div className="journey-label">03 - What Happens in a Session</div>
-        <h2 className="journey-title">Five steps, no mystery</h2>
+        <div className="journey-label">{t("forWhom.label")}</div>
+        <h2 className="journey-title journey-title-regular">{t("forWhom.title")}</h2>
         <div className="journey-grid-2 mt-6">
-          <div className="ds-glass journey-card">
-            <ol className="list-decimal pl-6 space-y-2 text-secondary">
-              <li>Arrival</li>
-              <li>Grounding</li>
-              <li>Sound immersion</li>
-              <li>Integration</li>
-              <li>Closing</li>
-            </ol>
-          </div>
-          <div className="journey-hero-media ds-glass">
+          {/* Photo with annotation overlay */}
+          <div className="journey-hero-media ds-glass relative overflow-hidden rounded-2xl">
             <Image
-              src="/media/sections/2641.jpg"
-              alt="Detail of instruments used in a session"
+              src="/media/hero/2627.jpg"
+              alt="Person lying down receiving sound healing in the forest"
               fill
               sizes="(max-width: 980px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
             <div className="journey-photo-vignette" aria-hidden="true" />
+            {/* "you →" annotation pointing to person lying down */}
+            <span
+              className="absolute bottom-6 right-6 ds-font-display ds-italic ds-size-2xl text-white/90 pointer-events-none select-none"
+              aria-hidden="true"
+            >
+              {t("forWhom.annotation")} →
+            </span>
+          </div>
+          {/* Symptom list + CTA */}
+          <div className="flex flex-col justify-center">
+            <ul className="space-y-3">
+              {(["items.0", "items.1", "items.2", "items.3"] as const).map((key) => (
+                <li key={key} className="ds-size-lg text-secondary">
+                  {t(`forWhom.${key}`)}
+                </li>
+              ))}
+            </ul>
+            <div className="ds-glass mt-8 flex flex-wrap items-center justify-between gap-5 rounded-2xl p-6">
+              <p className="text-secondary">{t("forWhom.cta_prompt")}</p>
+              <div className="btn-row !mb-0">
+                <Link className="btn btn-primary" href="/contact">
+                  {t("forWhom.cta_primary")}
+                </Link>
+                <Link className="btn btn-secondary" href="/portfolio">
+                  {t("forWhom.cta_secondary")}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="journey-container journey-section">
-        <div className="journey-label">04 - Session Formats</div>
-        <h2 className="journey-title journey-title-regular">Choose depth</h2>
-        <div className="journey-grid-2 mt-6">
-          <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-2xl ds-weight-light">1:1 Sound Therapy</h3>
-            <p className="mt-2 text-sm text-secondary">
-              For whom: deeper pacing + integration support · 60 min
-            </p>
-            <p className="mt-3 text-secondary">
-              Personalized support for transitions, sleep stress, and chronic overstimulation.
-            </p>
-            <div className="btn-row mt-5">
-              <Link className="btn btn-primary" href="/contact">
-                Book a 1:1
-              </Link>
-              <Link className="btn btn-ghost" href="/sessions">
-                See session details
-              </Link>
-            </div>
-          </article>
+      <VineDivider />
 
-          <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-2xl ds-weight-light">Group Sound Journey</h3>
-            <p className="mt-2 text-sm text-secondary">
-              For whom: collective rest without performance · 90 min
-            </p>
-            <p className="mt-3 text-secondary">
-              A shared field for settling and connection. Low barrier and high felt sense.
-            </p>
-            <div className="btn-row mt-5">
-              <Link className="btn btn-secondary" href="/sessions">
-                See next live
-              </Link>
-              <Link className="btn btn-ghost" href="/contact">
-                Contact
-              </Link>
-            </div>
-          </article>
+      {/* ── 3. WHAT IT IS ────────────────────────────────────────── */}
+      <section className="journey-container journey-section journey-section-lg">
+        <div className="journey-label">{t("whatItIs.label")}</div>
+        <h2 className="journey-title">{t("whatItIs.title")}</h2>
+        <p className="journey-sub">{t("whatItIs.sub")}</p>
+        <div className="journey-grid-2 mt-6 text-secondary leading-relaxed">
+          <p>{t("whatItIs.p1")}</p>
+          <p>{t("whatItIs.p2")}</p>
         </div>
       </section>
 
+      {/* ── 4. WHY IT WORKS — Princípio Fundador + Framework ────── */}
       <section className="journey-container journey-section">
-        <div className="journey-label">05 - Framework Elemental</div>
-        <h2 className="journey-title">Quatro forças do som</h2>
-        <div className="journey-grid-4 mt-6">
-          <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-xl ds-weight-light">The Sun</h3>
-            <p className="mt-2 text-sm text-secondary">heals, charges, warms</p>
-            <p className="mt-3 text-secondary">Frequência do fogo. Calor que dissolve.</p>
-          </article>
-          <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-xl ds-weight-light">The Moon</h3>
-            <p className="mt-2 text-sm text-secondary">connects, manifests, unlocks</p>
-            <p className="mt-3 text-secondary">Frequência da água interna e ritmo do corpo sutil.</p>
-          </article>
-          <article className="ds-glass journey-card relative overflow-hidden">
-            <svg
-              className="venation-art"
-              width="300"
-              height="300"
-              viewBox="0 0 300 300"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
+        <div className="journey-label">{t("whyItWorks.label")}</div>
+        <h2 className="journey-title journey-title-regular">{t("whyItWorks.title")}</h2>
+        <div className="ds-glass journey-card mt-6">
+          <p className="text-secondary">{t("whyItWorks.p1")}</p>
+          <p className="text-secondary mt-2">{t("whyItWorks.p2")}</p>
+          <p className="text-secondary mt-2">{t("whyItWorks.p3")}</p>
+          <p className="mt-3 ds-text-overline journey-breathe">{t("whyItWorks.overline")}</p>
+        </div>
+
+        {/* Framework Elemental — integrated as methodology */}
+        <div className="mt-10">
+          <p className="journey-label">{t("whyItWorks.framework_label")}</p>
+          <div className="journey-grid-4 mt-4">
+            <article className="ds-glass journey-card">
+              <h3 className="ds-font-display ds-size-xl ds-weight-light">{t("whyItWorks.sun_name")}</h3>
+              <p className="mt-2 text-sm text-secondary">{t("whyItWorks.sun_sub")}</p>
+              <p className="mt-3 text-secondary">{t("whyItWorks.sun_body")}</p>
+            </article>
+            <article className="ds-glass journey-card">
+              <h3 className="ds-font-display ds-size-xl ds-weight-light">{t("whyItWorks.moon_name")}</h3>
+              <p className="mt-2 text-sm text-secondary">{t("whyItWorks.moon_sub")}</p>
+              <p className="mt-3 text-secondary">{t("whyItWorks.moon_body")}</p>
+            </article>
+            <article className="ds-glass journey-card relative overflow-hidden">
+              <svg
+                className="venation-art"
+                width="300"
+                height="300"
+                viewBox="0 0 300 300"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
               <defs>
                 <style>{`
                   .segment-fill { fill: var(--sh-organic-liquid-glass-ghost, #C8E6D0); opacity: 0.08; }
@@ -276,208 +287,136 @@ export default function Home() {
               <line className="vein" x1="150" y1="150" x2="253.47" y2="107.14" />
               <line className="vein" x1="150" y1="150" x2="260.3" y2="130.55" />
               <circle className="core" cx="150" cy="150" r="8" />
-            </svg>
-            <div className="relative z-10">
-              <h3 className="ds-font-display ds-size-xl ds-weight-light">The Ocean</h3>
-              <p className="mt-2 text-sm text-secondary">cleanses, refreshes, opens</p>
-              <p className="mt-3 text-secondary">Ondulação que limpa e abre centros de energia.</p>
+              </svg>
+              <div className="relative z-10">
+                <h3 className="ds-font-display ds-size-xl ds-weight-light">{t("whyItWorks.ocean_name")}</h3>
+                <p className="mt-2 text-sm text-secondary">{t("whyItWorks.ocean_sub")}</p>
+                <p className="mt-3 text-secondary">{t("whyItWorks.ocean_body")}</p>
+              </div>
+            </article>
+            <article className="ds-glass journey-card">
+              <h3 className="ds-font-display ds-size-xl ds-weight-light">{t("whyItWorks.forest_name")}</h3>
+              <p className="mt-2 text-sm text-secondary">{t("whyItWorks.forest_sub")}</p>
+              <p className="mt-3 text-secondary">{t("whyItWorks.forest_body")}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <VineDivider />
+
+      {/* ── 5. HOW IT WORKS — Five steps ─────────────────────────── */}
+      <section className="journey-container journey-section">
+        <div className="journey-label">{t("howItWorks.label")}</div>
+        <h2 className="journey-title">{t("howItWorks.title")}</h2>
+        <div className="journey-grid-2 mt-6">
+          <div className="ds-glass journey-card">
+            <ol className="list-decimal pl-6 space-y-2 text-secondary">
+              <li>{t("howItWorks.step1")}</li>
+              <li>{t("howItWorks.step2")}</li>
+              <li>{t("howItWorks.step3")}</li>
+              <li>{t("howItWorks.step4")}</li>
+              <li>{t("howItWorks.step5")}</li>
+            </ol>
+          </div>
+          <div className="journey-hero-media ds-glass">
+            <Image
+              src="/media/sections/2641.jpg"
+              alt="Detail of instruments used in a session"
+              fill
+              sizes="(max-width: 980px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="journey-photo-vignette" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. QUEM SOU EU — Practitioner ────────────────────────── */}
+      <PractitionerSection
+        label={t("practitioner.label")}
+        title={t("practitioner.title")}
+        identity={t("practitioner.identity")}
+        p1={t("practitioner.p1")}
+        p2={t("practitioner.p2")}
+        cta={t("practitioner.cta")}
+      />
+
+      <ImpulseSeparator />
+
+      {/* ── 7. TESTIMONIALS — before the offer ───────────────────── */}
+      <TestimonialsPreview />
+
+      {/* ── 8. FORMATS ───────────────────────────────────────────── */}
+      <section className="journey-container journey-section">
+        <div className="journey-label">{t("formats.label")}</div>
+        <h2 className="journey-title journey-title-regular">{t("formats.title")}</h2>
+        <div className="journey-grid-2 mt-6">
+          <article className="ds-glass journey-card">
+            <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("formats.oneOnOne_title")}</h3>
+            <p className="mt-2 text-sm text-secondary">
+              {t("formats.oneOnOne_for")} · {t("formats.oneOnOne_duration")}
+            </p>
+            <p className="mt-3 text-secondary">{t("formats.oneOnOne_body")}</p>
+            <div className="btn-row mt-5">
+              <Link className="btn btn-primary" href="/contact">
+                {t("formats.oneOnOne_cta_primary")}
+              </Link>
+              <Link className="btn btn-ghost" href="/sessions">
+                {t("formats.oneOnOne_cta_secondary")}
+              </Link>
             </div>
           </article>
           <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-xl ds-weight-light">The Forest</h3>
-            <p className="mt-2 text-sm text-secondary">grounds, balances, stabilizes</p>
-            <p className="mt-3 text-secondary">Raiz. Aterramento. Som grave que ancora na terra.</p>
+            <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("formats.group_title")}</h3>
+            <p className="mt-2 text-sm text-secondary">
+              {t("formats.group_for")} · {t("formats.group_duration")}
+            </p>
+            <p className="mt-3 text-secondary">{t("formats.group_body")}</p>
+            <div className="btn-row mt-5">
+              <Link className="btn btn-secondary" href="/sessions">
+                {t("formats.group_cta_primary")}
+              </Link>
+              <Link className="btn btn-ghost" href="/contact">
+                {t("formats.group_cta_secondary")}
+              </Link>
+            </div>
           </article>
         </div>
       </section>
 
-      <div aria-hidden="true" className="journey-container journey-divider">
-        <svg
-          className="vine-divider"
-          viewBox="0 0 400 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Decorative vine islimi divider"
-        >
-          <defs>
-            <style>{`.vine-path:nth-child(2) { animation-delay: 0.4s; }`}</style>
-          </defs>
-          <path
-            className="vine-path"
-            d="M10 58C38 22 72 20 98 46C124 72 152 74 178 48C204 22 236 22 262 48C288 74 322 76 390 44"
-            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeDasharray="620"
-            strokeDashoffset="620"
-          />
-          <path
-            className="vine-path"
-            d="M10 74C44 38 76 36 102 60C126 84 150 84 174 62C198 40 228 40 252 62C276 84 308 84 390 56"
-            stroke="var(--sh-organic-liquid-glass-forest, #2D5A3E)"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity="0.85"
-            strokeDasharray="620"
-            strokeDashoffset="620"
-          />
-          <path
-            d="M72 38C78 28 90 28 96 38C90 48 78 48 72 38Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-          <path
-            d="M146 64C152 54 164 54 170 64C164 74 152 74 146 64Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-          <path
-            d="M218 40C224 30 236 30 242 40C236 50 224 50 218 40Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-          <path
-            d="M292 66C298 56 310 56 316 66C310 76 298 76 292 66Z"
-            fill="var(--sh-organic-liquid-glass-light, #8BC4A0)"
-            opacity="0.2"
-          />
-        </svg>
-      </div>
-
-      <section className="journey-section impulse-section">
-        <div className="journey-container">
-          <div className="journey-label">07 - Animação · Impulsos</div>
-          <h2 className="journey-title">Nada é inerte</h2>
-        </div>
-
-        <div className="impulse-plate ds-glass mt-6">
-          <div className="journey-container impulse-inner">
-            <p className="ds-font-display ds-size-2xl ds-italic ds-weight-light journey-breathe">
-              Nada é inerte.
-            </p>
-            <p className="journey-sub mt-3">
-              Textos respiram. Cards pulsam como nos nervosos. Elementos acendem como impulso nervoso.
-            </p>
-          </div>
-          <div className="impulse-art" aria-hidden="true">
-            <svg className="impulse-svg" viewBox="0 0 800 420" preserveAspectRatio="none">
-              <path
-                className="path"
-                d="M60,60 C220,50 260,140 340,160 C420,180 480,110 560,140 C640,170 640,270 740,310"
-              />
-              <path
-                className="flash"
-                d="M60,60 C220,50 260,140 340,160 C420,180 480,110 560,140 C640,170 640,270 740,310"
-              />
-              <circle className="node" cx="60" cy="60" r="3" />
-              <circle className="node" cx="340" cy="160" r="3" />
-              <circle className="node" cx="560" cy="140" r="3" />
-              <circle className="node" cx="740" cy="310" r="3" />
-            </svg>
-          </div>
-          <div className="strike-wave-art" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Strike wave ripple">
-              <defs>
-                <style>{`
-                  .ring {
-                    fill: none;
-                    stroke-width: 2;
-                    transform-origin: 150px 150px;
-                    animation: strikeWave 6000ms cubic-bezier(0.33, 0, 0.67, 1) infinite;
-                  }
-                  .r1 { stroke: var(--sh-organic-gold-primary, #C4A35A); animation-delay: 0ms; }
-                  .r2 { stroke: var(--sh-organic-gold-light, #E0C97F); animation-delay: 800ms; }
-                  .r3 { stroke: var(--sh-organic-liquid-glass-light, #8BC4A0); animation-delay: 1600ms; }
-                  .r4 { stroke: var(--sh-organic-liquid-glass-ghost, #C8E6D0); animation-delay: 2400ms; }
-                  .r5 { stroke: var(--sh-organic-ocean-primary, #5A8A8A); animation-delay: 3200ms; }
-                  .core {
-                    fill: var(--sh-organic-gold-primary, #C4A35A);
-                    animation: strikeFlash 6000ms cubic-bezier(0.16, 1, 0.3, 1) infinite;
-                  }
-                  @keyframes strikeWave {
-                    0% { opacity: 0; transform: scale(0.2); }
-                    15% { opacity: 0.9; }
-                    100% { opacity: 0; transform: scale(1.7); }
-                  }
-                  @keyframes strikeFlash {
-                    0%, 70%, 100% { opacity: 0.25; r: 5px; }
-                    74% { opacity: 1; r: 12px; }
-                  }
-                `}</style>
-              </defs>
-
-              <rect width="300" height="300" fill="transparent" />
-              <circle className="ring r5" cx="150" cy="150" r="80" />
-              <circle className="ring r4" cx="150" cy="150" r="65" />
-              <circle className="ring r3" cx="150" cy="150" r="50" />
-              <circle className="ring r2" cx="150" cy="150" r="35" />
-              <circle className="ring r1" cx="150" cy="150" r="20" />
-              <circle className="core" cx="150" cy="150" r="6" />
-            </svg>
-          </div>
-        </div>
-      </section>
-
+      {/* ── 9. SOUND HEALING LIVE ─────────────────────────────────── */}
       <section className="journey-container journey-section">
-        <div className="journey-label">08 - Who It Is For</div>
-        <h2 className="journey-title journey-title-regular">When life runs hot</h2>
-        <ul className="mt-4 list-disc pl-6 space-y-2 text-secondary">
-          <li>anxiety / stress</li>
-          <li>sleep</li>
-          <li>overstimulation</li>
-          <li>integration after intense periods</li>
-        </ul>
-        <div className="ds-glass mt-8 flex flex-wrap items-center justify-between gap-5 rounded-2xl p-6">
-          <p className="text-secondary">Ready to downshift? Two paths. Same intention: rhythm and regulation.</p>
-          <div className="btn-row !mb-0">
-            <Link className="btn btn-primary" href="/contact">
-              Book a 1:1
-            </Link>
-            <Link className="btn btn-secondary" href="/portfolio">
-              Explore portfolio
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="journey-container journey-section">
-        <div className="journey-label">08 - Live</div>
-        <h2 className="journey-title">Sound Healing Live</h2>
-        <p className="journey-sub">
-          A weekly ritual to keep your nervous system tended. Join for a reset and return for
-          rhythm.
-        </p>
+        <div className="journey-label">{t("live.label")}</div>
+        <h2 className="journey-title">{t("live.title")}</h2>
+        <p className="journey-sub">{t("live.sub")}</p>
         <div className="ds-glass mt-6 flex flex-wrap items-center justify-between gap-5 rounded-2xl p-6">
-          <p className="text-secondary max-w-2xl">
-            Texts breathe. Elements ignite like nervous impulse. Keep it minimal. Keep it calm.
-          </p>
+          <p className="text-secondary max-w-2xl">{t("live.body")}</p>
           <div className="btn-row !mb-0">
             <Link className="btn btn-primary" href="/newsletter">
-              Join the loop
+              {t("live.cta_primary")}
             </Link>
             <Link className="btn btn-secondary" href="/sessions">
-              See sessions
+              {t("live.cta_secondary")}
             </Link>
           </div>
         </div>
       </section>
 
+      {/* ── 10. PORTFOLIO ─────────────────────────────────────────── */}
       <PortfolioPreview />
-      <TestimonialsPreview />
 
+      {/* ── 11. CTA FINAL + NEWSLETTER ───────────────────────────── */}
       <section className="journey-container journey-section" id="contact">
-        <div className="journey-label">Contact</div>
-        <h2 className="journey-title">Book a 1:1</h2>
-        <p className="journey-sub">Three questions. I reply within 48 hours.</p>
+        <div className="journey-label">{t("contact.label")}</div>
+        <h2 className="journey-title">{t("contact.title")}</h2>
+        <p className="journey-sub">{t("contact.sub")}</p>
         <div className="mt-6">
           <Link className="btn btn-primary" href="/contact">
-            Start with a session
+            {t("contact.cta_primary")}
           </Link>
           <Link className="btn btn-secondary ml-3" href="/contact">
-            Open contact
+            {t("contact.cta_secondary")}
           </Link>
         </div>
         <NewsletterForm source="home" />
