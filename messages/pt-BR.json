@@ -69,10 +69,10 @@
     },
     "practitioner": {
       "label": "Sobre",
-      "title": "[Nome do Praticante]",
-      "identity": "[Uma linha — quem você é e o que faz]",
-      "p1": "[Trajetória: como você chegou ao som]",
-      "p2": "[Abordagem: o que guia sua prática]",
+      "title": "Raphael",
+      "identity": "Sound healing · música · prática contemplativa",
+      "p1": "Cheguei ao som pela música e pela meditação—descobrindo como ritmo, ressonância e silêncio podem aliviar o estresse e abrir espaço para um descanso real.",
+      "p2": "As sessões são lentas e estruturadas: aberturas e encerramentos claros, condução gentil para desacelerar, imersão sonora e espaço para integrar—para que a regulação aconteça sem esforço.",
       "cta": "História completa"
     },
     "formats": {
