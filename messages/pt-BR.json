@@ -106,5 +106,113 @@
       "cta_primary": "Começar com uma sessão",
       "cta_secondary": "Abrir contato"
     }
+  },
+  "footer": {
+    "ctaText": "Dois caminhos, mesma intenção: ritmo, regulação, integração.",
+    "ctaPrimary": "Agendar 1:1",
+    "ctaSecondary": "Entrar no Live",
+    "privacy": "Privacidade",
+    "newsletter": "Newsletter"
+  },
+  "portfolioPreview": {
+    "title": "Portfólio",
+    "sub": "Sessões, eventos, retiros e colaborações selecionadas.",
+    "viewAll": "Ver tudo",
+    "loading": "Carregando..."
+  },
+  "testimonialsPreview": {
+    "title": "Palavras",
+    "sub": "Breves reflexões de sessões e colaborações.",
+    "loading": "Carregando..."
+  },
+  "newsletterForm": {
+    "label": "Newsletter (atualizações tranquilas)",
+    "namePlaceholder": "Nome (opcional)",
+    "emailPlaceholder": "seu@email.com",
+    "submit": "Entrar",
+    "alreadySubscribed": "Você já está inscrito.",
+    "welcome": "Bem-vindo. Você entrou.",
+    "errorFallback": "Algo deu errado.",
+    "noSpam": "Sem spam. Cancele quando quiser."
+  },
+  "aboutPage": {
+    "label": "Sobre",
+    "title": "Sobre",
+    "sub": "Meu trabalho une sound healing, música e prática contemplativa para criar um espaço calmo e acolhedor. Cada sessão é conduzida com suavidade, respeitando como o seu corpo está no momento, para que descanso e regulação aconteçam naturalmente.",
+    "approachTitle": "Abordagem",
+    "approachBody": "Ritmo, ressonância e silêncio são usados com intenção para ajudar o sistema nervoso a assentar.",
+    "sessionsTitle": "Sessões",
+    "sessionsBody": "Cada sessão é conduzida lentamente, com aberturas e encerramentos claros, para que a integração aconteça com naturalidade."
+  },
+  "contactPage": {
+    "label": "Contato",
+    "title": "Agendar 1:1",
+    "sub": "Três perguntas. Respondo em até 48 horas.",
+    "inquiryTitle": "Pedido de sessão",
+    "inquiryBody": "Conte qual apoio você busca, sua preferência de horários e se é um contexto 1:1 ou em grupo.",
+    "nextTitle": "Próximos passos",
+    "nextBody": "Eu envio as opções de formato e agendamento, com o mínimo de fricção para começar.",
+    "ctaPrimary": "Enviar pedido",
+    "ctaSecondary": "Ver sessões"
+  },
+  "portfolioPage": {
+    "label": "Portfólio",
+    "title": "Portfólio",
+    "sub": "Sessões, eventos, retiros e colaborações.",
+    "emptyTitle": "Portfólio em construção",
+    "emptyDescription": "Sessões, eventos e retiros — em breve."
+  },
+  "sessionsPage": {
+    "label": "Sessões",
+    "title": "Escolha a profundidade",
+    "sub": "Disponibilidade e fuso horário aparecem no fluxo de agendamento, não na navegação global.",
+    "decisionLabel": "Pontos de decisão",
+    "decisionTitle": "Agendar 1:1 ou Entrar no Live",
+    "decisionSub": "Brilho no hover, resposta gentil no clique. Cada botão é uma sinapse.",
+    "oneOnOneTitle": "Sound Bath",
+    "oneOnOneMeta": "Sessão individual · 60 min",
+    "oneOnOneBody": "Tigelas Peter Hess sobre o corpo. O som encontra a água.",
+    "oneOnOneCtaPrimary": "Agendar 1:1",
+    "oneOnOneCtaSecondary": "Como funciona",
+    "groupTitle": "Jornada Sonora em Grupo",
+    "groupMeta": "Evento ritual · 90 min",
+    "groupBody": "Descanso coletivo e conexão sem performance.",
+    "groupCtaPrimary": "Entrar no Live",
+    "groupCtaSecondary": "Contato",
+    "timelineLabel": "O que acontece",
+    "timelineTitle": "Quatro fases de uma sessão",
+    "timelineArrivalTitle": "Chegada",
+    "timelineArrivalBody": "Assentar. Respirar. Deixar o corpo chegar.",
+    "timelineImmersionTitle": "Imersão sonora",
+    "timelineImmersionBody": "O campo sonoro se forma. O corpo responde.",
+    "timelineIntegrationTitle": "Integração",
+    "timelineIntegrationBody": "Silêncio guiado. O sistema nervoso processa.",
+    "timelineClosingTitle": "Fechamento",
+    "timelineClosingBody": "Retorno gradual. Chá. Partida com espaço.",
+    "faqLabel": "Perguntas frequentes",
+    "faqTitle": "O que esperar",
+    "faq0q": "Preciso de experiência com meditação?",
+    "faq0a": "Não. As sessões são acessíveis para qualquer pessoa. Não há técnica para aprender.",
+    "faq1q": "Como me vestir?",
+    "faq1a": "Roupas confortáveis. Você ficará deitado ou sentado a maior parte do tempo.",
+    "faq2q": "E se eu adormecer?",
+    "faq2a": "Ótimo. O corpo sabe o que precisa. O sono durante a sessão é integração.",
+    "faq3q": "Há contraindicações?",
+    "faq3a": "Sessões 1:1 podem ser adaptadas. Epilepsia fotossensível ou implantes metálicos — informe antes."
+  },
+  "soundHealingPage": {
+    "label": "Sound Healing",
+    "title": "Som como luz líquida",
+    "sub": "O som das tigelas percorre o sistema nervoso como a seiva percorre as nervuras de uma folha—encontrando caminhos e restaurando conexões.",
+    "principleLabel": "Princípio fundador",
+    "principleTitle": "Mecanismo, sem hype",
+    "principleBody": "Ritmo, ressonância e quietude estruturada criam condições para o sistema assentar e integrar.",
+    "waterP1": "O corpo humano é 70% água. O som viaja pela água.",
+    "waterP2": "O sistema nervoso está imerso nessa água.",
+    "waterP3": "Quando a tigela toca, a vibração encontra o líquido, se propaga como onda e alcança cada nervo por dentro.",
+    "waterOverline": "O som reconstrói o sistema nervoso.",
+    "ctaPrompt": "Quer sentir isso no corpo?",
+    "ctaPrimary": "Agendar 1:1",
+    "ctaSecondary": "Ver formatos"
   }
 }
