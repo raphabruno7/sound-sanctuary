@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Sound Healing",
@@ -8,16 +9,15 @@ export const metadata: Metadata = {
     "How sound travels through the nervous system. The practice behind Sound Sanctuary sessions.",
 };
 
-export default function SoundHealingPage() {
+export default async function SoundHealingPage() {
+  const t = await getTranslations("soundHealingPage");
+
   return (
     <main className="min-h-dvh pb-24">
       <section className="journey-container journey-section relative">
-        <div className="journey-label">Sound Healing</div>
-        <h1 className="journey-title">Sound as liquid light</h1>
-        <p className="journey-sub">
-          O som das tigelas percorre o sistema nervoso como a seiva percorre as nervuras de uma
-          folha, encontrando caminhos e restaurando conexoes.
-        </p>
+        <div className="journey-label">{t("label")}</div>
+        <h1 className="journey-title">{t("title")}</h1>
+        <p className="journey-sub">{t("sub")}</p>
 
         <div className="nervura-art" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" role="img" aria-label="draw-on-nervura">
@@ -105,12 +105,9 @@ export default function SoundHealingPage() {
           </div>
 
           <article className="ds-glass journey-card">
-            <div className="journey-label">Princípio fundador</div>
-            <h2 className="mt-3 ds-font-display ds-size-3xl ds-weight-light">Mechanism, without hype</h2>
-            <p className="mt-4 text-secondary">
-              Rhythm, resonance, and structured stillness create conditions where the system can
-              settle and integrate.
-            </p>
+            <div className="journey-label">{t("principleLabel")}</div>
+            <h2 className="mt-3 ds-font-display ds-size-3xl ds-weight-light">{t("principleTitle")}</h2>
+            <p className="mt-4 text-secondary">{t("principleBody")}</p>
           </article>
         </div>
       </section>
@@ -198,15 +195,10 @@ export default function SoundHealingPage() {
             <circle className="node d5" cx="410" cy="188" r="3" />
             <circle className="node d6" cx="500" cy="210" r="3" />
           </svg>
-          <p className="text-secondary">O corpo humano é 70% água. O som viaja pela água.</p>
-          <p className="text-secondary mt-2">O sistema nervoso está imerso nessa água.</p>
-          <p className="text-secondary mt-2">
-            Quando a tigela toca, a vibração encontra o líquido, se propaga como onda, e alcança
-            cada nervo por dentro.
-          </p>
-          <p className="mt-3 ds-text-overline journey-breathe">
-            O som reconstrói o sistema nervoso.
-          </p>
+          <p className="text-secondary">{t("waterP1")}</p>
+          <p className="text-secondary mt-2">{t("waterP2")}</p>
+          <p className="text-secondary mt-2">{t("waterP3")}</p>
+          <p className="mt-3 ds-text-overline journey-breathe">{t("waterOverline")}</p>
         </div>
       </section>
 
@@ -268,13 +260,13 @@ export default function SoundHealingPage() {
 
       <section className="journey-container journey-section">
         <div className="ds-glass rounded-2xl p-6 flex flex-wrap items-center justify-between gap-5">
-          <p className="text-secondary">Want to feel this in your body?</p>
+          <p className="text-secondary">{t("ctaPrompt")}</p>
           <div className="btn-row !mb-0">
             <Link className="btn btn-primary" href="/contact">
-              Book a 1:1
+              {t("ctaPrimary")}
             </Link>
             <Link className="btn btn-secondary" href="/sessions">
-              See formats
+              {t("ctaSecondary")}
             </Link>
           </div>
         </div>
