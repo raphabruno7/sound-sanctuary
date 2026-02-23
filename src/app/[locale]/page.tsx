@@ -1,10 +1,27 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { buildPageMetadata } from "@/i18n/metadata";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 import { PractitionerSection } from "@/components/PractitionerSection";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
 // Reusable vine divider SVG — copy from existing page.tsx
 function VineDivider() {
@@ -141,6 +158,27 @@ export default async function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── 1.5. SOUND BATH — what it is ──────────────────────── */}
+      <section className="journey-container journey-section journey-section-lg">
+        <div className="journey-label">{t("soundBath.label")}</div>
+        <h2 className="journey-title ds-font-display ds-weight-light">
+          {t("soundBath.title")}
+        </h2>
+        <p className="journey-sub mt-4">{t("soundBath.opening")}</p>
+        <div className="ds-glass journey-card mt-6 space-y-4 text-secondary leading-relaxed">
+          <p>{t("soundBath.p1")}</p>
+          <p>{t("soundBath.p2")}</p>
+          <p className="ds-font-display ds-italic ds-size-xl journey-breathe">
+            {t("soundBath.reset")}
+          </p>
+          <p>{t("soundBath.p3")}</p>
+          <p>{t("soundBath.p4")}</p>
+        </div>
+        <p className="mt-6 ds-size-lg ds-font-display ds-italic text-secondary">
+          {t("soundBath.closing")}
+        </p>
       </section>
 
       {/* ── 2. FOR WHOM — "you →" photo annotation ──────────────── */}
