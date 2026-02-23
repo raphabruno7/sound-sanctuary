@@ -214,7 +214,8 @@
 .home-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -344,9 +345,6 @@
 }
 
 @media (max-width: 768px) {
-  .home-hero {
-    aspect-ratio: 3 / 2;
-  }
   .home-hero__image {
     object-position: center center;
   }
@@ -369,9 +367,6 @@
 }
 
 @media (max-width: 480px) {
-  .home-hero {
-    aspect-ratio: 4 / 3;
-  }
   .hero-tw {
     bottom: 1.5rem;
   }
