@@ -255,7 +255,7 @@
   background: radial-gradient(ellipse at 50% 80%, rgba(196, 163, 90, 0.15), transparent 70%);
 }
 
-/* ── Hero Typewriter — centered text block ── */
+/* ── Hero Typewriter — rolling text window at bottom of hero ── */
 .hero-tw {
   position: absolute;
   bottom: 3rem;
@@ -267,6 +267,14 @@
   margin: 0 auto;
   padding: 0 1.5rem;
   pointer-events: none;
+  max-height: 55vh;
+  max-height: 55dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
 }
 
 .hero-tw__label {
@@ -352,6 +360,8 @@
     bottom: 2rem;
     max-width: 90vw;
     padding: 0 1rem;
+    max-height: 60vh;
+    max-height: 60dvh;
   }
   .hero-tw__title {
     font-size: clamp(1.5rem, 6vw, 2.2rem);
@@ -369,6 +379,7 @@
 @media (max-width: 480px) {
   .hero-tw {
     bottom: 1.5rem;
+    max-height: 65dvh;
   }
 }
 
