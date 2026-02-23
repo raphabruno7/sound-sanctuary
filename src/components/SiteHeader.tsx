@@ -1,10 +1,13 @@
  "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function SiteHeader() {
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,25 +28,26 @@ export function SiteHeader() {
         <div className="flex items-center gap-5">
           <nav aria-label="Primary navigation" className="flex gap-4">
             <Link className="ds-header__link" href="/sound-healing">
-              Sound Healing
+              {t("soundHealing")}
             </Link>
             <Link className="ds-header__link" href="/sessions">
-              Sessions
+              {t("sessions")}
             </Link>
             <Link className="ds-header__link" href="/portfolio">
-              Portfolio
+              {t("portfolio")}
             </Link>
             <Link className="ds-header__link" href="/about">
-              About
+              {t("about")}
             </Link>
             <Link className="ds-header__link" href="/contact">
-              Contact
+              {t("contact")}
             </Link>
           </nav>
           <div className="flex items-center gap-2">
+            <LanguageToggle />
             <ThemeToggle />
             <Link className="btn btn-primary" href="/contact">
-              Book 1:1
+              {t("book")}
             </Link>
           </div>
         </div>

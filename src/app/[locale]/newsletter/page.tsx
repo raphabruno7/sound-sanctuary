@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
-export const metadata: Metadata = {
-  title: "Newsletter",
-  description: "Quiet updates on session availability and reflective notes on sound and regulation.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "newsletterPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/newsletter",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
-export default function NewsletterPage() {
+export default async function NewsletterPage() {
+  const t = await getTranslations("newsletterPage");
   return (
     <main className="min-h-dvh pb-24">
       <section className="journey-container journey-section">
-        <div className="journey-label">Newsletter</div>
-        <h1 className="journey-title">Quiet updates</h1>
-        <p className="journey-sub">
-          Quiet updates on session availability and reflective notes on sound and regulation.
-        </p>
+        <div className="journey-label">{t("label")}</div>
+        <h1 className="journey-title">{t("title")}</h1>
+        <p className="journey-sub">{t("sub")}</p>
       </section>
 
       <div aria-hidden="true" className="journey-container">
@@ -52,11 +63,8 @@ export default function NewsletterPage() {
       </div>
 
       <section className="journey-container journey-section">
-        <h2 className="journey-title">What You Will Receive</h2>
-        <p className="journey-sub">
-          Quiet updates on session availability, new formats, and reflective notes on sound and
-          regulation.
-        </p>
+        <h2 className="journey-title">{t("sectionReceiveTitle")}</h2>
+        <p className="journey-sub">{t("sectionReceiveBody")}</p>
       </section>
 
       <div aria-hidden="true" className="journey-container">
@@ -94,11 +102,8 @@ export default function NewsletterPage() {
       </div>
 
       <section className="journey-container journey-section">
-        <h2 className="journey-title">Delivery Rhythm</h2>
-        <p className="journey-sub">
-          Sent occasionally—no spam. Expect a short note when there’s something genuinely useful to
-          share.
-        </p>
+        <h2 className="journey-title">{t("sectionRhythmTitle")}</h2>
+        <p className="journey-sub">{t("sectionRhythmBody")}</p>
       </section>
 
       <div aria-hidden="true" className="journey-container">

@@ -1,0 +1,283 @@
+{
+  "nav": {
+    "soundHealing": "Sound Healing",
+    "sessions": "Sessões",
+    "portfolio": "Portfólio",
+    "about": "Sobre",
+    "contact": "Contato",
+    "book": "Agendar 1:1",
+    "langToggle": "EN"
+  },
+  "home": {
+    "meta": {
+      "title": "Sound Sanctuary",
+      "description": "Sound healing, práticas contemplativas e sessões com os pés no chão para apoiar calma e regulação do sistema nervoso."
+    },
+    "hero": {
+      "title": "Sound Healing",
+      "poetic": "O prana canta enquanto flui",
+      "sub": "Uma prática de regulação para a vida moderna: ritmo, descanso e integração.",
+      "cta_primary": "Agendar 1:1",
+      "cta_secondary": "Entrar no Sound Healing Live"
+    },
+    "soundBath": {
+      "label": "Banho de Som",
+      "title": "Som: o super alimento do sistema nervoso.",
+      "opening": "O sistema nervoso é vibração.",
+      "p1": "Quando você se deita e os instrumentos começam a tocar, seu sistema nervoso entra em sintonia com o som. Ele obedece e vibra junto.",
+      "p2": "Seus ossos, sua água interna, cada célula — tudo entra em ressonância com as taças tibetanas e o gongo.",
+      "reset": "E você reinicia.",
+      "p3": "Durante um Banho de Som, o som percorre o seu corpo, organiza onde há desordem, dissolve o que está preso e gentilmente desfaz bloqueios.",
+      "p4": "O som ajuda o corpo a sair do estresse crônico e entrar em estados que suportam o sono, a imunidade, a clareza mental, o equilíbrio emocional e a saúde a longo prazo.",
+      "closing": "E sabe o que você precisa fazer? Nada. Apenas deitar e receber."
+    },
+    "forWhom": {
+      "label": "Para quem é",
+      "title": "Quando a vida acelera demais",
+      "annotation": "você",
+      "items": [
+        "ansiedade / estresse",
+        "dificuldades com o sono",
+        "superestimulação",
+        "integração após períodos intensos"
+      ],
+      "cta_prompt": "Pronto para desacelerar? Dois caminhos. Mesma intenção.",
+      "cta_primary": "Agendar 1:1",
+      "cta_secondary": "Ver portfólio"
+    },
+    "whatItIs": {
+      "label": "Cuidado preventivo",
+      "title": "Uma prática sonora calma e estruturada",
+      "sub": "O Sound Healing usa ressonância, ritmo e descanso guiado para ajudar o sistema nervoso a desacelerar sem performance.",
+      "p1": "É simples: você chega, se instala, o som cria um campo e o seu corpo tem espaço para integrar. Nada a atingir.",
+      "p2": "A promessa não é tratamento médico. É treinar capacidade: desacelerar, voltar ao ritmo e sair com mais espaço interno."
+    },
+    "whyItWorks": {
+      "label": "Som e Sistema Nervoso",
+      "title": "Por que funciona",
+      "p1": "O corpo humano é 70% água. O som viaja pela água.",
+      "p2": "O sistema nervoso está imerso nessa água.",
+      "p3": "Quando a tigela toca, a vibração encontra o líquido, se propaga como onda e alcança cada nervo por dentro.",
+      "overline": "O som reconstrói o sistema nervoso.",
+      "framework_label": "Framework Elemental",
+      "sun_name": "O Sol",
+      "sun_sub": "cura, carrega, aquece",
+      "sun_body": "Frequência do fogo. Calor que dissolve.",
+      "moon_name": "A Lua",
+      "moon_sub": "conecta, manifesta, desbloqueia",
+      "moon_body": "Frequência da água interna e ritmo do corpo sutil.",
+      "ocean_name": "O Oceano",
+      "ocean_sub": "limpa, refresca, abre",
+      "ocean_body": "Ondulação que limpa e abre centros de energia.",
+      "forest_name": "A Floresta",
+      "forest_sub": "enraíza, equilibra, estabiliza",
+      "forest_body": "Raiz. Aterramento. Som grave que ancora na terra."
+    },
+    "howItWorks": {
+      "label": "O que acontece em uma sessão",
+      "title": "Cinco etapas, sem mistério",
+      "step1": "Chegada",
+      "step2": "Enraizamento",
+      "step3": "Imersão sonora",
+      "step4": "Integração",
+      "step5": "Encerramento"
+    },
+    "practitioner": {
+      "label": "Sobre",
+      "title": "Raphael",
+      "identity": "Sound healing · música · prática contemplativa",
+      "p1": "Cheguei ao som pela música e pela meditação—descobrindo como ritmo, ressonância e silêncio podem aliviar o estresse e abrir espaço para um descanso real.",
+      "p2": "As sessões são lentas e estruturadas: aberturas e encerramentos claros, condução gentil para desacelerar, imersão sonora e espaço para integrar—para que a regulação aconteça sem esforço.",
+      "cta": "História completa"
+    },
+    "formats": {
+      "label": "Formatos de Sessão",
+      "title": "Escolha a profundidade",
+      "oneOnOne_title": "1:1 Terapia Sonora",
+      "oneOnOne_duration": "60 min",
+      "oneOnOne_for": "Para suporte de integração mais profundo",
+      "oneOnOne_body": "Suporte personalizado para transições, estresse do sono e superestimulação crônica.",
+      "oneOnOne_cta_primary": "Agendar 1:1",
+      "oneOnOne_cta_secondary": "Ver detalhes da sessão",
+      "group_title": "Jornada Sonora em Grupo",
+      "group_duration": "90 min",
+      "group_for": "Descanso coletivo sem performance",
+      "group_body": "Um campo compartilhado para aquietar e conectar. Baixa barreira, alto senso de pertencimento.",
+      "group_cta_primary": "Ver próximo ao vivo",
+      "group_cta_secondary": "Contato"
+    },
+    "live": {
+      "label": "Ao Vivo",
+      "title": "Sound Healing Live",
+      "sub": "Um ritual semanal para cuidar do seu sistema nervoso. Venha para um reset e volte para o ritmo.",
+      "body": "Baixo compromisso. Alto retorno. Apareça, deite, deixe o som trabalhar.",
+      "cta_primary": "Entrar no loop",
+      "cta_secondary": "Ver sessões"
+    },
+    "contact": {
+      "label": "Contato",
+      "title": "Agendar 1:1",
+      "sub": "Três perguntas. Respondo em até 48 horas.",
+      "cta_primary": "Começar com uma sessão",
+      "cta_secondary": "Abrir contato"
+    }
+  },
+  "footer": {
+    "ctaText": "Dois caminhos, mesma intenção: ritmo, regulação, integração.",
+    "ctaPrimary": "Agendar 1:1",
+    "ctaSecondary": "Entrar no Live",
+    "privacy": "Privacidade",
+    "newsletter": "Newsletter"
+  },
+  "portfolioPreview": {
+    "title": "Portfólio",
+    "sub": "Sessões, eventos, retiros e colaborações selecionadas.",
+    "viewAll": "Ver tudo",
+    "loading": "Carregando..."
+  },
+  "testimonialsPreview": {
+    "title": "Palavras",
+    "sub": "Breves reflexões de sessões e colaborações.",
+    "loading": "Carregando..."
+  },
+  "newsletterForm": {
+    "label": "Newsletter (atualizações tranquilas)",
+    "namePlaceholder": "Nome (opcional)",
+    "emailPlaceholder": "seu@email.com",
+    "submit": "Entrar",
+    "alreadySubscribed": "Você já está inscrito.",
+    "welcome": "Bem-vindo. Você entrou.",
+    "errorFallback": "Algo deu errado.",
+    "noSpam": "Sem spam. Cancele quando quiser."
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "Sobre",
+      "description": "Conheça a abordagem de sound healing e práticas contemplativas por trás das sessões do Sound Sanctuary."
+    },
+    "label": "Sobre",
+    "title": "Sobre",
+    "sub": "Meu trabalho une sound healing, música e prática contemplativa para criar um espaço calmo e acolhedor. Cada sessão é conduzida com suavidade, respeitando como o seu corpo está no momento, para que descanso e regulação aconteçam naturalmente.",
+    "approachTitle": "Abordagem",
+    "approachBody": "Ritmo, ressonância e silêncio são usados com intenção para ajudar o sistema nervoso a assentar.",
+    "sessionsTitle": "Sessões",
+    "sessionsBody": "Cada sessão é conduzida lentamente, com aberturas e encerramentos claros, para que a integração aconteça com naturalidade."
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contato",
+      "description": "Agende uma sessão 1:1 de sound healing ou faça uma pergunta. Três perguntas. Resposta em até 48 horas."
+    },
+    "label": "Contato",
+    "title": "Agendar 1:1",
+    "sub": "Três perguntas. Respondo em até 48 horas.",
+    "inquiryTitle": "Pedido de sessão",
+    "inquiryBody": "Conte qual apoio você busca, sua preferência de horários e se é um contexto 1:1 ou em grupo.",
+    "nextTitle": "Próximos passos",
+    "nextBody": "Eu envio as opções de formato e agendamento, com o mínimo de fricção para começar.",
+    "ctaPrimary": "Enviar pedido",
+    "ctaSecondary": "Ver sessões"
+  },
+  "portfolioPage": {
+    "meta": {
+      "title": "Portfólio",
+      "description": "Sessões, eventos, retiros e colaborações — provas e contexto do Sound Sanctuary."
+    },
+    "label": "Portfólio",
+    "title": "Portfólio",
+    "sub": "Sessões, eventos, retiros e colaborações.",
+    "emptyTitle": "Portfólio em construção",
+    "emptyDescription": "Sessões, eventos e retiros — em breve."
+  },
+  "sessionsPage": {
+    "meta": {
+      "title": "Sessões",
+      "description": "Terapia sonora 1:1 e Jornada Sonora em grupo — formatos, durações e como agendar."
+    },
+    "label": "Sessões",
+    "title": "Escolha a profundidade",
+    "sub": "Disponibilidade e fuso horário aparecem no fluxo de agendamento, não na navegação global.",
+    "decisionLabel": "Pontos de decisão",
+    "decisionTitle": "Agendar 1:1 ou Entrar no Live",
+    "decisionSub": "Brilho no hover, resposta gentil no clique. Cada botão é uma sinapse.",
+    "oneOnOneTitle": "Sound Bath",
+    "oneOnOneMeta": "Sessão individual · 60 min",
+    "oneOnOneBody": "Tigelas Peter Hess sobre o corpo. O som encontra a água.",
+    "oneOnOneCtaPrimary": "Agendar 1:1",
+    "oneOnOneCtaSecondary": "Como funciona",
+    "groupTitle": "Jornada Sonora em Grupo",
+    "groupMeta": "Evento ritual · 90 min",
+    "groupBody": "Descanso coletivo e conexão sem performance.",
+    "groupCtaPrimary": "Entrar no Live",
+    "groupCtaSecondary": "Contato",
+    "timelineLabel": "O que acontece",
+    "timelineTitle": "Quatro fases de uma sessão",
+    "timelineArrivalTitle": "Chegada",
+    "timelineArrivalBody": "Assentar. Respirar. Deixar o corpo chegar.",
+    "timelineImmersionTitle": "Imersão sonora",
+    "timelineImmersionBody": "O campo sonoro se forma. O corpo responde.",
+    "timelineIntegrationTitle": "Integração",
+    "timelineIntegrationBody": "Silêncio guiado. O sistema nervoso processa.",
+    "timelineClosingTitle": "Fechamento",
+    "timelineClosingBody": "Retorno gradual. Chá. Partida com espaço.",
+    "faqLabel": "Perguntas frequentes",
+    "faqTitle": "O que esperar",
+    "faq0q": "Preciso de experiência com meditação?",
+    "faq0a": "Não. As sessões são acessíveis para qualquer pessoa. Não há técnica para aprender.",
+    "faq1q": "Como me vestir?",
+    "faq1a": "Roupas confortáveis. Você ficará deitado ou sentado a maior parte do tempo.",
+    "faq2q": "E se eu adormecer?",
+    "faq2a": "Ótimo. O corpo sabe o que precisa. O sono durante a sessão é integração.",
+    "faq3q": "Há contraindicações?",
+    "faq3a": "Sessões 1:1 podem ser adaptadas. Epilepsia fotossensível ou implantes metálicos — informe antes."
+  },
+  "soundHealingPage": {
+    "meta": {
+      "title": "Sound Healing",
+      "description": "Como o som atravessa o sistema nervoso. A prática por trás das sessões do Sound Sanctuary."
+    },
+    "label": "Sound Healing",
+    "title": "Som como luz líquida",
+    "sub": "O som das tigelas percorre o sistema nervoso como a seiva percorre as nervuras de uma folha—encontrando caminhos e restaurando conexões.",
+    "principleLabel": "Princípio fundador",
+    "principleTitle": "Mecanismo, sem hype",
+    "principleBody": "Ritmo, ressonância e quietude estruturada criam condições para o sistema assentar e integrar.",
+    "waterP1": "O corpo humano é 70% água. O som viaja pela água.",
+    "waterP2": "O sistema nervoso está imerso nessa água.",
+    "waterP3": "Quando a tigela toca, a vibração encontra o líquido, se propaga como onda e alcança cada nervo por dentro.",
+    "waterOverline": "O som reconstrói o sistema nervoso.",
+    "ctaPrompt": "Quer sentir isso no corpo?",
+    "ctaPrimary": "Agendar 1:1",
+    "ctaSecondary": "Ver formatos"
+  },
+  "newsletterPage": {
+    "meta": {
+      "title": "Newsletter",
+      "description": "Atualizações tranquilas sobre disponibilidade de sessões e notas reflexivas sobre som e regulação."
+    },
+    "label": "Newsletter",
+    "title": "Atualizações tranquilas",
+    "sub": "Atualizações tranquilas sobre disponibilidade de sessões e notas reflexivas sobre som e regulação.",
+    "sectionReceiveTitle": "O que você vai receber",
+    "sectionReceiveBody": "Atualizações tranquilas sobre disponibilidade de sessões, novos formatos e notas reflexivas sobre som e regulação.",
+    "sectionRhythmTitle": "Ritmo de envio",
+    "sectionRhythmBody": "Enviado ocasionalmente — sem spam. Espere uma nota curta quando houver algo realmente útil para compartilhar."
+  },
+  "privacyPage": {
+    "meta": {
+      "title": "Privacidade",
+      "description": "Aviso de privacidade para visitantes do site e inscritos na newsletter do Sound Sanctuary."
+    },
+    "label": "Privacidade",
+    "title": "Privacidade",
+    "sub": "Um aviso curto e prático sobre o que é coletado e por quê. Sem rastreamento escondido e sem revenda de dados.",
+    "collectTitle": "O que coletamos",
+    "collectBody": "Seu email, se você assinar a newsletter. Se você entrar em contato, você também pode compartilhar seu nome e o conteúdo da mensagem.",
+    "useTitle": "Para que usamos",
+    "useBody": "Enviar atualizações da newsletter e responder dúvidas sobre sessões. Não vendemos seus dados pessoais.",
+    "removeTitle": "Como remover seus dados",
+    "removeBody": "Toda newsletter inclui um link de descadastro. Você também pode nos enviar um email pedindo remoção.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "Não usamos cookies de publicidade ou rastreamento. Se algo mudar no futuro, esta página será atualizada."
+  }
+}

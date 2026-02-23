@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about the sound healing and contemplative approach behind Sound Sanctuary sessions.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "aboutPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/about",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
-export default function About() {
+export default async function About() {
+  const t = await getTranslations("aboutPage");
+
   return (
     <main className="min-h-dvh pb-24">
       <svg
@@ -42,13 +55,9 @@ export default function About() {
       </svg>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">About</div>
-        <h1 className="journey-title">About</h1>
-        <p className="journey-sub text-lg">
-          My work brings together sound healing, music, and contemplative practice to create a calm
-          and supportive space. Each session is paced gently, with care for how your body feels in the
-          moment, so rest and regulation can happen naturally.
-        </p>
+        <div className="journey-label">{t("label")}</div>
+        <h1 className="journey-title">{t("title")}</h1>
+        <p className="journey-sub text-lg">{t("sub")}</p>
       </section>
 
       <div aria-hidden="true" className="journey-container">
@@ -88,16 +97,16 @@ export default function About() {
       <section className="journey-container journey-section">
         <div className="grid gap-6 md:grid-cols-2 text-muted-foreground leading-relaxed">
           <div className="space-y-2">
-            <h2 className="ds-font-display ds-weight-light ds-size-2xl text-foreground">Approach</h2>
-            <p>
-              Rhythm, resonance, and silence are used intentionally to help the nervous system settle.
-            </p>
+            <h2 className="ds-font-display ds-weight-light ds-size-2xl text-foreground">
+              {t("approachTitle")}
+            </h2>
+            <p>{t("approachBody")}</p>
           </div>
           <div className="space-y-2">
-            <h2 className="ds-font-display ds-weight-light ds-size-2xl text-foreground">Sessions</h2>
-            <p>
-              Each session is paced slowly with clear openings and closings so integration feels natural.
-            </p>
+            <h2 className="ds-font-display ds-weight-light ds-size-2xl text-foreground">
+              {t("sessionsTitle")}
+            </h2>
+            <p>{t("sessionsBody")}</p>
           </div>
         </div>
       </section>

@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 
-export const metadata: Metadata = {
-  title: "Sessions",
-  description: "1:1 Sound Therapy and Group Sound Journey — formats, durations, and how to book.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "sessionsPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/sessions",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
-export default function SessionsPage() {
+export default async function SessionsPage() {
+  const t = await getTranslations("sessionsPage");
+
   return (
     <main className="min-h-dvh pb-24">
       <section className="journey-container journey-section relative">
@@ -79,45 +93,41 @@ export default function SessionsPage() {
             opacity="0.35"
           />
         </svg>
-        <div className="journey-label">Sessions</div>
-        <h1 className="journey-title">Choose your depth</h1>
-        <p className="journey-sub">
-          Availability and timezone details appear in booking flow, not in global navigation.
-        </p>
+        <div className="journey-label">{t("label")}</div>
+        <h1 className="journey-title">{t("title")}</h1>
+        <p className="journey-sub">{t("sub")}</p>
       </section>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">Pontos de decisao</div>
-        <h2 className="journey-title">Book 1:1 or Join Live</h2>
-        <p className="journey-sub">Glow on hover, gentle response on click. Each button is a synapse.</p>
+        <div className="journey-label">{t("decisionLabel")}</div>
+        <h2 className="journey-title">{t("decisionTitle")}</h2>
+        <p className="journey-sub">{t("decisionSub")}</p>
 
         <div className="journey-grid-2 mt-8">
           <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-2xl ds-weight-light">Sound Bath</h3>
-            <p className="mt-2 text-sm text-secondary">Sessao individual · 60min</p>
-            <p className="mt-3 text-secondary">
-              Peter Hess bowls sobre o corpo. O som encontra a agua.
-            </p>
+            <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("oneOnOneTitle")}</h3>
+            <p className="mt-2 text-sm text-secondary">{t("oneOnOneMeta")}</p>
+            <p className="mt-3 text-secondary">{t("oneOnOneBody")}</p>
             <div className="btn-row mt-5">
               <Link className="btn btn-primary" href="/contact">
-                Book 1:1
+                {t("oneOnOneCtaPrimary")}
               </Link>
               <Link className="btn btn-ghost" href="/sound-healing">
-                How it works
+                {t("oneOnOneCtaSecondary")}
               </Link>
             </div>
           </article>
 
           <article className="ds-glass journey-card">
-            <h3 className="ds-font-display ds-size-2xl ds-weight-light">Group Sound Journey</h3>
-            <p className="mt-2 text-sm text-secondary">Evento ritual · 90 min</p>
-            <p className="mt-3 text-secondary">Collective rest and connection without performance.</p>
+            <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("groupTitle")}</h3>
+            <p className="mt-2 text-sm text-secondary">{t("groupMeta")}</p>
+            <p className="mt-3 text-secondary">{t("groupBody")}</p>
             <div className="btn-row mt-5">
               <Link className="btn btn-secondary" href="/newsletter">
-                Join Live
+                {t("groupCtaPrimary")}
               </Link>
               <Link className="btn btn-ghost" href="/contact">
-                Contact
+                {t("groupCtaSecondary")}
               </Link>
             </div>
           </article>
@@ -125,67 +135,55 @@ export default function SessionsPage() {
       </section>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">O que acontece</div>
-        <h2 className="journey-title">Quatro fases de uma sessão</h2>
+        <div className="journey-label">{t("timelineLabel")}</div>
+        <h2 className="journey-title">{t("timelineTitle")}</h2>
         <div className="ds-timeline mt-8">
           <div className="ds-timeline__line" aria-hidden="true" />
 
           <div className="ds-timeline__event ds-timeline__event--completed">
             <div className="ds-timeline__marker" />
             <div className="ds-timeline__content">
-              <strong className="ds-timeline__title">Chegada</strong>
-              <p className="ds-timeline__description">Assentar. Respirar. Deixar o corpo chegar.</p>
+              <strong className="ds-timeline__title">{t("timelineArrivalTitle")}</strong>
+              <p className="ds-timeline__description">{t("timelineArrivalBody")}</p>
             </div>
           </div>
 
           <div className="ds-timeline__event ds-timeline__event--current">
             <div className="ds-timeline__marker" />
             <div className="ds-timeline__content">
-              <strong className="ds-timeline__title">Imersão sonora</strong>
-              <p className="ds-timeline__description">O campo sonoro se forma. O corpo responde.</p>
+              <strong className="ds-timeline__title">{t("timelineImmersionTitle")}</strong>
+              <p className="ds-timeline__description">{t("timelineImmersionBody")}</p>
             </div>
           </div>
 
           <div className="ds-timeline__event">
             <div className="ds-timeline__marker" />
             <div className="ds-timeline__content">
-              <strong className="ds-timeline__title">Integração</strong>
-              <p className="ds-timeline__description">Silêncio guiado. O sistema nervoso processa.</p>
+              <strong className="ds-timeline__title">{t("timelineIntegrationTitle")}</strong>
+              <p className="ds-timeline__description">{t("timelineIntegrationBody")}</p>
             </div>
           </div>
 
           <div className="ds-timeline__event">
             <div className="ds-timeline__marker" />
             <div className="ds-timeline__content">
-              <strong className="ds-timeline__title">Fechamento</strong>
-              <p className="ds-timeline__description">Retorno gradual. Chá. Partida com espaço.</p>
+              <strong className="ds-timeline__title">{t("timelineClosingTitle")}</strong>
+              <p className="ds-timeline__description">{t("timelineClosingBody")}</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="journey-container journey-section">
-        <div className="journey-label">Perguntas frequentes</div>
-        <h2 className="journey-title">O que esperar</h2>
+        <div className="journey-label">{t("faqLabel")}</div>
+        <h2 className="journey-title">{t("faqTitle")}</h2>
         <div className="mt-6">
           <div className="ds-accordion">
             {[
-              {
-                q: "Preciso de experiência com meditação?",
-                a: "Não. As sessões são acessíveis para qualquer pessoa. Não há técnica para aprender.",
-              },
-              {
-                q: "Como me vestir?",
-                a: "Roupas confortáveis. Você ficará deitado ou sentado a maior parte do tempo.",
-              },
-              {
-                q: "E se eu adormecer?",
-                a: "Ótimo. O corpo sabe o que precisa. O sono durante a sessão é integração.",
-              },
-              {
-                q: "Há contraindicações?",
-                a: "Sessões individuais são adaptadas. Epilepsia fotossensível ou implantes metálicos — informe antes.",
-              },
+              { q: t("faq0q"), a: t("faq0a") },
+              { q: t("faq1q"), a: t("faq1a") },
+              { q: t("faq2q"), a: t("faq2a") },
+              { q: t("faq3q"), a: t("faq3a") },
             ].map(({ q, a }) => (
               <details key={q} className="ds-accordion__item">
                 <summary className="ds-accordion__trigger">

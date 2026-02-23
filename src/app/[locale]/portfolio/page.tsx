@@ -1,18 +1,20 @@
 "use client";
 
 import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
+import { useTranslations } from "next-intl";
+import { api } from "../../../../convex/_generated/api";
 import { ScapesEmpty } from "@/components/artwork/ScapesEmpty";
 
 export default function Portfolio() {
+  const t = useTranslations("portfolioPage");
   const items = useQuery(api.portfolio.listPublished, { limit: 100 });
 
   return (
     <main className="min-h-dvh pb-24">
       <section className="journey-container journey-section">
-        <div className="journey-label">Portfolio</div>
-        <h1 className="journey-title">Portfolio</h1>
-        <p className="journey-sub">Sessions, events, retreats, and collaborations.</p>
+        <div className="journey-label">{t("label")}</div>
+        <h1 className="journey-title">{t("title")}</h1>
+        <p className="journey-sub">{t("sub")}</p>
       </section>
 
       <section className="journey-container journey-section">
@@ -49,8 +51,8 @@ export default function Portfolio() {
           {items && items.length === 0 ? (
             <div className="md:col-span-3">
               <ScapesEmpty
-                title="Portfolio em construção"
-                description="Sessions, events, and retreats — coming soon."
+                title={t("emptyTitle")}
+                description={t("emptyDescription")}
               />
             </div>
           ) : null}
