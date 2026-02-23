@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about the sound healing and contemplative approach behind Sound Sanctuary sessions.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "aboutPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/about",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
 export default async function About() {
   const t = await getTranslations("aboutPage");

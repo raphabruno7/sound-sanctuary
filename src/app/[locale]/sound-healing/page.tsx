@@ -2,12 +2,22 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 
-export const metadata: Metadata = {
-  title: "Sound Healing",
-  description:
-    "How sound travels through the nervous system. The practice behind Sound Sanctuary sessions.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "soundHealingPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/sound-healing",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
 export default async function SoundHealingPage() {
   const t = await getTranslations("soundHealingPage");

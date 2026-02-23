@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Book a 1:1 sound healing session or ask a question. Three questions. Reply within 48 hours.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contactPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/contact",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
 export default async function ContactPage() {
   const t = await getTranslations("contactPage");

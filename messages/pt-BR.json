@@ -9,12 +9,27 @@
     "langToggle": "EN"
   },
   "home": {
+    "meta": {
+      "title": "Sound Sanctuary",
+      "description": "Sound healing, práticas contemplativas e sessões com os pés no chão para apoiar calma e regulação do sistema nervoso."
+    },
     "hero": {
       "title": "Sound Healing",
       "poetic": "O prana canta enquanto flui",
       "sub": "Uma prática de regulação para a vida moderna: ritmo, descanso e integração.",
       "cta_primary": "Agendar 1:1",
       "cta_secondary": "Entrar no Sound Healing Live"
+    },
+    "soundBath": {
+      "label": "Banho de Som",
+      "title": "Som: o super alimento do sistema nervoso.",
+      "opening": "O sistema nervoso é vibração.",
+      "p1": "Quando você se deita e os instrumentos começam a tocar, seu sistema nervoso entra em sintonia com o som. Ele obedece e vibra junto.",
+      "p2": "Seus ossos, sua água interna, cada célula — tudo entra em ressonância com as taças tibetanas e o gongo.",
+      "reset": "E você reinicia.",
+      "p3": "Durante um Banho de Som, o som percorre o seu corpo, organiza onde há desordem, dissolve o que está preso e gentilmente desfaz bloqueios.",
+      "p4": "O som ajuda o corpo a sair do estresse crônico e entrar em estados que suportam o sono, a imunidade, a clareza mental, o equilíbrio emocional e a saúde a longo prazo.",
+      "closing": "E sabe o que você precisa fazer? Nada. Apenas deitar e receber."
     },
     "forWhom": {
       "label": "Para quem é",
@@ -136,6 +151,10 @@
     "noSpam": "Sem spam. Cancele quando quiser."
   },
   "aboutPage": {
+    "meta": {
+      "title": "Sobre",
+      "description": "Conheça a abordagem de sound healing e práticas contemplativas por trás das sessões do Sound Sanctuary."
+    },
     "label": "Sobre",
     "title": "Sobre",
     "sub": "Meu trabalho une sound healing, música e prática contemplativa para criar um espaço calmo e acolhedor. Cada sessão é conduzida com suavidade, respeitando como o seu corpo está no momento, para que descanso e regulação aconteçam naturalmente.",
@@ -145,6 +164,10 @@
     "sessionsBody": "Cada sessão é conduzida lentamente, com aberturas e encerramentos claros, para que a integração aconteça com naturalidade."
   },
   "contactPage": {
+    "meta": {
+      "title": "Contato",
+      "description": "Agende uma sessão 1:1 de sound healing ou faça uma pergunta. Três perguntas. Resposta em até 48 horas."
+    },
     "label": "Contato",
     "title": "Agendar 1:1",
     "sub": "Três perguntas. Respondo em até 48 horas.",
@@ -156,6 +179,10 @@
     "ctaSecondary": "Ver sessões"
   },
   "portfolioPage": {
+    "meta": {
+      "title": "Portfólio",
+      "description": "Sessões, eventos, retiros e colaborações — provas e contexto do Sound Sanctuary."
+    },
     "label": "Portfólio",
     "title": "Portfólio",
     "sub": "Sessões, eventos, retiros e colaborações.",
@@ -163,6 +190,10 @@
     "emptyDescription": "Sessões, eventos e retiros — em breve."
   },
   "sessionsPage": {
+    "meta": {
+      "title": "Sessões",
+      "description": "Terapia sonora 1:1 e Jornada Sonora em grupo — formatos, durações e como agendar."
+    },
     "label": "Sessões",
     "title": "Escolha a profundidade",
     "sub": "Disponibilidade e fuso horário aparecem no fluxo de agendamento, não na navegação global.",
@@ -201,6 +232,10 @@
     "faq3a": "Sessões 1:1 podem ser adaptadas. Epilepsia fotossensível ou implantes metálicos — informe antes."
   },
   "soundHealingPage": {
+    "meta": {
+      "title": "Sound Healing",
+      "description": "Como o som atravessa o sistema nervoso. A prática por trás das sessões do Sound Sanctuary."
+    },
     "label": "Sound Healing",
     "title": "Som como luz líquida",
     "sub": "O som das tigelas percorre o sistema nervoso como a seiva percorre as nervuras de uma folha—encontrando caminhos e restaurando conexões.",
@@ -214,5 +249,35 @@
     "ctaPrompt": "Quer sentir isso no corpo?",
     "ctaPrimary": "Agendar 1:1",
     "ctaSecondary": "Ver formatos"
+  },
+  "newsletterPage": {
+    "meta": {
+      "title": "Newsletter",
+      "description": "Atualizações tranquilas sobre disponibilidade de sessões e notas reflexivas sobre som e regulação."
+    },
+    "label": "Newsletter",
+    "title": "Atualizações tranquilas",
+    "sub": "Atualizações tranquilas sobre disponibilidade de sessões e notas reflexivas sobre som e regulação.",
+    "sectionReceiveTitle": "O que você vai receber",
+    "sectionReceiveBody": "Atualizações tranquilas sobre disponibilidade de sessões, novos formatos e notas reflexivas sobre som e regulação.",
+    "sectionRhythmTitle": "Ritmo de envio",
+    "sectionRhythmBody": "Enviado ocasionalmente — sem spam. Espere uma nota curta quando houver algo realmente útil para compartilhar."
+  },
+  "privacyPage": {
+    "meta": {
+      "title": "Privacidade",
+      "description": "Aviso de privacidade para visitantes do site e inscritos na newsletter do Sound Sanctuary."
+    },
+    "label": "Privacidade",
+    "title": "Privacidade",
+    "sub": "Um aviso curto e prático sobre o que é coletado e por quê. Sem rastreamento escondido e sem revenda de dados.",
+    "collectTitle": "O que coletamos",
+    "collectBody": "Seu email, se você assinar a newsletter. Se você entrar em contato, você também pode compartilhar seu nome e o conteúdo da mensagem.",
+    "useTitle": "Para que usamos",
+    "useBody": "Enviar atualizações da newsletter e responder dúvidas sobre sessões. Não vendemos seus dados pessoais.",
+    "removeTitle": "Como remover seus dados",
+    "removeBody": "Toda newsletter inclui um link de descadastro. Você também pode nos enviar um email pedindo remoção.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "Não usamos cookies de publicidade ou rastreamento. Se algo mudar no futuro, esta página será atualizada."
   }
 }

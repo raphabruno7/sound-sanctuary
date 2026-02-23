@@ -1,37 +1,41 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/i18n/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy",
-  description: "Privacy notice for Sound Sanctuary website visitors and newsletter subscribers.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "privacyPage" });
+  return buildPageMetadata({
+    locale,
+    pathname: "/privacy",
+    title: t("meta.title"),
+    description: t("meta.description"),
+  });
+}
 
-export default function Privacy() {
+export default async function Privacy() {
+  const t = await getTranslations("privacyPage");
   return (
     <main className="min-h-dvh pb-24">
       <section className="journey-container journey-section">
-        <div className="journey-label">Privacy</div>
-        <h1 className="journey-title">Privacy</h1>
-        <p className="journey-sub">
-          A short, practical notice about what is collected and why. No hidden tracking and no
-          data resale.
-        </p>
+        <div className="journey-label">{t("label")}</div>
+        <h1 className="journey-title">{t("title")}</h1>
+        <p className="journey-sub">{t("sub")}</p>
       </section>
 
       <section className="journey-container journey-section">
         <div className="journey-grid-2 gap-6">
           <article className="ds-glass journey-card">
-            <h2 className="ds-font-display ds-size-2xl ds-weight-light">What we collect</h2>
-            <p className="mt-3 text-secondary">
-              Your email address if you subscribe to the newsletter. If you contact us, you may
-              also share your name and message content.
-            </p>
+            <h2 className="ds-font-display ds-size-2xl ds-weight-light">{t("collectTitle")}</h2>
+            <p className="mt-3 text-secondary">{t("collectBody")}</p>
           </article>
           <article className="ds-glass journey-card">
-            <h2 className="ds-font-display ds-size-2xl ds-weight-light">What we use it for</h2>
-            <p className="mt-3 text-secondary">
-              Sending newsletter updates and replying to session inquiries. We do not sell your
-              personal data.
-            </p>
+            <h2 className="ds-font-display ds-size-2xl ds-weight-light">{t("useTitle")}</h2>
+            <p className="mt-3 text-secondary">{t("useBody")}</p>
           </article>
         </div>
       </section>
@@ -73,18 +77,12 @@ export default function Privacy() {
       <section className="journey-container journey-section">
         <div className="journey-grid-2 gap-6">
           <article className="ds-glass journey-card">
-            <h2 className="ds-font-display ds-size-2xl ds-weight-light">How to remove your data</h2>
-            <p className="mt-3 text-secondary">
-              Every newsletter email includes an unsubscribe link. You can also email us requesting
-              removal.
-            </p>
+            <h2 className="ds-font-display ds-size-2xl ds-weight-light">{t("removeTitle")}</h2>
+            <p className="mt-3 text-secondary">{t("removeBody")}</p>
           </article>
           <article className="ds-glass journey-card">
-            <h2 className="ds-font-display ds-size-2xl ds-weight-light">Cookies</h2>
-            <p className="mt-3 text-secondary">
-              We do not use advertising or tracking cookies. If anything changes in the future,
-              this page will be updated.
-            </p>
+            <h2 className="ds-font-display ds-size-2xl ds-weight-light">{t("cookiesTitle")}</h2>
+            <p className="mt-3 text-secondary">{t("cookiesBody")}</p>
           </article>
         </div>
       </section>

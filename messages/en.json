@@ -9,12 +9,27 @@
     "langToggle": "PT"
   },
   "home": {
+    "meta": {
+      "title": "Sound Sanctuary",
+      "description": "Sound healing, contemplative practices, and grounded sessions to support calm and nervous system regulation."
+    },
     "hero": {
       "title": "Sound Healing",
       "poetic": "O prana canta enquanto flui",
       "sub": "Regulation practice for modern life: rhythm, rest, and integration.",
       "cta_primary": "Book a 1:1",
       "cta_secondary": "Join Sound Healing Live"
+    },
+    "soundBath": {
+      "label": "Sound Bath",
+      "title": "Sound: the superfood for the nervous system.",
+      "opening": "The nervous system is vibration.",
+      "p1": "When you lie down and the instruments begin to play, your nervous system tunes in with the sound. It obeys and vibrates along.",
+      "p2": "Your bones, your inner water, every cell — everything enters resonance with the Tibetan singing bowls and the gong.",
+      "reset": "And you reboot.",
+      "p3": "During a Sound Bath, sound travels through your body, organizes where there is disorder, dissolves what is stuck, and gently unravels blockages.",
+      "p4": "Sound helps the body move out of chronic stress and into states that support sleep, immunity, mental clarity, emotional balance, and long-term health.",
+      "closing": "And do you know what you need to do? Nothing. Just lie down and receive."
     },
     "forWhom": {
       "label": "Who It Is For",
@@ -136,6 +151,10 @@
     "noSpam": "No spam. Unsubscribe anytime."
   },
   "aboutPage": {
+    "meta": {
+      "title": "About",
+      "description": "Learn about the sound healing and contemplative approach behind Sound Sanctuary sessions."
+    },
     "label": "About",
     "title": "About",
     "sub": "My work brings together sound healing, music, and contemplative practice to create a calm and supportive space. Each session is paced gently, with care for how your body feels in the moment, so rest and regulation can happen naturally.",
@@ -145,6 +164,10 @@
     "sessionsBody": "Each session is paced slowly with clear openings and closings so integration feels natural."
   },
   "contactPage": {
+    "meta": {
+      "title": "Contact",
+      "description": "Book a 1:1 sound healing session or ask a question. Three questions. Reply within 48 hours."
+    },
     "label": "Contact",
     "title": "Book a 1:1",
     "sub": "Three questions. I reply within 48 hours.",
@@ -156,6 +179,10 @@
     "ctaSecondary": "Review sessions"
   },
   "portfolioPage": {
+    "meta": {
+      "title": "Portfolio",
+      "description": "Sessions, events, retreats, and collaborations — proof and context from Sound Sanctuary."
+    },
     "label": "Portfolio",
     "title": "Portfolio",
     "sub": "Sessions, events, retreats, and collaborations.",
@@ -163,6 +190,10 @@
     "emptyDescription": "Sessions, events, and retreats — coming soon."
   },
   "sessionsPage": {
+    "meta": {
+      "title": "Sessions",
+      "description": "1:1 Sound Therapy and Group Sound Journey — formats, durations, and how to book."
+    },
     "label": "Sessions",
     "title": "Choose your depth",
     "sub": "Availability and timezone details appear in booking flow, not in global navigation.",
@@ -201,6 +232,10 @@
     "faq3a": "1:1 sessions can be adapted. Photosensitive epilepsy or metal implants — tell me beforehand."
   },
   "soundHealingPage": {
+    "meta": {
+      "title": "Sound Healing",
+      "description": "How sound travels through the nervous system. The practice behind Sound Sanctuary sessions."
+    },
     "label": "Sound Healing",
     "title": "Sound as liquid light",
     "sub": "The sound of the bowls moves through the nervous system the way sap moves through a leaf’s veins—finding pathways and restoring connection.",
@@ -214,5 +249,35 @@
     "ctaPrompt": "Want to feel this in your body?",
     "ctaPrimary": "Book a 1:1",
     "ctaSecondary": "See formats"
+  },
+  "newsletterPage": {
+    "meta": {
+      "title": "Newsletter",
+      "description": "Quiet updates on session availability and reflective notes on sound and regulation."
+    },
+    "label": "Newsletter",
+    "title": "Quiet updates",
+    "sub": "Quiet updates on session availability and reflective notes on sound and regulation.",
+    "sectionReceiveTitle": "What You Will Receive",
+    "sectionReceiveBody": "Quiet updates on session availability, new formats, and reflective notes on sound and regulation.",
+    "sectionRhythmTitle": "Delivery Rhythm",
+    "sectionRhythmBody": "Sent occasionally—no spam. Expect a short note when there’s something genuinely useful to share."
+  },
+  "privacyPage": {
+    "meta": {
+      "title": "Privacy",
+      "description": "Privacy notice for Sound Sanctuary website visitors and newsletter subscribers."
+    },
+    "label": "Privacy",
+    "title": "Privacy",
+    "sub": "A short, practical notice about what is collected and why. No hidden tracking and no data resale.",
+    "collectTitle": "What we collect",
+    "collectBody": "Your email address if you subscribe to the newsletter. If you contact us, you may also share your name and message content.",
+    "useTitle": "What we use it for",
+    "useBody": "Sending newsletter updates and replying to session inquiries. We do not sell your personal data.",
+    "removeTitle": "How to remove your data",
+    "removeBody": "Every newsletter email includes an unsubscribe link. You can also email us requesting removal.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "We do not use advertising or tracking cookies. If anything changes in the future, this page will be updated."
   }
 }

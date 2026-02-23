@@ -1,13 +1,25 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sound-sanctuary.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Sound Sanctuary",
     template: "%s | Sound Sanctuary",
   },
   description:
     "Sound healing, contemplative practices, and grounded sessions to support calm and nervous system regulation.",
+  openGraph: {
+    siteName: "Sound Sanctuary",
+    type: "website",
+    url: BASE_URL,
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
