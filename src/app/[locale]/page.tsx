@@ -7,6 +7,7 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 import { PractitionerSection } from "@/components/PractitionerSection";
+import { HeroTypewriter } from "@/components/HeroTypewriter";
 
 export async function generateMetadata({
   params,
@@ -123,7 +124,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-dvh pb-24">
-      {/* ── 1. HERO — full 3:2 photo + Sound Bath overlay on the floor ── */}
+      {/* ── 1. HERO — cinematic photo + typewriter text ── */}
       <section className="home-hero">
         <Image
           src="/media/hero/2627.jpg"
@@ -135,44 +136,28 @@ export default async function Home() {
         />
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="home-hero__vignette" aria-hidden="true" />
-
-        {/* Sound Bath text — anchored to the floor/ground area, right half */}
-        <div className="home-hero__soundbath">
-          <span className="home-hero__soundbath-label">{t("soundBath.label")}</span>
-          <h2 className="home-hero__soundbath-title">{t("soundBath.title")}</h2>
-          <div className="home-hero__soundbath-body">
-            <p>{t("soundBath.opening")}</p>
-            <p>{t("soundBath.p1")}</p>
-            <p>{t("soundBath.p2")}</p>
-            <span className="home-hero__soundbath-reset">{t("soundBath.reset")}</span>
-            <p>{t("soundBath.p3")}</p>
-            <p>{t("soundBath.p4")}</p>
-          </div>
-          <span className="home-hero__soundbath-closing">{t("soundBath.closing")}</span>
-        </div>
-
-        {/* H1 + CTAs — left side, bottom */}
-        <div className="home-hero__content journey-container">
-          <div className="home-hero__copy">
-            <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">
-              {t("hero.title")}
-            </h1>
-            <p className="journey-sub ds-size-lg">{t("hero.sub")}</p>
-            <div className="journey-axon" aria-hidden="true">
-              <span className="journey-node left" />
-              <span className="journey-node right" />
-            </div>
-            <div className="btn-row">
-              <Link className="btn btn-primary" href="/contact">
-                {t("hero.cta_primary")}
-              </Link>
-              <Link className="btn btn-secondary" href="/sessions">
-                {t("hero.cta_secondary")}
-              </Link>
-            </div>
-          </div>
-        </div>
+        <HeroTypewriter
+          label={t("soundBath.label")}
+          title={t("soundBath.title")}
+          opening={t("soundBath.opening")}
+          p1={t("soundBath.p1")}
+          p2={t("soundBath.p2")}
+          reset={t("soundBath.reset")}
+          p3={t("soundBath.p3")}
+          p4={t("soundBath.p4")}
+          closing={t("soundBath.closing")}
+        />
       </section>
+
+      {/* ── CTA strip ── */}
+      <div className="hero-cta-strip">
+        <Link className="btn btn-primary" href="/contact">
+          {t("hero.cta_primary")}
+        </Link>
+        <Link className="btn btn-secondary" href="/sessions">
+          {t("hero.cta_secondary")}
+        </Link>
+      </div>
 
       {/* ── 2. FOR WHOM — "you →" photo annotation ──────────────── */}
       <section className="journey-container journey-section">
