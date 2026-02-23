@@ -123,11 +123,11 @@ export default async function Home() {
 
   return (
     <main className="min-h-dvh pb-24">
-      {/* ── 1. HERO ─────────────────────────────────────────────── */}
+      {/* ── 1. HERO — full 3:2 photo + Sound Bath overlay on the floor ── */}
       <section className="home-hero">
         <Image
           src="/media/hero/2627.jpg"
-          alt="Sound healing session in the forest"
+          alt="Sound healing session outdoors — Raphael playing instruments and a person lying down receiving sound"
           fill
           priority
           sizes="100vw"
@@ -135,14 +135,28 @@ export default async function Home() {
         />
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="home-hero__vignette" aria-hidden="true" />
+
+        {/* Sound Bath text — anchored to the floor/ground area, right half */}
+        <div className="home-hero__soundbath">
+          <span className="home-hero__soundbath-label">{t("soundBath.label")}</span>
+          <h2 className="home-hero__soundbath-title">{t("soundBath.title")}</h2>
+          <div className="home-hero__soundbath-body">
+            <p>{t("soundBath.opening")}</p>
+            <p>{t("soundBath.p1")}</p>
+            <p>{t("soundBath.p2")}</p>
+            <span className="home-hero__soundbath-reset">{t("soundBath.reset")}</span>
+            <p>{t("soundBath.p3")}</p>
+            <p>{t("soundBath.p4")}</p>
+          </div>
+          <span className="home-hero__soundbath-closing">{t("soundBath.closing")}</span>
+        </div>
+
+        {/* H1 + CTAs — left side, bottom */}
         <div className="home-hero__content journey-container">
           <div className="home-hero__copy">
             <h1 className="ds-font-display ds-weight-light ds-size-6xl ds-leading-tight">
               {t("hero.title")}
             </h1>
-            <p className="mt-3 ds-font-display ds-italic ds-weight-light ds-size-xl journey-breathe sh-breath-pulse text-secondary">
-              {t("hero.poetic")}
-            </p>
             <p className="journey-sub ds-size-lg">{t("hero.sub")}</p>
             <div className="journey-axon" aria-hidden="true">
               <span className="journey-node left" />
@@ -158,27 +172,6 @@ export default async function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ── 1.5. SOUND BATH — what it is ──────────────────────── */}
-      <section className="journey-container journey-section journey-section-lg">
-        <div className="journey-label">{t("soundBath.label")}</div>
-        <h2 className="journey-title ds-font-display ds-weight-light">
-          {t("soundBath.title")}
-        </h2>
-        <p className="journey-sub mt-4">{t("soundBath.opening")}</p>
-        <div className="ds-glass journey-card mt-6 space-y-4 text-secondary leading-relaxed">
-          <p>{t("soundBath.p1")}</p>
-          <p>{t("soundBath.p2")}</p>
-          <p className="ds-font-display ds-italic ds-size-xl journey-breathe">
-            {t("soundBath.reset")}
-          </p>
-          <p>{t("soundBath.p3")}</p>
-          <p>{t("soundBath.p4")}</p>
-        </div>
-        <p className="mt-6 ds-size-lg ds-font-display ds-italic text-secondary">
-          {t("soundBath.closing")}
-        </p>
       </section>
 
       {/* ── 2. FOR WHOM — "you →" photo annotation ──────────────── */}
