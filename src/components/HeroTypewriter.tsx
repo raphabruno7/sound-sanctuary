@@ -149,6 +149,7 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
     const node = containerRef.current;
     if (!node) return;
 
+    const observeTarget = node.parentElement ?? node;
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -227,7 +228,7 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
       { threshold: 0.3 },
     );
 
-    observer.observe(node);
+    observer.observe(observeTarget);
     return () => observer.disconnect();
   }, [segmentOffsets, segments, totalChars]);
 
