@@ -223,27 +223,27 @@
   object-position: center center;
 }
 
-/* Bottom-only vignette — covers ~45% of height for text legibility */
+/* Bottom vignette — strengthened for centered text legibility */
 .home-hero__overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: linear-gradient(
     to top,
-    rgba(26, 26, 22, 0.92) 0%,
-    rgba(26, 26, 22, 0.72) 20%,
-    rgba(26, 26, 22, 0.35) 38%,
-    transparent 55%
+    rgba(26, 26, 22, 0.95) 0%,
+    rgba(26, 26, 22, 0.80) 25%,
+    rgba(26, 26, 22, 0.40) 45%,
+    transparent 60%
   );
 }
 
 :root:not(.dark) .home-hero__overlay {
   background: linear-gradient(
     to top,
-    rgba(26, 26, 22, 0.82) 0%,
-    rgba(26, 26, 22, 0.55) 20%,
-    rgba(26, 26, 22, 0.2) 38%,
-    transparent 55%
+    rgba(26, 26, 22, 0.88) 0%,
+    rgba(26, 26, 22, 0.65) 25%,
+    rgba(26, 26, 22, 0.25) 45%,
+    transparent 60%
   );
 }
 
@@ -254,118 +254,93 @@
   background: radial-gradient(ellipse at 50% 80%, rgba(196, 163, 90, 0.15), transparent 70%);
 }
 
-/* ── Sound Bath overlay — right half, anchored to the floor of the photo ── */
-.home-hero__soundbath {
+/* ── Hero Typewriter — centered text block ── */
+.hero-tw {
   position: absolute;
-  bottom: 4.5rem;
+  bottom: 3rem;
+  left: 0;
   right: 0;
-  left: 50%;
-  padding-right: var(--journey-px, 2rem);
-  padding-left: 2rem;
-  pointer-events: none;
   z-index: 2;
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  pointer-events: none;
 }
 
-.home-hero__soundbath-label {
+.hero-tw__label {
+  display: block;
   font-family: var(--sh-font-mono, 'DM Mono', monospace);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--sh-organic-gold-primary, #C4A35A);
-  opacity: 0.9;
-  margin-bottom: 0.6rem;
-  display: block;
+  margin-bottom: 0.75rem;
 }
 
-.home-hero__soundbath-title {
+.hero-tw__title {
+  display: block;
   font-family: var(--sh-font-display, 'Cormorant Garamond', serif);
   font-weight: 300;
-  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
   line-height: 1.15;
   color: #fff;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
 }
 
-.home-hero__soundbath-body {
+.hero-tw__body {
+  display: block;
   font-family: var(--sh-font-sans, 'DM Sans', sans-serif);
-  font-size: clamp(0.75rem, 1.3vw, 0.875rem);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
-  max-width: 38ch;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5em;
 }
 
-.home-hero__soundbath-reset {
+.hero-tw__reset {
+  display: block;
   font-family: var(--sh-font-display, 'Cormorant Garamond', serif);
+  font-weight: 300;
   font-style: italic;
-  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: var(--sh-organic-gold-light, #E0C97F);
-  display: block;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-.home-hero__soundbath-closing {
+.hero-tw__closing {
+  display: block;
   font-family: var(--sh-font-display, 'Cormorant Garamond', serif);
+  font-weight: 300;
   font-style: italic;
-  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-  margin-top: 0.75rem;
-  display: block;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.65);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+  margin-top: 1em;
 }
 
-.home-hero__content {
-  position: absolute;
-  inset: 0;
+/* Reduced motion: instant reveal with fade */
+.hero-tw--revealed {
+  animation: heroFadeIn 1s ease-out forwards;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CTA strip after hero ── */
+.hero-cta-strip {
   display: flex;
-  align-items: flex-end;
-  padding-top: 6rem;
-  padding-bottom: 4.5rem;
-  z-index: 2;
-}
-
-.home-hero__copy {
-  max-width: 44ch;
-}
-
-.dark .home-hero__copy {
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
-}
-
-/* ── Hero CTA legibility ── */
-.home-hero .btn-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.home-hero .btn-secondary {
-  background: rgba(26, 26, 22, 0.4);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-color: rgba(196, 163, 90, 0.4);
-  color: var(--sh-semantic-text-primary);
-}
-
-.home-hero .btn-secondary:hover {
-  background: rgba(26, 26, 22, 0.55);
-  border-color: rgba(196, 163, 90, 0.6);
-}
-
-:root:not(.dark) .home-hero .btn-secondary {
-  background: rgba(248, 246, 241, 0.5);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-color: rgba(196, 163, 90, 0.35);
-  color: var(--sh-semantic-text-primary);
-}
-
-:root:not(.dark) .home-hero .btn-secondary:hover {
-  background: rgba(248, 246, 241, 0.7);
-  border-color: rgba(196, 163, 90, 0.55);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -375,27 +350,30 @@
   .home-hero__image {
     object-position: center center;
   }
-  .home-hero__content {
-    padding-top: 4.5rem;
-    padding-bottom: 3rem;
+  .hero-tw {
+    bottom: 2rem;
+    max-width: 90vw;
+    padding: 0 1rem;
   }
-  .home-hero__soundbath {
-    left: 0;
-    right: 0;
-    bottom: 1rem;
-    padding: 0 var(--journey-px, 1.25rem);
+  .hero-tw__title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: 1rem;
   }
-  .home-hero__soundbath-body {
-    display: none;
+  .hero-tw__body {
+    font-size: clamp(0.8rem, 3.2vw, 0.9rem);
   }
-  .home-hero__soundbath-closing {
-    display: none;
+  .hero-cta-strip {
+    flex-direction: column;
+    padding: 2rem 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .home-hero {
     aspect-ratio: 4 / 3;
+  }
+  .hero-tw {
+    bottom: 1.5rem;
   }
 }
 
