@@ -1,11 +1,11 @@
-# Codex Exec — S12: Refinar "Para quem e" section
+# Codex Exec — S12: Hero visual fixes + Refinar "Para quem e"
 
 ## Context
 
 Sound Sanctuary is a Next.js 16 site for sound healing (banho de som).
 The hero section was just pivoted to a minimal Claude Code status-line
-aesthetic (commit `c982b23`). The next section in the page flow is
-"Para quem e" — the user identification/recognition section.
+aesthetic (commit `c982b23`). Visual review revealed positioning and
+sizing issues that need fixing before moving to the next section.
 
 **User journey:** sentir (hero) -> se reconhecer (para quem e) -> entender
 -> decidir -> agendar.
@@ -21,11 +21,181 @@ sem diagnostico. Zero performance. Convite gentil, nunca pressao.
 
 **Publico:** Tech-savvy em Portugal. Valoriza clareza, sem misticismo.
 
-## Task
+---
 
-Refine the "Para quem e" section (section 2 on the homepage). The user
-(Raphael) will provide new text content in the i18n messages before this
-runs. This prompt covers the code/CSS refinement.
+## Part 1: Hero visual fixes (PRIORITY — do this first)
+
+Four issues identified from browser testing (see screenshot context):
+
+### 1.1 "VOCE" label + arrow needs to be lower
+
+The "VOCE" + arrow is currently at `top: 55%` — it needs to sit lower,
+closer to the person lying down in the photo. The arrow must clearly
+point AT the person, not float in the middle of the image.
+
+**File:** `src/app/globals.css`
+
+**Current CSS (line 274):**
+```css
+.hero-you {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ...
+}
+```
+
+**Fix:** Change `top: 55%` to `top: 68%`. This pushes VOCE + arrow down
+closer to the person lying in the lower third of the photo. Test visually
+and adjust if needed (65-72% range).
+
+### 1.2 Status line phrases need to be larger
+
+The rotating phrases (`SISTEMA NERVOSO ALIMENTANDO`, `VIBRATINGGG`, etc.)
+are too small at `font-size: 0.68rem`. They are the main text element of
+the hero and need more presence.
+
+**File:** `src/app/globals.css`
+
+**Current CSS (line ~398):**
+```css
+.hero-sl__phrase {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+}
+```
+
+**Fix:** Increase to `font-size: 0.82rem` and adjust letter-spacing to
+`0.18em` (slightly tighter to compensate for larger size). Also increase
+the CTA to match:
+
+```css
+.hero-sl__phrase {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+.hero-sl__cta {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+}
+.hero-sl__dot {
+  font-size: 0.82rem;
+}
+```
+
+Update mobile breakpoints proportionally:
+- 768px: `.hero-sl__phrase, .hero-sl__cta { font-size: 0.75rem; }`
+- 480px: `.hero-sl__phrase, .hero-sl__cta { font-size: 0.68rem; }`
+
+### 1.3 StrikeWave circle needs to be more visible and vibrant
+
+The StrikeWave SVG (concentric ripple circles) is too subtle. It needs to
+feel like it is actually vibrating — more visible, slightly larger, with
+more dynamic animation.
+
+**File:** `src/app/globals.css`
+
+**Current CSS:**
+```css
+.hero-sl__wave {
+  width: 22px;
+  height: 22px;
+}
+.hero-sl__ring {
+  stroke-width: 1.5;
+  animation: heroRipple 6000ms ...;
+}
+.hero-sl__core {
+  animation: heroPulse 6000ms ease-in-out infinite;
+}
+```
+
+**Fix — make it larger, bolder, faster:**
+
+```css
+.hero-sl__wave {
+  width: 28px;
+  height: 28px;
+}
+.hero-sl__ring {
+  stroke-width: 2;
+  animation: heroRipple 4500ms cubic-bezier(0.33, 0, 0.67, 1) infinite;
+}
+.hero-sl__core {
+  animation: heroPulse 4500ms ease-in-out infinite;
+}
+```
+
+Also update the keyframes to be more dramatic:
+
+```css
+@keyframes heroRipple {
+  0% { opacity: 0; transform: scale(0.3); }
+  12% { opacity: 0.8; }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+@keyframes heroPulse {
+  0%, 100% { opacity: 0.3; r: 3; }
+  50% { opacity: 1; r: 5; }
+}
+```
+
+And **also increase the SVG circle radii** in the component to make the
+rings more spread out. In `src/components/HeroStatusLine.tsx`, the
+StrikeWave function currently has:
+
+```tsx
+<circle ... r="12" />
+<circle ... r="24" />
+<circle ... r="36" />
+<circle ... r="3" />  // core
+```
+
+Change to:
+```tsx
+<circle ... r="15" />
+<circle ... r="30" />
+<circle ... r="45" />
+<circle ... r="4" />  // core
+```
+
+### 1.4 Add vibrate/pulse to the entire status line container
+
+The phrases already have `phraseVibrate` but the whole status line
+(including the StrikeWave) should feel alive. Add a very subtle shared
+pulse to the status container:
+
+**File:** `src/app/globals.css`
+
+Add after `.hero-sl__status--visible`:
+
+```css
+.hero-sl__status--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  animation: statusPulse 4s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+```
+
+### 1.5 Commit hero fixes
+
+```bash
+git add src/app/globals.css src/components/HeroStatusLine.tsx
+git commit -m "fix(hero): VOCE lower, phrases larger, strike-wave more visible
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
+```
+
+---
+
+## Part 2: Refinar "Para quem e" section
 
 ### What to do
 
@@ -49,9 +219,9 @@ runs. This prompt covers the code/CSS refinement.
    - Keep the 2-column grid layout (photo left, text right)
    - The photo currently reuses the hero image (`/media/hero/2627.jpg`).
      This may change — check if Raphael specifies a different image.
-   - The "voce ->" annotation on the photo may be redundant now that
-     the hero already has "VOCE" + arrow. Consider removing it or
-     making it more subtle. Ask Raphael if unclear.
+   - **Remove the "voce ->" annotation on the photo** — it is redundant
+     now that the hero already has "VOCE" + arrow pointing at the person.
+     Remove the `<span>` element and the `forWhom.annotation` i18n key.
    - The symptom list items should feel like gentle recognition, not a
      clinical checklist. Use the tone described above.
    - The CTA glass card at the bottom should maintain the current
@@ -81,14 +251,70 @@ runs. This prompt covers the code/CSS refinement.
    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
    ```
 
+---
+
 ## Files
 
-| File | Action |
-|------|--------|
-| `messages/pt-BR.json` | Modify `home.forWhom` |
-| `messages/en.json` | Modify `home.forWhom` |
-| `src/app/[locale]/page.tsx` | Modify section 2 (lines 157-202) |
-| `src/app/globals.css` | Modify if layout changes needed |
+| File | Action | Part |
+|------|--------|------|
+| `src/app/globals.css` | Hero CSS fixes + section CSS | 1 + 2 |
+| `src/components/HeroStatusLine.tsx` | StrikeWave SVG radii | 1 |
+| `messages/pt-BR.json` | Modify `home.forWhom` | 2 |
+| `messages/en.json` | Modify `home.forWhom` | 2 |
+| `src/app/[locale]/page.tsx` | Modify section 2 (lines 157-202) | 2 |
+
+## Current hero CSS (relevant sections in globals.css)
+
+```css
+/* VOCE + arrow — line 272 */
+.hero-you {
+  position: absolute;
+  top: 55%;          /* <- needs to be ~68% */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-you__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+}
+
+/* Status line — line 308 */
+.hero-sl__status { ... }
+
+/* Strike-wave — line 326 */
+.hero-sl__wave {
+  width: 22px;       /* <- needs to be 28px */
+  height: 22px;
+}
+.hero-sl__ring {
+  stroke-width: 1.5; /* <- needs to be 2 */
+  animation: heroRipple 6000ms ...;  /* <- needs to be 4500ms */
+}
+
+/* Phrase — line 396 */
+.hero-sl__phrase {
+  font-size: 0.68rem;  /* <- needs to be 0.82rem */
+  letter-spacing: 0.2em;
+}
+.hero-sl__cta {
+  font-size: 0.68rem;  /* <- needs to be 0.78rem */
+}
+```
+
+## Current StrikeWave component (HeroStatusLine.tsx)
+
+```tsx
+function StrikeWave() {
+  return (
+    <svg className="hero-sl__wave" viewBox="0 0 200 200" ...>
+      <circle className="hero-sl__ring hero-sl__r1" r="12" />  /* -> 15 */
+      <circle className="hero-sl__ring hero-sl__r2" r="24" />  /* -> 30 */
+      <circle className="hero-sl__ring hero-sl__r3" r="36" />  /* -> 45 */
+      <circle className="hero-sl__core" r="3" />                /* -> 4 */
+    </svg>
+  );
+}
+```
 
 ## Current i18n keys (`home.forWhom`)
 
@@ -186,10 +412,10 @@ runs. This prompt covers the code/CSS refinement.
 
 ## Important
 
+- **Do Part 1 (hero fixes) FIRST, commit, then Part 2**
 - Wait for Raphael to provide the new text content before updating i18n
 - If he does not provide new text, keep the current content and focus
   only on code/CSS/layout refinement
-- The "voce ->" annotation on the photo is likely redundant now — the
-  hero already has "VOCE" + arrow. Suggest removing or simplifying.
-- Run lint + build before committing
+- Remove the "voce ->" annotation on the photo — redundant with hero
+- Run lint + build before each commit
 - Use the verification-before-completion skill
