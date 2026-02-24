@@ -268,13 +268,20 @@
   padding: 0 1.5rem;
 }
 
-/* ── Slide container: each segment occupies the same space ── */
+/* ── Slide container: each segment fades + rises into place ── */
 .hero-tw__slide {
-  transition: opacity 1.2s ease-in-out;
-  opacity: 1;
+  transition: opacity 1.2s ease-in-out, transform 1.2s ease-out;
+  opacity: 0;
+  transform: translateY(16px);
 }
-.hero-tw__slide--in { opacity: 1; }
-.hero-tw__slide--out { opacity: 0; }
+.hero-tw__slide--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-tw__slide--out {
+  opacity: 0;
+  transform: translateY(-8px);
+}
 
 /* ── Typing cursor ── */
 .hero-tw__cursor {
@@ -334,11 +341,13 @@
   justify-content: center;
   gap: 0.6rem;
   opacity: 0;
-  transition: opacity 0.8s ease-out;
+  transform: translateY(12px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   pointer-events: none;
 }
 .hero-tw__status--visible {
   opacity: 1;
+  transform: translateY(0);
   pointer-events: auto;
 }
 

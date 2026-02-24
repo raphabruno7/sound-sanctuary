@@ -75,6 +75,7 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
   const [activeIndex, setActiveIndex] = useState(-1); // -1 = not started
   const [typedChars, setTypedChars] = useState(0);
   const [phase, setPhase] = useState<"typing" | "holding" | "dissolving" | "done">("typing");
+  const [entered, setEntered] = useState(false); // controls slide-up transition
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [phraseFading, setPhraseFading] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -151,6 +152,16 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
     [segments]
   );
 
+  // ── Trigger slide-up entrance on new segment ──
+  useEffect(() => {
+    if (activeIndex < 0 || activeIndex >= segments.length) return;
+    setEntered(false);
+    const frame = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setEntered(true));
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [activeIndex, segments.length]);
+
   // ── Start typing when activeIndex changes ──
   useEffect(() => {
     if (reducedMotion) return;
@@ -220,7 +231,7 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
       {/* Active segment */}
       {activeIndex >= 0 && activeIndex < segments.length && (
         <div
-          className={`hero-tw__slide ${phase === "dissolving" ? "hero-tw__slide--out" : "hero-tw__slide--in"}`}
+          className={`hero-tw__slide ${phase === "dissolving" ? "hero-tw__slide--out" : entered ? "hero-tw__slide--in" : ""}`}
         >
           <span className={activeClass}>{activeText}</span>
           {phase === "typing" && <span className="hero-tw__cursor" aria-hidden="true" />}
