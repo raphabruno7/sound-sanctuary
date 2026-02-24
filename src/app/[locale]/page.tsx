@@ -7,7 +7,7 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 import { PractitionerSection } from "@/components/PractitionerSection";
-import { HeroTypewriter } from "@/components/HeroTypewriter";
+import { HeroStatusLine } from "@/components/HeroStatusLine";
 
 export async function generateMetadata({
   params,
@@ -136,17 +136,10 @@ export default async function Home() {
         />
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="home-hero__vignette" aria-hidden="true" />
-        <HeroTypewriter
-          title={t("soundBath.title")}
-          opening={t("soundBath.opening")}
-          p1={t("soundBath.p1")}
-          p2={t("soundBath.p2")}
-          reset={t("soundBath.reset")}
-          p3={t("soundBath.p3")}
-          p4={t("soundBath.p4")}
-          closing={t("soundBath.closing")}
-          statusPhrases={t.raw("soundBath.statusPhrases")}
-          statusCta={t("soundBath.statusCta")}
+        <HeroStatusLine
+          youLabel={t("hero.youLabel")}
+          statusPhrases={t.raw("hero.statusPhrases")}
+          statusCta={t("hero.statusCta")}
           ctaHref="/contact"
         />
       </section>

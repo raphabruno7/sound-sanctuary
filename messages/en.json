@@ -16,20 +16,28 @@
     "hero": {
       "title": "Sound Healing",
       "sub": "Regulation practice for modern life: rhythm, rest, and integration.",
+      "youLabel": "YOU",
+      "statusPhrases": [
+        "lying downnn",
+        "bowls vibratinggg",
+        "nervous system feeding",
+        "regulatinggg",
+        "dissolving on the mat",
+        "delta frequency",
+        "transmuting",
+        "not doinggg",
+        "zero mind",
+        "restartinggg",
+        "vibratinggg",
+        "hibernating",
+        "silence loading",
+        "slow waves",
+        "gong processing",
+        "rebuild complete"
+      ],
+      "statusCta": "book",
       "cta_primary": "Book a 1:1",
       "cta_secondary": "Join Sound Healing Live"
-    },
-    "soundBath": {
-      "title": "Sound Bath: the superfood for the nervous system.",
-      "opening": "The nervous system is vibration.",
-      "p1": "When you lie down and the instruments begin to play, your nervous system tunes in with the sound. It obeys and vibrates along.",
-      "p2": "Your bones, your inner water, every cell — everything enters resonance with the Tibetan singing bowls and the gong.",
-      "reset": "And you reboot.",
-      "p3": "During a Sound Bath, sound travels through your body, organizes where there is disorder, dissolves what is stuck, and gently unravels blockages.",
-      "p4": "Sound helps the body move out of chronic stress and into states that support sleep, immunity, mental clarity, emotional balance, and long-term health.",
-      "closing": "Nothing. Just lie down and receive.",
-      "statusPhrases": ["vibrating", "melting into the mat", "dissolving", "receiving"],
-      "statusCta": "book"
     },
     "forWhom": {
       "label": "Who It Is For",
