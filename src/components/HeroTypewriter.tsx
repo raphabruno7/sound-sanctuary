@@ -1,9 +1,15 @@
 "use client";
 
-import { useRef, useState, useEffect, useMemo } from "react";
+import { useRef, useState, useEffect, useMemo, useCallback } from "react";
+import Link from "next/link";
+
+/* ═══════════════════════════════════════════════════════════
+   HeroTypewriter — cross-dissolve sequence with status line
+   Each segment types in, holds, fades out, next fades in.
+   After all segments, a persistent status line appears.
+   ═══════════════════════════════════════════════════════════ */
 
 interface HeroTypewriterProps {
-  label: string;
   title: string;
   opening: string;
   p1: string;
@@ -12,93 +18,116 @@ interface HeroTypewriterProps {
   p3: string;
   p4: string;
   closing: string;
+  statusPhrases: string[];
+  statusCta: string;
+  ctaHref: string;
 }
 
 interface Segment {
   text: string;
-  tag: "span" | "p";
   className: string;
-  pauseBefore: number;
 }
 
-const BASE_SPEED = 35;
+// ── Timing ──
+const BASE_SPEED = 55;
+const JITTER = 15;
+const HOLD_AFTER_TYPING = 2400;
+const DISSOLVE_DURATION = 1200;
+const PHRASE_INTERVAL = 4000;
+const PHRASE_FADE = 600;
 
 function getPauseForChar(char: string): number {
-  if (char === ",") return 150;
-  if (char === ".") return 400;
-  if (char === "—") return 200;
-  if (char === "?" || char === "!") return 300;
-  if (char === ":") return 200;
-  if (char === ";") return 150;
+  if (char === ",") return 220;
+  if (char === ".") return 600;
+  if (char === "—") return 300;
+  if (char === "?" || char === "!") return 450;
+  if (char === ":") return 350;
+  if (char === ";") return 220;
   return 0;
+}
+
+function jitter(): number {
+  return (Math.random() - 0.5) * 2 * JITTER;
+}
+
+// ── Strike-wave inline SVG ──
+function StrikeWave() {
+  return (
+    <svg
+      className="hero-tw__wave"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 300 300"
+      aria-hidden="true"
+    >
+      <circle className="hero-tw__ring hero-tw__r1" cx="150" cy="150" r="20" />
+      <circle className="hero-tw__ring hero-tw__r2" cx="150" cy="150" r="35" />
+      <circle className="hero-tw__ring hero-tw__r3" cx="150" cy="150" r="50" />
+      <circle className="hero-tw__core" cx="150" cy="150" r="5" />
+    </svg>
+  );
 }
 
 export function HeroTypewriter(props: HeroTypewriterProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const hasPlayed = useRef(false);
+  const hasStarted = useRef(false);
   const rafRef = useRef<number>(0);
-  const [displayedChars, setDisplayedChars] = useState(0);
+
+  const [activeIndex, setActiveIndex] = useState(-1); // -1 = not started
+  const [typedChars, setTypedChars] = useState(0);
+  const [phase, setPhase] = useState<"typing" | "holding" | "dissolving" | "done">("typing");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [phraseFading, setPhraseFading] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   const segments: Segment[] = useMemo(
     () => [
-      { text: props.label, tag: "span", className: "hero-tw__label", pauseBefore: 0 },
-      { text: props.title, tag: "span", className: "hero-tw__title", pauseBefore: 300 },
-      { text: props.opening, tag: "p", className: "hero-tw__body", pauseBefore: 600 },
-      { text: props.p1, tag: "p", className: "hero-tw__body", pauseBefore: 600 },
-      { text: props.p2, tag: "p", className: "hero-tw__body", pauseBefore: 600 },
-      { text: props.reset, tag: "span", className: "hero-tw__reset", pauseBefore: 800 },
-      { text: props.p3, tag: "p", className: "hero-tw__body", pauseBefore: 600 },
-      { text: props.p4, tag: "p", className: "hero-tw__body", pauseBefore: 600 },
-      { text: props.closing, tag: "p", className: "hero-tw__closing", pauseBefore: 1000 },
+      { text: props.title, className: "hero-tw__title" },
+      { text: props.opening, className: "hero-tw__body" },
+      { text: props.p1, className: "hero-tw__body" },
+      { text: props.p2, className: "hero-tw__body" },
+      { text: props.reset, className: "hero-tw__accent" },
+      { text: props.p3, className: "hero-tw__body" },
+      { text: props.p4, className: "hero-tw__body" },
+      { text: props.closing, className: "hero-tw__accent" },
     ],
-    [props.label, props.title, props.opening, props.p1, props.p2, props.reset, props.p3, props.p4, props.closing]
+    [props.title, props.opening, props.p1, props.p2, props.reset, props.p3, props.p4, props.closing]
   );
 
-  const { boundaries, totalChars } = useMemo(() => {
-    const b: number[] = [];
-    let total = 0;
-    for (const seg of segments) {
-      b.push(total);
-      total += seg.text.length;
-    }
-    return { boundaries: b, totalChars: total };
-  }, [segments]);
-
-  // Check reduced motion preference
+  // ── Reduced motion ──
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) {
       setReducedMotion(true);
-      setDisplayedChars(totalChars);
+      setActiveIndex(segments.length); // skip to status line
+      setPhase("done");
     }
-  }, [totalChars]);
+  }, [segments.length]);
 
-  // Intersection Observer + animation in one effect — no dep on displayedChars
-  useEffect(() => {
-    if (reducedMotion || hasPlayed.current) return;
-
-    const el = containerRef.current;
-    if (!el) return;
-    const target = el.closest(".home-hero") || el;
-
-    function startAnimation() {
+  // ── Typewriter animation for active segment ──
+  const typeSegment = useCallback(
+    (segIdx: number) => {
+      const text = segments[segIdx].text;
       let charIndex = 0;
-      let currentSegIndex = 0;
       let waitUntil = 0;
 
-      function findSegment(ci: number): { seg: number; pos: number } {
-        for (let i = segments.length - 1; i >= 0; i--) {
-          if (ci >= boundaries[i]) {
-            return { seg: i, pos: ci - boundaries[i] };
-          }
-        }
-        return { seg: 0, pos: 0 };
-      }
-
       function step(time: number) {
-        if (charIndex >= totalChars) {
-          setDisplayedChars(totalChars);
+        if (charIndex >= text.length) {
+          setTypedChars(text.length);
+          // Hold, then dissolve
+          setTimeout(() => {
+            setPhase("dissolving");
+            setTimeout(() => {
+              // Advance to next segment or finish
+              if (segIdx < segments.length - 1) {
+                setTypedChars(0);
+                setPhase("typing");
+                setActiveIndex(segIdx + 1);
+              } else {
+                setPhase("done");
+                setActiveIndex(segments.length); // status line
+              }
+            }, DISSOLVE_DURATION);
+          }, HOLD_AFTER_TYPING);
           return;
         }
 
@@ -107,78 +136,113 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
           return;
         }
 
-        const { seg, pos } = findSegment(charIndex);
-
-        // Pause before new segment
-        if (pos === 0 && seg !== currentSegIndex) {
-          currentSegIndex = seg;
-          const pause = segments[seg].pauseBefore;
-          if (pause > 0) {
-            waitUntil = time + pause;
-            rafRef.current = requestAnimationFrame(step);
-            return;
-          }
-        }
-
         charIndex++;
-        setDisplayedChars(charIndex);
+        setTypedChars(charIndex);
 
-        const currentChar = segments[seg].text[pos];
+        const currentChar = text[charIndex - 1];
         const charPause = getPauseForChar(currentChar);
-        waitUntil = time + BASE_SPEED + charPause;
+        waitUntil = time + BASE_SPEED + jitter() + charPause;
 
         rafRef.current = requestAnimationFrame(step);
       }
 
       rafRef.current = requestAnimationFrame(step);
-    }
+    },
+    [segments]
+  );
+
+  // ── Start typing when activeIndex changes ──
+  useEffect(() => {
+    if (reducedMotion) return;
+    if (activeIndex < 0 || activeIndex >= segments.length) return;
+    if (phase !== "typing") return;
+
+    typeSegment(activeIndex);
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [activeIndex, phase, reducedMotion, typeSegment, segments.length]);
+
+  // ── Intersection Observer to start ──
+  useEffect(() => {
+    if (reducedMotion || hasStarted.current) return;
+
+    const el = containerRef.current;
+    if (!el) return;
+    const target = el.closest(".home-hero") || el;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasPlayed.current) {
-          hasPlayed.current = true;
-          startAnimation();
+        if (entry.isIntersecting && !hasStarted.current) {
+          hasStarted.current = true;
+          setActiveIndex(0);
+          setPhase("typing");
         }
       },
       { threshold: 0 }
     );
 
     observer.observe(target);
+    return () => observer.disconnect();
+  }, [reducedMotion]);
 
-    return () => {
-      observer.disconnect();
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [reducedMotion, segments, boundaries, totalChars]);
+  // ── Status line phrase rotation ──
+  useEffect(() => {
+    if (phase !== "done") return;
+    const interval = setInterval(() => {
+      setPhraseFading(true);
+      setTimeout(() => {
+        setPhraseIndex((prev) => (prev + 1) % props.statusPhrases.length);
+        setPhraseFading(false);
+      }, PHRASE_FADE);
+    }, PHRASE_INTERVAL);
+    return () => clearInterval(interval);
+  }, [phase, props.statusPhrases.length]);
 
-  // Render
-  const elements: React.ReactNode[] = [];
-  for (let i = 0; i < segments.length; i++) {
-    const seg = segments[i];
-    const segStart = boundaries[i];
-    const segEnd = segStart + seg.text.length;
-    const visibleEnd = Math.min(displayedChars, segEnd);
-    const visibleCount = Math.max(0, visibleEnd - segStart);
+  // ── Render ──
+  const activeText = activeIndex >= 0 && activeIndex < segments.length
+    ? segments[activeIndex].text.slice(0, typedChars)
+    : "";
 
-    if (visibleCount <= 0) continue;
+  const activeClass = activeIndex >= 0 && activeIndex < segments.length
+    ? segments[activeIndex].className
+    : "";
 
-    const visibleText = seg.text.slice(0, visibleCount);
-    const Tag = seg.tag;
-
-    elements.push(
-      <Tag key={i} className={seg.className}>
-        {visibleText}
-      </Tag>
-    );
-  }
+  const showStatus = phase === "done" || activeIndex >= segments.length;
 
   return (
     <div
       ref={containerRef}
-      className={`hero-tw${reducedMotion ? " hero-tw--revealed" : ""}`}
-      style={{ minHeight: "1em" }}
+      className="hero-tw"
+      style={{ minHeight: "3em" }}
     >
-      {elements}
+      {/* Active segment */}
+      {activeIndex >= 0 && activeIndex < segments.length && (
+        <div
+          className={`hero-tw__slide ${phase === "dissolving" ? "hero-tw__slide--out" : "hero-tw__slide--in"}`}
+        >
+          <span className={activeClass}>{activeText}</span>
+          {phase === "typing" && <span className="hero-tw__cursor" aria-hidden="true" />}
+        </div>
+      )}
+
+      {/* Status line */}
+      <div
+        className={`hero-tw__status ${showStatus ? "hero-tw__status--visible" : ""}`}
+        aria-live="polite"
+      >
+        <StrikeWave />
+        <span
+          className={`hero-tw__phrase ${phraseFading ? "hero-tw__phrase--fading" : ""}`}
+        >
+          {props.statusPhrases[phraseIndex]}
+        </span>
+        <span className="hero-tw__dot" aria-hidden="true">&middot;</span>
+        <Link href={props.ctaHref} className="hero-tw__cta">
+          {props.statusCta} &rarr;
+        </Link>
+      </div>
     </div>
   );
 }

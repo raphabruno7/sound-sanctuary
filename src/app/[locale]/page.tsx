@@ -137,7 +137,6 @@ export default async function Home() {
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="home-hero__vignette" aria-hidden="true" />
         <HeroTypewriter
-          label={t("soundBath.label")}
           title={t("soundBath.title")}
           opening={t("soundBath.opening")}
           p1={t("soundBath.p1")}
@@ -146,6 +145,9 @@ export default async function Home() {
           p3={t("soundBath.p3")}
           p4={t("soundBath.p4")}
           closing={t("soundBath.closing")}
+          statusPhrases={t.raw("soundBath.statusPhrases")}
+          statusCta={t("soundBath.statusCta")}
+          ctaHref="/contact"
         />
       </section>
 
