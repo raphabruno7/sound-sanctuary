@@ -5,8 +5,8 @@ import Link from "next/link";
 
 /* ═══════════════════════════════════════════════════════════
    HeroTypewriter — cross-dissolve sequence with status line
-   Each segment types in, holds, fades out, next fades in.
-   After all segments, a persistent status line appears.
+   One paragraph at a time. Types in → holds → fades out → next.
+   After all segments, a persistent vibrating status line stays.
    ═══════════════════════════════════════════════════════════ */
 
 interface HeroTypewriterProps {
@@ -28,21 +28,23 @@ interface Segment {
   className: string;
 }
 
-// ── Timing ──
-const BASE_SPEED = 55;
-const JITTER = 15;
-const HOLD_AFTER_TYPING = 2400;
-const DISSOLVE_DURATION = 1200;
-const PHRASE_INTERVAL = 4000;
-const PHRASE_FADE = 600;
+// ── Timing — slow, deliberate, human ──
+const BASE_SPEED = 82;
+const JITTER = 20;
+const HOLD_AFTER_TYPING = 2800;
+const DISSOLVE_DURATION = 1400;
+const PHRASE_INTERVAL = 3600;
+const PHRASE_FADE = 500;
 
 function getPauseForChar(char: string): number {
-  if (char === ",") return 220;
-  if (char === ".") return 600;
-  if (char === "—") return 300;
-  if (char === "?" || char === "!") return 450;
-  if (char === ":") return 350;
-  if (char === ";") return 220;
+  if (char === " ") return 30;
+  if (char === ",") return 320;
+  if (char === ".") return 800;
+  if (char === "—") return 500;
+  if (char === "?" || char === "!") return 650;
+  if (char === ":") return 500;
+  if (char === ";") return 320;
+  if (char === "\n") return 400;
   return 0;
 }
 
@@ -50,19 +52,19 @@ function jitter(): number {
   return (Math.random() - 0.5) * 2 * JITTER;
 }
 
-// ── Strike-wave inline SVG ──
+// ── Strike-wave inline SVG — refined concentric ripple ──
 function StrikeWave() {
   return (
     <svg
       className="hero-tw__wave"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 300 300"
+      viewBox="0 0 200 200"
       aria-hidden="true"
     >
-      <circle className="hero-tw__ring hero-tw__r1" cx="150" cy="150" r="20" />
-      <circle className="hero-tw__ring hero-tw__r2" cx="150" cy="150" r="35" />
-      <circle className="hero-tw__ring hero-tw__r3" cx="150" cy="150" r="50" />
-      <circle className="hero-tw__core" cx="150" cy="150" r="5" />
+      <circle className="hero-tw__ring hero-tw__r1" cx="100" cy="100" r="12" />
+      <circle className="hero-tw__ring hero-tw__r2" cx="100" cy="100" r="24" />
+      <circle className="hero-tw__ring hero-tw__r3" cx="100" cy="100" r="36" />
+      <circle className="hero-tw__core" cx="100" cy="100" r="3" />
     </svg>
   );
 }
@@ -72,10 +74,10 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
   const hasStarted = useRef(false);
   const rafRef = useRef<number>(0);
 
-  const [activeIndex, setActiveIndex] = useState(-1); // -1 = not started
+  const [activeIndex, setActiveIndex] = useState(-1);
   const [typedChars, setTypedChars] = useState(0);
   const [phase, setPhase] = useState<"typing" | "holding" | "dissolving" | "done">("typing");
-  const [entered, setEntered] = useState(false); // controls slide-up transition
+  const [entered, setEntered] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [phraseFading, setPhraseFading] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -99,7 +101,7 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) {
       setReducedMotion(true);
-      setActiveIndex(segments.length); // skip to status line
+      setActiveIndex(segments.length);
       setPhase("done");
     }
   }, [segments.length]);
@@ -114,18 +116,16 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
       function step(time: number) {
         if (charIndex >= text.length) {
           setTypedChars(text.length);
-          // Hold, then dissolve
           setTimeout(() => {
             setPhase("dissolving");
             setTimeout(() => {
-              // Advance to next segment or finish
               if (segIdx < segments.length - 1) {
                 setTypedChars(0);
                 setPhase("typing");
                 setActiveIndex(segIdx + 1);
               } else {
                 setPhase("done");
-                setActiveIndex(segments.length); // status line
+                setActiveIndex(segments.length);
               }
             }, DISSOLVE_DURATION);
           }, HOLD_AFTER_TYPING);
@@ -226,9 +226,8 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
     <div
       ref={containerRef}
       className="hero-tw"
-      style={{ minHeight: "3em" }}
     >
-      {/* Active segment */}
+      {/* One segment at a time — no accumulation */}
       {activeIndex >= 0 && activeIndex < segments.length && (
         <div
           className={`hero-tw__slide ${phase === "dissolving" ? "hero-tw__slide--out" : entered ? "hero-tw__slide--in" : ""}`}
@@ -238,7 +237,7 @@ export function HeroTypewriter(props: HeroTypewriterProps) {
         </div>
       )}
 
-      {/* Status line */}
+      {/* Status line — vibrating phrases + CTA */}
       <div
         className={`hero-tw__status ${showStatus ? "hero-tw__status--visible" : ""}`}
         aria-live="polite"
