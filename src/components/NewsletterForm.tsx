@@ -3,11 +3,13 @@
 import type { FormEvent } from "react";
 import { useMemo, useState } from "react";
 import { useMutation } from "convex/react";
+import { useTranslations } from "next-intl";
 import { api } from "../../convex/_generated/api";
 
 type Status = "idle" | "loading" | "success" | "exists" | "error";
 
 export function NewsletterForm({ source = "home" }: { source?: string }) {
+  const t = useTranslations("newsletterForm");
   const subscribe = useMutation(api.subscribers.subscribe);
 
   const [name, setName] = useState("");
@@ -26,30 +28,30 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
       const res = await subscribe({ email, name: name.trim() || undefined, source });
       if (res.alreadySubscribed) {
         setStatus("exists");
-        setMessage("You're already subscribed.");
+        setMessage(t("alreadySubscribed"));
       } else {
         setStatus("success");
-        setMessage("Welcome. You're in.");
+        setMessage(t("welcome"));
         setName("");
         setEmail("");
       }
     } catch (err: unknown) {
       setStatus("error");
-      setMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setMessage(err instanceof Error ? err.message : t("errorFallback"));
     }
   }
 
   return (
     <form onSubmit={onSubmit} className="mt-6 max-w-md">
       <label className="block text-sm text-muted-foreground" htmlFor="email">
-        Newsletter (quiet updates)
+        {t("label")}
       </label>
       <div className="mt-3">
         <input
           id="name"
           type="text"
           autoComplete="name"
-          placeholder="Name (optional)"
+          placeholder={t("namePlaceholder")}
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -62,7 +64,7 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
           type="email"
           inputMode="email"
           autoComplete="email"
-          placeholder="your@email.com"
+          placeholder={t("emailPlaceholder")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -74,7 +76,7 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
           className="btn btn-primary disabled:opacity-60"
           disabled={disabled}
         >
-          Join
+          {t("submit")}
         </button>
       </div>
 
@@ -87,7 +89,7 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
           {message}
         </p>
       ) : (
-        <p className="mt-3 text-xs text-muted-foreground">No spam. Unsubscribe anytime.</p>
+        <p className="mt-3 text-xs text-muted-foreground">{t("noSpam")}</p>
       )}
     </form>
   );

@@ -1,17 +1,23 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sound-sanctuary.vercel.app";
+import { routing } from "@/i18n/routing";
+import { BASE_URL, getLocalizedPathname } from "@/i18n/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: `${BASE_URL}/` },
-    { url: `${BASE_URL}/sound-healing` },
-    { url: `${BASE_URL}/sessions` },
-    { url: `${BASE_URL}/contact` },
-    { url: `${BASE_URL}/about` },
-    { url: `${BASE_URL}/portfolio` },
-    { url: `${BASE_URL}/newsletter` },
-    { url: `${BASE_URL}/privacy` },
+  const pathnames = [
+    "/",
+    "/sound-healing",
+    "/sessions",
+    "/contact",
+    "/about",
+    "/portfolio",
+    "/newsletter",
+    "/privacy",
   ];
-}
 
+  return routing.locales.flatMap((locale) =>
+    pathnames.map((pathname) => ({
+      url: `${BASE_URL}${getLocalizedPathname(locale, pathname)}`,
+    }))
+  );
+}

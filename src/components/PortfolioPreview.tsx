@@ -1,23 +1,25 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useQuery } from "convex/react";
+import { useTranslations } from "next-intl";
 import { api } from "../../convex/_generated/api";
 
 export function PortfolioPreview() {
+  const t = useTranslations("portfolioPreview");
   const items = useQuery(api.portfolio.listPublished, { limit: 6 });
 
   return (
     <section className="max-w-5xl mx-auto px-8 md:px-10 pb-16">
       <div className="flex items-end justify-between gap-6">
         <div>
-          <h2 className="text-2xl md:text-3xl tracking-tight">Portfolio</h2>
+          <h2 className="text-2xl md:text-3xl tracking-tight">{t("title")}</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl leading-relaxed">
-            Selected sessions, events, retreats, and collaborations.
+            {t("sub")}
           </p>
         </div>
         <Link className="underline underline-offset-4 text-sm" href="/portfolio">
-          View all
+          {t("viewAll")}
         </Link>
       </div>
 
@@ -36,7 +38,7 @@ export function PortfolioPreview() {
           </article>
         ))}
 
-        {items === undefined ? <p className="text-sm text-muted-foreground">Loading...</p> : null}
+        {items === undefined ? <p className="text-sm text-muted-foreground">{t("loading")}</p> : null}
       </div>
     </section>
   );
