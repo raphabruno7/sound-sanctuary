@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import Link from "next/link";
 
 /* =====================================================
    HeroStatusLine — minimal Claude Code status aesthetic
@@ -12,8 +11,6 @@ import Link from "next/link";
 interface HeroStatusLineProps {
   youLabel: string;
   statusPhrases: string[];
-  statusCta: string;
-  ctaHref: string;
 }
 
 const PHRASE_INTERVAL = 3600;
@@ -27,24 +24,25 @@ function StrikeWave() {
       viewBox="0 0 200 200"
       aria-hidden="true"
     >
-      <circle className="hero-sl__ring hero-sl__r1" cx="100" cy="100" r="12" />
-      <circle className="hero-sl__ring hero-sl__r2" cx="100" cy="100" r="24" />
-      <circle className="hero-sl__ring hero-sl__r3" cx="100" cy="100" r="36" />
-      <circle className="hero-sl__core" cx="100" cy="100" r="3" />
+      <circle className="hero-sl__ring hero-sl__r1" cx="100" cy="100" r="18" />
+      <circle className="hero-sl__ring hero-sl__r2" cx="100" cy="100" r="34" />
+      <circle className="hero-sl__ring hero-sl__r3" cx="100" cy="100" r="50" />
+      <circle className="hero-sl__core" cx="100" cy="100" r="5" />
     </svg>
   );
 }
 
-function ArrowDown() {
+function ArrowPointing() {
+  /* Horizontal arrow pointing right toward the person lying on the right */
   return (
     <svg
       className="hero-you__arrow"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 48"
+      viewBox="0 0 80 24"
       aria-hidden="true"
     >
-      <line x1="12" y1="0" x2="12" y2="40" stroke="currentColor" strokeWidth="1.5" />
-      <polyline points="6,34 12,42 18,34" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <line x1="0" y1="12" x2="60" y2="12" stroke="currentColor" strokeWidth="1.5" />
+      <polyline points="52,6 64,12 52,18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -94,10 +92,10 @@ export function HeroStatusLine(props: HeroStatusLineProps) {
 
   return (
     <div ref={containerRef} className="hero-sl">
-      {/* Static "VOCE" + arrow */}
+      {/* Static "VOCE" + arrow pointing right toward the person */}
       <div className={`hero-you ${visible ? "hero-you--visible" : ""}`}>
         <span className="hero-you__label">{props.youLabel}</span>
-        <ArrowDown />
+        <ArrowPointing />
       </div>
 
       {/* Status line */}
@@ -111,10 +109,6 @@ export function HeroStatusLine(props: HeroStatusLineProps) {
         >
           {props.statusPhrases[phraseIndex]}
         </span>
-        <span className="hero-sl__dot" aria-hidden="true">&middot;</span>
-        <Link href={props.ctaHref} className="hero-sl__cta">
-          {props.statusCta} &rarr;
-        </Link>
       </div>
     </div>
   );
