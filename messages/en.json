@@ -39,6 +39,18 @@
       "cta_primary": "Book a 1:1",
       "cta_secondary": "Join Sound Healing Live"
     },
+    "offers": {
+      "title": "Current Offers",
+      "card1_title": "1:1 Sessions",
+      "card1_sub": "Personalised Sound Healing",
+      "card1_cta": "Learn More",
+      "card2_title": "Group Sessions",
+      "card2_sub": "Shared Sonic Journeys",
+      "card2_cta": "Learn More",
+      "card3_title": "Sound Healing Live",
+      "card3_sub": "Immersive Performances",
+      "card3_cta": "Learn More"
+    },
     "forWhom": {
       "label": "Who It Is For",
       "title": "When life runs hot",

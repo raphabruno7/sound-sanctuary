@@ -39,6 +39,18 @@
       "cta_primary": "Agendar 1:1",
       "cta_secondary": "Entrar no Sound Healing Live"
     },
+    "offers": {
+      "title": "Ofertas Atuais",
+      "card1_title": "Sessões Individuais",
+      "card1_sub": "Sound Healing Personalizado",
+      "card1_cta": "Saiba Mais",
+      "card2_title": "Sessões em Grupo",
+      "card2_sub": "Jornadas Sonoras Compartilhadas",
+      "card2_cta": "Saiba Mais",
+      "card3_title": "Sound Healing Ao Vivo",
+      "card3_sub": "Performances Imersivas",
+      "card3_cta": "Saiba Mais"
+    },
     "forWhom": {
       "label": "Para quem é",
       "title": "Quando a vida acelera demais",

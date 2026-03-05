@@ -139,9 +139,36 @@ export default async function Home() {
         <HeroStatusLine
           youLabel={t("hero.youLabel")}
           statusPhrases={t.raw("hero.statusPhrases")}
-          statusCta={t("hero.statusCta")}
-          ctaHref="/contact"
         />
+      </section>
+
+      {/* -- CURRENT OFFERS -- */}
+      <section className="journey-container journey-section text-center">
+        <h2 className="journey-title">{t("offers.title")}</h2>
+        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+          {[
+            { key: "card1", href: "/contact" },
+            { key: "card2", href: "/sessions" },
+            { key: "card3", href: "/sessions" },
+          ].map(({ key, href }) => (
+            <article
+              key={key}
+              className="ds-glass journey-card flex h-full w-full flex-col items-center text-center"
+            >
+              <h3 className="ds-font-display ds-size-2xl ds-weight-light">
+                {t(`offers.${key}_title`)}
+              </h3>
+              <p className="mt-2 text-sm text-secondary">
+                {t(`offers.${key}_sub`)}
+              </p>
+              <div className="mt-auto flex w-full justify-center pt-6">
+                <Link className="btn btn-primary" href={href}>
+                  {t(`offers.${key}_cta`)}
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* ── CTA strip ── */}
