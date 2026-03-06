@@ -8,6 +8,7 @@ import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
 import { PractitionerSection } from "@/components/PractitionerSection";
 import { HeroStatusLine } from "@/components/HeroStatusLine";
+import { TasterSection } from "@/components/TasterSection";
 
 export async function generateMetadata({
   params,
@@ -170,6 +171,9 @@ export default async function Home() {
           ))}
         </div>
       </section>
+
+      {/* -- TASTER SESSION -- */}
+      <TasterSection />
 
       {/* ── CTA strip ── */}
       <div className="hero-cta-strip">

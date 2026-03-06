@@ -39,22 +39,27 @@
       "cta_primary": "Agendar 1:1",
       "cta_secondary": "Entrar no Sound Healing Live"
     },
-    "offers": {
-      "title": "Ofertas Atuais",
-      "card1_title": "Sessões Individuais",
-      "card1_sub": "Sound Healing Personalizado",
-      "card1_cta": "Saiba Mais",
-      "card2_title": "Sessões em Grupo",
-      "card2_sub": "Jornadas Sonoras Compartilhadas",
-      "card2_cta": "Saiba Mais",
-      "card3_title": "Sound Healing Ao Vivo",
-      "card3_sub": "Performances Imersivas",
-      "card3_cta": "Saiba Mais"
-    },
-    "forWhom": {
-      "label": "Para quem é",
-      "title": "Quando a vida acelera demais",
-      "annotation": "você",
+	    "offers": {
+	      "title": "Ofertas Atuais",
+	      "card1_title": "Sessões Individuais",
+	      "card1_sub": "Sound Healing Personalizado",
+	      "card1_cta": "Saiba Mais",
+	      "card2_title": "Sessões em Grupo",
+	      "card2_sub": "Jornadas Sonoras Compartilhadas",
+	      "card2_cta": "Saiba Mais",
+	      "card3_title": "Sound Healing Ao Vivo",
+	      "card3_sub": "Performances Imersivas",
+	      "card3_cta": "Saiba Mais"
+	    },
+	    "taster": {
+	      "title": "Experimente uma Sessão Gratuita de Sound Healing",
+	      "description": "Uma sessão de sound healing é a forma perfeita de relaxar em casa sempre que você precisa de alívio imediato. É uma chance de reconectar com o seu mundo interior sem precisar sair de casa.",
+	      "cta": "Acessar a Sessão Gratuita"
+	    },
+	    "forWhom": {
+	      "label": "Para quem é",
+	      "title": "Quando a vida acelera demais",
+	      "annotation": "você",
       "items": [
         "ansiedade / estresse",
         "dificuldades com o sono",
@@ -160,21 +165,31 @@
     "sub": "Breves reflexões de sessões e colaborações.",
     "loading": "Carregando..."
   },
-  "newsletterForm": {
-    "label": "Newsletter (atualizações tranquilas)",
-    "namePlaceholder": "Nome (opcional)",
-    "emailPlaceholder": "seu@email.com",
-    "submit": "Entrar",
-    "alreadySubscribed": "Você já está inscrito.",
-    "welcome": "Bem-vindo. Você entrou.",
-    "errorFallback": "Algo deu errado.",
-    "noSpam": "Sem spam. Cancele quando quiser."
-  },
-  "aboutPage": {
-    "meta": {
-      "title": "Sobre",
-      "description": "Conheça a abordagem de sound healing e práticas contemplativas por trás das sessões do Sound Sanctuary."
-    },
+	  "newsletterForm": {
+	    "label": "Newsletter (atualizações tranquilas)",
+	    "namePlaceholder": "Nome (opcional)",
+	    "emailPlaceholder": "seu@email.com",
+	    "submit": "Entrar",
+	    "alreadySubscribed": "Você já está inscrito.",
+	    "welcome": "Bem-vindo. Você entrou.",
+	    "errorFallback": "Algo deu errado.",
+	    "noSpam": "Sem spam. Cancele quando quiser."
+	  },
+	  "tasterModal": {
+	    "title": "Receba Sua Sessão Gratuita",
+	    "description": "Preencha seus dados abaixo e enviaremos um link para uma sessão gravada de sound healing gratuita.",
+	    "namePlaceholder": "Primeiro Nome",
+	    "emailPlaceholder": "Email",
+	    "submit": "Enviar a Gravação",
+	    "success": "Confira sua caixa de entrada! Sua sessão gratuita está a caminho.",
+	    "alreadySubscribed": "Você já tem acesso! Confira sua caixa de entrada.",
+	    "errorFallback": "Algo deu errado. Tente novamente."
+	  },
+	  "aboutPage": {
+	    "meta": {
+	      "title": "Sobre",
+	      "description": "Conheça a abordagem de sound healing e práticas contemplativas por trás das sessões do Sound Sanctuary."
+	    },
     "label": "Sobre",
     "title": "Sobre",
     "sub": "Meu trabalho une sound healing, música e prática contemplativa para criar um espaço calmo e acolhedor. Cada sessão é conduzida com suavidade, respeitando como o seu corpo está no momento, para que descanso e regulação aconteçam naturalmente.",

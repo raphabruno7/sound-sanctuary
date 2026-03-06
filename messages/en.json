@@ -39,22 +39,27 @@
       "cta_primary": "Book a 1:1",
       "cta_secondary": "Join Sound Healing Live"
     },
-    "offers": {
-      "title": "Current Offers",
-      "card1_title": "1:1 Sessions",
-      "card1_sub": "Personalised Sound Healing",
-      "card1_cta": "Learn More",
-      "card2_title": "Group Sessions",
-      "card2_sub": "Shared Sonic Journeys",
-      "card2_cta": "Learn More",
-      "card3_title": "Sound Healing Live",
-      "card3_sub": "Immersive Performances",
-      "card3_cta": "Learn More"
-    },
-    "forWhom": {
-      "label": "Who It Is For",
-      "title": "When life runs hot",
-      "annotation": "you",
+	    "offers": {
+	      "title": "Current Offers",
+	      "card1_title": "1:1 Sessions",
+	      "card1_sub": "Personalised Sound Healing",
+	      "card1_cta": "Learn More",
+	      "card2_title": "Group Sessions",
+	      "card2_sub": "Shared Sonic Journeys",
+	      "card2_cta": "Learn More",
+	      "card3_title": "Sound Healing Live",
+	      "card3_sub": "Immersive Performances",
+	      "card3_cta": "Learn More"
+	    },
+	    "taster": {
+	      "title": "Try a Free Sound Healing Session",
+	      "description": "A sound healing session is the perfect way to relax from home whenever you need immediate relief. It's a chance to reconnect with your inner world without having to travel anywhere.",
+	      "cta": "Access the Taster Session"
+	    },
+	    "forWhom": {
+	      "label": "Who It Is For",
+	      "title": "When life runs hot",
+	      "annotation": "you",
       "items": [
         "anxiety / stress",
         "sleep issues",
@@ -160,21 +165,31 @@
     "sub": "Short reflections from sessions and collaborations.",
     "loading": "Loading..."
   },
-  "newsletterForm": {
-    "label": "Newsletter (quiet updates)",
-    "namePlaceholder": "Name (optional)",
-    "emailPlaceholder": "your@email.com",
-    "submit": "Join",
-    "alreadySubscribed": "You're already subscribed.",
-    "welcome": "Welcome. You're in.",
-    "errorFallback": "Something went wrong.",
-    "noSpam": "No spam. Unsubscribe anytime."
-  },
-  "aboutPage": {
-    "meta": {
-      "title": "About",
-      "description": "Learn about the sound healing and contemplative approach behind Sound Sanctuary sessions."
-    },
+	  "newsletterForm": {
+	    "label": "Newsletter (quiet updates)",
+	    "namePlaceholder": "Name (optional)",
+	    "emailPlaceholder": "your@email.com",
+	    "submit": "Join",
+	    "alreadySubscribed": "You're already subscribed.",
+	    "welcome": "Welcome. You're in.",
+	    "errorFallback": "Something went wrong.",
+	    "noSpam": "No spam. Unsubscribe anytime."
+	  },
+	  "tasterModal": {
+	    "title": "Receive Your Free Session",
+	    "description": "Enter your details below and we'll send you a link to a free recorded sound healing session.",
+	    "namePlaceholder": "First Name",
+	    "emailPlaceholder": "Email",
+	    "submit": "Send Me the Recording",
+	    "success": "Check your inbox! Your free session is on the way.",
+	    "alreadySubscribed": "You already have access! Check your inbox.",
+	    "errorFallback": "Something went wrong. Please try again."
+	  },
+	  "aboutPage": {
+	    "meta": {
+	      "title": "About",
+	      "description": "Learn about the sound healing and contemplative approach behind Sound Sanctuary sessions."
+	    },
     "label": "About",
     "title": "About",
     "sub": "My work brings together sound healing, music, and contemplative practice to create a calm and supportive space. Each session is paced gently, with care for how your body feels in the moment, so rest and regulation can happen naturally.",
