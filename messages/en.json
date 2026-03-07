@@ -13,11 +13,12 @@
       "title": "Sound Sanctuary",
       "description": "Sound healing, contemplative practices, and grounded sessions to support calm and nervous system regulation."
     },
-    "hero": {
-      "title": "Sound Healing",
-      "sub": "Regulation practice for modern life: rhythm, rest, and integration.",
-      "youLabel": "YOU",
-      "statusPhrases": [
+	    "hero": {
+	      "title": "Sound Healing",
+	      "alt": "Sound healing session outdoors — Raphael playing instruments and a person lying down receiving sound",
+	      "sub": "Regulation practice for modern life: rhythm, rest, and integration.",
+	      "youLabel": "YOU",
+	      "statusPhrases": [
         "lying downnn",
         "bowls vibratinggg",
         "nervous system feeding",
@@ -51,15 +52,45 @@
 	      "card3_sub": "Immersive Performances",
 	      "card3_cta": "Learn More"
 	    },
-	    "taster": {
-	      "title": "Try a Free Sound Healing Session",
-	      "description": "A sound healing session is the perfect way to relax from home whenever you need immediate relief. It's a chance to reconnect with your inner world without having to travel anywhere.",
-	      "cta": "Access the Taster Session"
-	    },
-	    "forWhom": {
-	      "label": "Who It Is For",
-	      "title": "When life runs hot",
-	      "annotation": "you",
+		    "taster": {
+		      "title": "Try a Free Sound Healing Session",
+		      "description": "A sound healing session is the perfect way to relax from home whenever you need immediate relief. It's a chance to reconnect with your inner world without having to travel anywhere.",
+		      "cta": "Access the Taster Session"
+		    },
+		    "photoSplit": {
+		      "aria": "Session photos",
+		      "alt1": "Sound healing instruments in a session setting",
+		      "alt2": "Person receiving a sound healing session"
+		    },
+		    "benefits": {
+		      "title": "Benefits",
+		      "sub": "What a sound healing session can offer you.",
+		      "item1": "Deep relaxation and stress relief",
+		      "item2": "Better sleep quality",
+		      "item3": "Nervous system regulation",
+		      "item4": "Reduced anxiety and mental chatter",
+		      "item5": "Emotional release and clarity",
+		      "item6": "Restored sense of inner balance"
+		    },
+		    "workplace": {
+		      "title": "Workplace Sessions",
+		      "sub": "Sound healing for teams and organisations.",
+		      "body": "Bring sound healing into your workplace. Tailored group sessions designed to reduce stress, improve focus, and support team wellbeing.",
+		      "cta": "Enquire for Your Team"
+		    },
+		    "training": {
+		      "title": "Practitioner Training",
+		      "sub": "Learn the art of sound healing.",
+		      "body": "Interested in becoming a sound healing practitioner? Training programmes and mentorship available for those called to this path.",
+		      "cta": "Learn About Training"
+		    },
+		    "socialProof": {
+		      "label": "As Featured In"
+		    },
+		    "forWhom": {
+		      "label": "Who It Is For",
+		      "title": "When life runs hot",
+		      "annotation": "you",
       "items": [
         "anxiety / stress",
         "sleep issues",

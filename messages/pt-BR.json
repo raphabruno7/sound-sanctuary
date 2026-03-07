@@ -13,11 +13,12 @@
       "title": "Sound Sanctuary",
       "description": "Sound healing, práticas contemplativas e sessões com os pés no chão para apoiar calma e regulação do sistema nervoso."
     },
-    "hero": {
-      "title": "Sound Healing",
-      "sub": "Uma prática de regulação para a vida moderna: ritmo, descanso e integração.",
-      "youLabel": "VOCÊ",
-      "statusPhrases": [
+	    "hero": {
+	      "title": "Sound Healing",
+	      "alt": "Sessão de sound healing ao ar livre — Raphael tocando instrumentos e uma pessoa deitada recebendo som",
+	      "sub": "Uma prática de regulação para a vida moderna: ritmo, descanso e integração.",
+	      "youLabel": "VOCÊ",
+	      "statusPhrases": [
         "deitandooo",
         "bowls vibrandooo",
         "sistema nervoso alimentando",
@@ -51,10 +52,40 @@
 	      "card3_sub": "Performances Imersivas",
 	      "card3_cta": "Saiba Mais"
 	    },
-	    "taster": {
-	      "title": "Experimente uma Sessão Gratuita de Sound Healing",
-	      "description": "Uma sessão de sound healing é a forma perfeita de relaxar em casa sempre que você precisa de alívio imediato. É uma chance de reconectar com o seu mundo interior sem precisar sair de casa.",
-	      "cta": "Acessar a Sessão Gratuita"
+		    "taster": {
+		      "title": "Experimente uma Sessão Gratuita de Sound Healing",
+		      "description": "Uma sessão de sound healing é a forma perfeita de relaxar em casa sempre que você precisa de alívio imediato. É uma chance de reconectar com o seu mundo interior sem precisar sair de casa.",
+		      "cta": "Acessar a Sessão Gratuita"
+		    },
+		    "photoSplit": {
+		      "aria": "Fotos de sessão",
+		      "alt1": "Instrumentos de sound healing em ambiente de sessão",
+		      "alt2": "Pessoa recebendo uma sessão de sound healing"
+		    },
+	    "benefits": {
+	      "title": "Benefícios",
+	      "sub": "O que uma sessão de sound healing pode oferecer.",
+	      "item1": "Relaxamento profundo e alívio do estresse",
+	      "item2": "Melhora na qualidade do sono",
+	      "item3": "Regulação do sistema nervoso",
+	      "item4": "Redução da ansiedade e ruído mental",
+	      "item5": "Liberação emocional e clareza",
+	      "item6": "Restauração do equilíbrio interior"
+	    },
+	    "workplace": {
+	      "title": "Sessões Corporativas",
+	      "sub": "Sound healing para equipes e organizações.",
+	      "body": "Leve o sound healing para o seu ambiente de trabalho. Sessões em grupo personalizadas para reduzir o estresse, melhorar o foco e apoiar o bem-estar da equipe.",
+	      "cta": "Consulte para Sua Equipe"
+	    },
+	    "training": {
+	      "title": "Formação de Praticantes",
+	      "sub": "Aprenda a arte do sound healing.",
+	      "body": "Interesse em se tornar um praticante de sound healing? Programas de formação e mentoria disponíveis para quem sente o chamado deste caminho.",
+	      "cta": "Saiba Sobre a Formação"
+	    },
+	    "socialProof": {
+	      "label": "Como Visto Em"
 	    },
 	    "forWhom": {
 	      "label": "Para quem é",
