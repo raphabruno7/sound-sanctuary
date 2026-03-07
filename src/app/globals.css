@@ -713,7 +713,7 @@
   margin-top: 0.75rem;
   font-family: var(--sh-font-family-display);
   font-weight: 300;
-  font-size: clamp(1.8rem, 4.2vw, 3.3rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   line-height: var(--sh-leading-tight);
 }
 
@@ -732,6 +732,7 @@
 .journey-sub {
   margin-top: 1rem;
   max-width: 68ch;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
   color: var(--sh-semantic-text-secondary);
 }
 
@@ -828,7 +829,7 @@
 .journey-card {
   position: relative;
   overflow: hidden;
-  padding: 1.4rem;
+  padding: 1rem 1.2rem;
 }
 
 .journey-card::after {
@@ -847,6 +848,10 @@
 
 :root:not(.dark) .journey-card::after {
   opacity: 0.35;
+}
+
+.journey-card--clean::after {
+  display: none;
 }
 
 .impulse-plate {
@@ -943,7 +948,7 @@
 
   /* Section margins */
   .journey-section {
-    margin: 3rem auto;
+    margin: 2rem auto;
   }
   .journey-section-lg {
     margin-top: 4.5rem;
@@ -955,7 +960,7 @@
 
   /* Typography */
   .journey-title {
-    font-size: clamp(1.4rem, 5vw, 2.4rem);
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
   }
 
   /* Grid-4 to single column */
@@ -980,10 +985,10 @@
     padding: 0 0.75rem;
   }
   .journey-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 	  .journey-section {
-	    margin: 2.5rem auto;
+	    margin: 1.5rem auto;
 	  }
   .journey-section-lg {
     margin-top: 3.5rem;

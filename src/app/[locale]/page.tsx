@@ -167,8 +167,11 @@ export default async function Home() {
             { key: "card2", href: "/sessions" },
             { key: "card3", href: "/sessions" },
           ].map(({ key, href }) => (
-            <article key={key} className="ds-glass journey-card flex h-full w-full flex-col items-center text-center">
-              <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t(`offers.${key}_title`)}</h3>
+            <article
+              key={key}
+              className="ds-glass journey-card journey-card--clean flex h-full w-full flex-col items-center text-center"
+            >
+              <h3 className="ds-font-display ds-size-xl ds-weight-light">{t(`offers.${key}_title`)}</h3>
               <p className="mt-2 text-sm text-secondary">{t(`offers.${key}_sub`)}</p>
               <div className="mt-auto flex w-full justify-center pt-6">
                 <Link className="btn btn-primary" href={href}>
@@ -185,25 +188,14 @@ export default async function Home() {
 
       {/* ── 4. PHOTO SPLIT ── */}
       <section className="journey-container journey-section" aria-label={t("photoSplit.aria")}>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/media/sections/2641.jpg"
-              alt={t("photoSplit.alt1")}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/media/sections/2633.jpg"
-              alt={t("photoSplit.alt2")}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+          <Image
+            src="/media/sections/2641.jpg"
+            alt={t("photoSplit.alt1")}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
@@ -221,10 +213,14 @@ export default async function Home() {
       <section className="journey-container journey-section text-center">
         <h2 className="journey-title">{t("benefits.title")}</h2>
         <p className="journey-sub mx-auto max-w-2xl">{t("benefits.sub")}</p>
-        <ul className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2">
+        <ul className="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-3 text-left md:grid-cols-2">
           {(["item1", "item2", "item3", "item4", "item5", "item6"] as const).map((key) => (
-            <li key={key} className="ds-glass journey-card text-center">
-              <p className="text-secondary">{t(`benefits.${key}`)}</p>
+            <li key={key} className="flex items-start gap-2 text-secondary">
+              <span
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-current opacity-40"
+                aria-hidden="true"
+              />
+              {t(`benefits.${key}`)}
             </li>
           ))}
         </ul>
@@ -292,4 +288,3 @@ export default async function Home() {
     </main>
   );
 }
-
