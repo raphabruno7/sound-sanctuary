@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { buildPageMetadata } from "@/i18n/metadata";
-import { NewsletterForm } from "@/components/NewsletterForm";
 import { TestimonialsPreview } from "@/components/TestimonialsPreview";
-import { PractitionerSection } from "@/components/PractitionerSection";
 import { HeroStatusLine } from "@/components/HeroStatusLine";
 import { TasterSection } from "@/components/TasterSection";
 
@@ -186,7 +184,38 @@ export default async function Home() {
       {/* ── 3. TASTER SESSION ── */}
       <TasterSection />
 
-      {/* ── 4. VIRTUAL SESSIONS ── */}
+      {/* ── 4. WHAT IS SOUND HEALING ── */}
+      <section className="journey-container journey-section">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
+            <Image
+              src="/media/sections/2641.jpg"
+              alt={t("whatItIs.alt")}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="journey-title">{t("whatItIs.title")}</h2>
+            <p className="mt-3 journey-sub">{t("whatItIs.sub")}</p>
+            <div className="mt-4 space-y-3 text-secondary leading-relaxed">
+              {t("whatItIs.p1")
+                .split(/\n{2,}/)
+                .map((paragraph) => paragraph.trim())
+                .filter(Boolean)
+                .map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+            </div>
+            <Link className="btn btn-primary mt-6" href="/sound-healing">
+              {t("whatItIs.cta")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. VIRTUAL SESSIONS ── */}
       <section className="journey-container journey-section">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl md:order-2">
@@ -209,108 +238,9 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ── 5. WHAT IS SOUND HEALING ── */}
-      <section className="journey-container journey-section text-center">
-        <h2 className="journey-title">{t("whatItIs.title")}</h2>
-        <p className="journey-sub mx-auto max-w-2xl">{t("whatItIs.sub")}</p>
-        <div className="mt-10 grid grid-cols-1 gap-10 text-left text-secondary leading-relaxed md:grid-cols-2">
-          <div className="max-w-prose space-y-4">
-            {t("whatItIs.p1")
-              .split(/\n{2,}/)
-              .map((paragraph) => paragraph.trim())
-              .filter(Boolean)
-              .map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-          </div>
-          <div className="max-w-prose space-y-4">
-            {t("whatItIs.p2")
-              .split(/\n{2,}/)
-              .map((paragraph) => paragraph.trim())
-              .filter(Boolean)
-              .map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. BENEFITS ── */}
-      <section className="journey-container journey-section text-center">
-        <h2 className="journey-title">{t("benefits.title")}</h2>
-        <p className="journey-sub mx-auto max-w-2xl">{t("benefits.sub")}</p>
-        <ul className="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-3 text-left md:grid-cols-2">
-          {(["item1", "item2", "item3", "item4", "item5", "item6"] as const).map((key) => (
-            <li key={key} className="flex items-start gap-2 text-secondary">
-              <span
-                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-current opacity-40"
-                aria-hidden="true"
-              />
-              {t(`benefits.${key}`)}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* ── 7. TESTIMONIALS ── */}
+      {/* ── 6. TESTIMONIALS ── */}
       <TestimonialsPreview />
 
-      {/* ── 8. PRACTITIONER ── */}
-      <PractitionerSection
-        label={t("practitioner.label")}
-        title={t("practitioner.title")}
-        identity={t("practitioner.identity")}
-        p1={t("practitioner.p1")}
-        p2={t("practitioner.p2")}
-        cta={t("practitioner.cta")}
-      />
-
-      {/* ── 9. WORKPLACE ── */}
-      <section className="journey-container journey-section text-center">
-        <h2 className="journey-title">{t("workplace.title")}</h2>
-        <p className="journey-sub mx-auto max-w-2xl">{t("workplace.sub")}</p>
-        <p className="mx-auto mt-6 max-w-2xl text-secondary">{t("workplace.body")}</p>
-        <Link className="btn btn-primary mt-8" href="/contact">
-          {t("workplace.cta")}
-        </Link>
-      </section>
-
-      {/* ── 10. TRAINING ── */}
-      <section className="journey-container journey-section text-center">
-        <h2 className="journey-title">{t("training.title")}</h2>
-        <p className="journey-sub mx-auto max-w-2xl">{t("training.sub")}</p>
-        <p className="mx-auto mt-6 max-w-2xl text-secondary">{t("training.body")}</p>
-        <Link className="btn btn-secondary mt-8" href="/contact">
-          {t("training.cta")}
-        </Link>
-      </section>
-
-      {/* ── 11. SOCIAL PROOF ── */}
-      <section className="journey-container journey-section text-center">
-        <p className="ds-text-overline text-secondary">{t("socialProof.label")}</p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-8 opacity-50">
-          <span className="ds-size-lg text-secondary">Logo 1</span>
-          <span className="ds-size-lg text-secondary">Logo 2</span>
-          <span className="ds-size-lg text-secondary">Logo 3</span>
-          <span className="ds-size-lg text-secondary">Logo 4</span>
-        </div>
-      </section>
-
-      {/* ── 12. NEWSLETTER + CONTACT ── */}
-      <section className="journey-container journey-section" id="contact">
-        <div className="journey-label">{t("contact.label")}</div>
-        <h2 className="journey-title">{t("contact.title")}</h2>
-        <p className="journey-sub">{t("contact.sub")}</p>
-        <div className="mt-6">
-          <Link className="btn btn-primary" href="/contact">
-            {t("contact.cta_primary")}
-          </Link>
-          <Link className="btn btn-secondary ml-3" href="/contact">
-            {t("contact.cta_secondary")}
-          </Link>
-        </div>
-        <NewsletterForm source="home" />
-      </section>
     </main>
   );
 }

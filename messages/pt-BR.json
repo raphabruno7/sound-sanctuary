@@ -57,11 +57,13 @@
 		      "description": "Uma sessão de sound healing é a forma perfeita de relaxar em casa sempre que você precisa de alívio imediato. É uma chance de reconectar com o seu mundo interior sem precisar sair de casa.",
 		      "cta": "Acessar a Sessão Gratuita"
 		    },
-		    "photoSplit": {
-		      "aria": "Fotos de sessão",
-		      "alt1": "Instrumentos de sound healing em ambiente de sessão",
-		      "alt2": "Pessoa recebendo uma sessão de sound healing"
-		    },
+			    "virtual": {
+			      "title": "Funciona Online?",
+			      "p1": "Sim. Uma sessão virtual de sound healing é uma forma poderosa de pausar e resetar sem sair de casa. Tudo que você precisa é um fone de ouvido, um lugar confortável para deitar, e a disposição de fechar os olhos e ouvir.",
+			      "p2": "O som conduz suas ondas cerebrais para um estado relaxado e restaurador. É uma forma de acessar os benefícios da meditação profunda sem nenhuma experiência prévia — sempre que você precisar.",
+			      "cta": "Agendar Sessão Virtual",
+			      "alt": "Pessoa deitada com fones de ouvido recebendo uma sessão online de sound healing"
+			    },
 	    "benefits": {
 	      "title": "Benefícios",
 	      "sub": "O que uma sessão de sound healing pode oferecer.",
@@ -101,13 +103,15 @@
       "cta_primary": "Agendar 1:1",
       "cta_secondary": "Ver portfólio"
     },
-    "whatItIs": {
-      "label": "Cuidado preventivo",
-      "title": "O Que é Banho de Som?",
-      "sub": "O Sound Healing usa ressonância, ritmo e descanso guiado para ajudar o sistema nervoso a desacelerar sem performance.",
-      "p1": "É simples: você chega, se instala, o som cria um campo e o seu corpo tem espaço para integrar. Nada a atingir.",
-      "p2": "A promessa não é tratamento médico. É treinar capacidade: desacelerar, voltar ao ritmo e sair com mais espaço interno."
-    },
+	    "whatItIs": {
+	      "label": "Cuidado preventivo",
+	      "title": "O Que é Banho de Som?",
+	      "sub": "Um Banho de Som é uma experiência de vibração sonora que transporta você, quase instantaneamente, a um relaxamento profundo — e a um aumento de energia.",
+	      "p1": "Para onde o som leva você? Para o ponto exato em que o seu organismo se repara.\n\nAo estimular rapidamente as ondas cerebrais Delta e Theta, a vibração desativa o estado de alerta e conduz o corpo a um repouso tão profundo que é extremamente comum os participantes adormecerem durante a sessão.",
+	      "p2": "É nesse espaço de \"sono restaurador\" que o reequilíbrio físico e emocional acontece.\n\nNão é necessário qualquer esforço: basta deitar-se confortavelmente, fechar os olhos e permitir que a inteligência sonora regule o seu sistema nervoso, liberte a mente de pensamentos repetitivos e relaxe.",
+	      "alt": "Sessão de banho de som na natureza com gong e tigelas",
+	      "cta": "Saber Mais"
+	    },
     "whyItWorks": {
       "label": "Som e Sistema Nervoso",
       "title": "Por que funciona",
@@ -182,7 +186,19 @@
     "ctaText": "Dois caminhos, mesma intenção: ritmo, regulação, integração.",
     "ctaPrimary": "Agendar 1:1",
     "ctaSecondary": "Entrar no Live",
+    "newsletterHeading": "Fique em contacto",
+    "colAbout": "Sobre",
+    "aboutUs": "Sobre Nós",
+    "sessions": "Sessões",
+    "training": "Formação",
+    "portfolio": "Portfólio",
+    "colExperience": "Experiência",
+    "workplace": "Empresas",
+    "tasterSession": "Sessão Gratuita",
+    "soundHealing": "Sound Healing",
+    "contact": "Contacto",
     "privacy": "Privacidade",
+    "terms": "Termos",
     "newsletter": "Newsletter"
   },
   "portfolioPreview": {

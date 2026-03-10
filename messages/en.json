@@ -57,11 +57,13 @@
 		      "description": "A sound healing session is the perfect way to relax from home whenever you need immediate relief. It's a chance to reconnect with your inner world without having to travel anywhere.",
 		      "cta": "Access the Taster Session"
 		    },
-		    "photoSplit": {
-		      "aria": "Session photos",
-		      "alt1": "Sound healing instruments in a session setting",
-		      "alt2": "Person receiving a sound healing session"
-		    },
+			    "virtual": {
+			      "title": "Does It Work Virtually?",
+			      "p1": "Yes. A virtual sound healing session is a powerful way to pause and reset from home. All you need is headphones, a comfortable place to lie down, and the willingness to close your eyes and listen.",
+			      "p2": "The sound entrains your brainwaves into a relaxed, restorative state. It's a way to access the benefits of deep meditation without any experience required — whenever you need it.",
+			      "cta": "Book a Virtual Session",
+			      "alt": "Person lying down with headphones receiving an online sound healing session"
+			    },
 		    "benefits": {
 		      "title": "Benefits",
 		      "sub": "What a sound healing session can offer you.",
@@ -106,7 +108,9 @@
       "title": "What is a Sound Bath?",
       "sub": "Sound Healing uses resonance, rhythm, and guided rest to help the nervous system downshift without performance.",
       "p1": "It is simple: you arrive, you settle, sound creates a field, and your body has room to integrate. Nothing to achieve.",
-      "p2": "The promise is not medical treatment. It is training capacity: downshifting, returning to rhythm, and leaving with more space inside."
+      "p2": "The promise is not medical treatment. It is training capacity: downshifting, returning to rhythm, and leaving with more space inside.",
+      "alt": "Sound bath session in nature with gong and singing bowls",
+      "cta": "Learn More"
     },
     "whyItWorks": {
       "label": "Sound and the Nervous System",
@@ -182,7 +186,19 @@
     "ctaText": "Two paths, same intention: rhythm, regulation, integration.",
     "ctaPrimary": "Book 1:1",
     "ctaSecondary": "Join Live",
+    "newsletterHeading": "Stay in touch",
+    "colAbout": "About",
+    "aboutUs": "About Us",
+    "sessions": "Sessions",
+    "training": "Training",
+    "portfolio": "Portfolio",
+    "colExperience": "Experience",
+    "workplace": "Workplace",
+    "tasterSession": "Free Taster Session",
+    "soundHealing": "Sound Healing",
+    "contact": "Contact",
     "privacy": "Privacy",
+    "terms": "Terms",
     "newsletter": "Newsletter"
   },
   "portfolioPreview": {

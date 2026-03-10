@@ -42,50 +42,39 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-6 max-w-md">
-      <div className="ds-field">
-        <label className="ds-field__label" htmlFor="email">
-          {t("label")}
-        </label>
-        <input
-          id="name"
-          type="text"
-          autoComplete="name"
-          placeholder={t("namePlaceholder")}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="ds-input"
-          disabled={disabled}
-        />
-        <div className="flex gap-2">
-          <input
-            id="email"
-            type="email"
-            inputMode="email"
-            autoComplete="email"
-            placeholder={t("emailPlaceholder")}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="ds-input"
-            required
-            disabled={disabled}
-          />
-          <button
-            type="submit"
-            className="btn btn-primary disabled:opacity-60"
-            disabled={disabled}
-          >
-            {t("submit")}
-          </button>
-        </div>
-      </div>
+    <form onSubmit={onSubmit} className="mt-4 space-y-2">
+      <input
+        id="name"
+        type="text"
+        autoComplete="name"
+        placeholder={t("namePlaceholder")}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="ds-input ds-input--sm"
+        disabled={disabled}
+      />
+      <input
+        id="email"
+        type="email"
+        inputMode="email"
+        autoComplete="email"
+        placeholder={t("emailPlaceholder")}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="ds-input ds-input--sm"
+        required
+        disabled={disabled}
+      />
+      <button
+        type="submit"
+        className="btn btn-primary w-full disabled:opacity-60"
+        disabled={disabled}
+      >
+        {t("submit")}
+      </button>
 
       {message ? (
-        <p
-          className={["ds-field__helper", status === "error" ? "ds-field__error" : ""].filter(Boolean).join(
-            " "
-          )}
-        >
+        <p className={status === "error" ? "ds-field__error" : "ds-field__helper"}>
           {message}
         </p>
       ) : (
