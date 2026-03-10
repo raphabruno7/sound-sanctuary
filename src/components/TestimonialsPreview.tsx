@@ -10,8 +10,8 @@ export function TestimonialsPreview() {
 
   return (
     <section className="max-w-5xl mx-auto px-8 md:px-10 pb-24">
-      <h2 className="text-2xl md:text-3xl tracking-tight">{t("title")}</h2>
-      <p className="mt-3 text-muted-foreground max-w-2xl leading-relaxed">
+      <h2 className="journey-title">{t("title")}</h2>
+      <p className="journey-sub max-w-2xl">
         {t("sub")}
       </p>
 
@@ -19,13 +19,13 @@ export function TestimonialsPreview() {
         {(items ?? []).map((t) => (
           <figure key={t._id} className="rounded-2xl border border-border bg-card p-6">
             <blockquote className="text-foreground leading-relaxed">&ldquo;{t.text}&rdquo;</blockquote>
-            <figcaption className="mt-4 text-sm text-muted-foreground">
+            <figcaption className="mt-4 text-sm text-muted">
               - {t.name}
               {t.source ? `, ${t.source}` : ""}
             </figcaption>
           </figure>
         ))}
-        {items === undefined ? <p className="text-sm text-muted-foreground">{t("loading")}</p> : null}
+        {items === undefined ? <p className="text-sm text-muted">{t("loading")}</p> : null}
       </div>
     </section>
   );
