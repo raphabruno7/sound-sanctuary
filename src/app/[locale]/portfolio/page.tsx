@@ -32,7 +32,7 @@ export default function Portfolio() {
               <p className="journey-label">{it.type}</p>
               <h2 className="mt-3 ds-font-display ds-size-2xl ds-weight-light">{it.title}</h2>
               {it.excerpt ? <p className="mt-3 text-secondary">{it.excerpt}</p> : null}
-              <div className="mt-4 text-xs text-muted-foreground">
+              <div className="mt-4 text-xs text-muted">
                 {it.location ? <span>{it.location}</span> : null}
                 {it.date ? <span>{it.location ? " • " : ""}{it.date}</span> : null}
               </div>

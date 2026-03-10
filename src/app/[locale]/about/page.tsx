@@ -95,7 +95,7 @@ export default async function About() {
       </div>
 
       <section className="journey-container journey-section">
-        <div className="grid gap-6 md:grid-cols-2 text-muted-foreground leading-relaxed">
+        <div className="grid gap-6 md:grid-cols-2 text-muted leading-relaxed">
           <div className="space-y-2">
             <h2 className="ds-font-display ds-weight-light ds-size-2xl text-foreground">
               {t("approachTitle")}
