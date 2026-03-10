@@ -43,10 +43,10 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
 
   return (
     <form onSubmit={onSubmit} className="mt-6 max-w-md">
-      <label className="block ds-size-sm text-muted" htmlFor="email">
-        {t("label")}
-      </label>
-      <div className="mt-3">
+      <div className="ds-field">
+        <label className="ds-field__label" htmlFor="email">
+          {t("label")}
+        </label>
         <input
           id="name"
           type="text"
@@ -54,42 +54,42 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
           placeholder={t("namePlaceholder")}
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="ds-input"
           disabled={disabled}
         />
-      </div>
-      <div className="mt-2 flex gap-2">
-        <input
-          id="email"
-          type="email"
-          inputMode="email"
-          autoComplete="email"
-          placeholder={t("emailPlaceholder")}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          required
-          disabled={disabled}
-        />
-        <button
-          type="submit"
-          className="btn btn-primary disabled:opacity-60"
-          disabled={disabled}
-        >
-          {t("submit")}
-        </button>
+        <div className="flex gap-2">
+          <input
+            id="email"
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            placeholder={t("emailPlaceholder")}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="ds-input"
+            required
+            disabled={disabled}
+          />
+          <button
+            type="submit"
+            className="btn btn-primary disabled:opacity-60"
+            disabled={disabled}
+          >
+            {t("submit")}
+          </button>
+        </div>
       </div>
 
       {message ? (
         <p
-          className={["mt-3 ds-size-sm", status === "error" ? "text-red-600" : "text-muted"].join(
+          className={["ds-field__helper", status === "error" ? "ds-field__error" : ""].filter(Boolean).join(
             " "
           )}
         >
           {message}
         </p>
       ) : (
-        <p className="mt-3 ds-size-xs text-muted">{t("noSpam")}</p>
+        <p className="ds-field__helper">{t("noSpam")}</p>
       )}
     </form>
   );

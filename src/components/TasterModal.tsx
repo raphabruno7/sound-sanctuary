@@ -108,7 +108,7 @@ export function TasterModal({ open, onClose }: TasterModalProps) {
                 placeholder={t("namePlaceholder")}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="ds-input"
                 disabled={disabled}
               />
               <input
@@ -118,7 +118,7 @@ export function TasterModal({ open, onClose }: TasterModalProps) {
                 placeholder={t("emailPlaceholder")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="ds-input"
                 required
                 disabled={disabled}
               />
@@ -126,7 +126,7 @@ export function TasterModal({ open, onClose }: TasterModalProps) {
                 {t("submit")}
               </button>
               {message ? (
-                <p className={["ds-size-sm", status === "error" ? "text-red-600" : "text-secondary"].join(" ")}>
+                <p className={status === "error" ? "ds-field__error" : "ds-field__helper"}>
                   {message}
                 </p>
               ) : null}
