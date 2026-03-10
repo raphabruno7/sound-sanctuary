@@ -18,7 +18,7 @@ export function PortfolioPreview() {
             {t("sub")}
           </p>
         </div>
-        <Link className="underline underline-offset-4 text-sm" href="/portfolio">
+        <Link className="underline underline-offset-4 ds-size-sm" href="/portfolio">
           {t("viewAll")}
         </Link>
       </div>
@@ -31,14 +31,14 @@ export function PortfolioPreview() {
             {it.excerpt ? (
               <p className="mt-2 text-secondary leading-relaxed">{it.excerpt}</p>
             ) : null}
-            <div className="mt-4 text-xs text-muted">
+            <div className="mt-4 ds-size-xs text-muted">
               {it.location ? <span>{it.location}</span> : null}
               {it.date ? <span>{it.location ? " • " : ""}{it.date}</span> : null}
             </div>
           </article>
         ))}
 
-        {items === undefined ? <p className="text-sm text-muted">{t("loading")}</p> : null}
+        {items === undefined ? <p className="ds-size-sm text-muted">{t("loading")}</p> : null}
       </div>
     </section>
   );

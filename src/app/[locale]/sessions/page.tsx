@@ -106,7 +106,7 @@ export default async function SessionsPage() {
         <div className="journey-grid-2 mt-8">
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("oneOnOneTitle")}</h3>
-            <p className="mt-2 text-sm text-secondary">{t("oneOnOneMeta")}</p>
+            <p className="mt-2 ds-size-sm text-secondary">{t("oneOnOneMeta")}</p>
             <p className="mt-3 text-secondary">{t("oneOnOneBody")}</p>
             <div className="btn-row mt-5">
               <Link className="btn btn-primary" href="/contact">
@@ -120,7 +120,7 @@ export default async function SessionsPage() {
 
           <article className="ds-glass journey-card">
             <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("groupTitle")}</h3>
-            <p className="mt-2 text-sm text-secondary">{t("groupMeta")}</p>
+            <p className="mt-2 ds-size-sm text-secondary">{t("groupMeta")}</p>
             <p className="mt-3 text-secondary">{t("groupBody")}</p>
             <div className="btn-row mt-5">
               <Link className="btn btn-secondary" href="/newsletter">

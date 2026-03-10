@@ -18,7 +18,7 @@ export function LanguageToggle() {
   return (
     <Link
       href={targetHref}
-      className="ds-header__link text-sm"
+      className="ds-header__link ds-size-sm"
       aria-label={`Switch to ${targetLocale}`}
     >
       {targetLabel}

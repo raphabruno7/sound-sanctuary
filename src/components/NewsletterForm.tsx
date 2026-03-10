@@ -43,7 +43,7 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
 
   return (
     <form onSubmit={onSubmit} className="mt-6 max-w-md">
-      <label className="block text-sm text-muted" htmlFor="email">
+      <label className="block ds-size-sm text-muted" htmlFor="email">
         {t("label")}
       </label>
       <div className="mt-3">
@@ -82,14 +82,14 @@ export function NewsletterForm({ source = "home" }: { source?: string }) {
 
       {message ? (
         <p
-          className={["mt-3 text-sm", status === "error" ? "text-red-600" : "text-muted"].join(
+          className={["mt-3 ds-size-sm", status === "error" ? "text-red-600" : "text-muted"].join(
             " "
           )}
         >
           {message}
         </p>
       ) : (
-        <p className="mt-3 text-xs text-muted">{t("noSpam")}</p>
+        <p className="mt-3 ds-size-xs text-muted">{t("noSpam")}</p>
       )}
     </form>
   );

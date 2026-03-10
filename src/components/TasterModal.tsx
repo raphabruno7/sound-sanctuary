@@ -126,7 +126,7 @@ export function TasterModal({ open, onClose }: TasterModalProps) {
                 {t("submit")}
               </button>
               {message ? (
-                <p className={["text-sm", status === "error" ? "text-red-600" : "text-secondary"].join(" ")}>
+                <p className={["ds-size-sm", status === "error" ? "text-red-600" : "text-secondary"].join(" ")}>
                   {message}
                 </p>
               ) : null}

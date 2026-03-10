@@ -19,13 +19,13 @@ export function TestimonialsPreview() {
         {(items ?? []).map((t) => (
           <figure key={t._id} className="rounded-2xl border border-border bg-card p-6">
             <blockquote className="text-foreground leading-relaxed">&ldquo;{t.text}&rdquo;</blockquote>
-            <figcaption className="mt-4 text-sm text-muted">
+            <figcaption className="mt-4 ds-size-sm text-muted">
               - {t.name}
               {t.source ? `, ${t.source}` : ""}
             </figcaption>
           </figure>
         ))}
-        {items === undefined ? <p className="text-sm text-muted">{t("loading")}</p> : null}
+        {items === undefined ? <p className="ds-size-sm text-muted">{t("loading")}</p> : null}
       </div>
     </section>
   );

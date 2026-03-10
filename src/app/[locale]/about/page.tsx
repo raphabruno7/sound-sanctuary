@@ -57,7 +57,7 @@ export default async function About() {
       <section className="journey-container journey-section">
         <div className="journey-label">{t("label")}</div>
         <h1 className="journey-title">{t("title")}</h1>
-        <p className="journey-sub text-lg">{t("sub")}</p>
+        <p className="journey-sub ds-size-lg">{t("sub")}</p>
       </section>
 
       <div aria-hidden="true" className="journey-container">

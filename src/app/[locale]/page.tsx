@@ -172,7 +172,7 @@ export default async function Home() {
               className="ds-glass journey-card journey-card--clean flex h-full w-full flex-col items-center text-center"
             >
               <h3 className="ds-font-display ds-size-xl ds-weight-light">{t(`offers.${key}_title`)}</h3>
-              <p className="mt-2 text-sm text-secondary">{t(`offers.${key}_sub`)}</p>
+              <p className="mt-2 ds-size-sm text-secondary">{t(`offers.${key}_sub`)}</p>
               <div className="mt-auto flex w-full justify-center pt-6">
                 <Link className="btn btn-primary" href={href}>
                   {t(`offers.${key}_cta`)}
@@ -186,26 +186,52 @@ export default async function Home() {
       {/* ── 3. TASTER SESSION ── */}
       <TasterSection />
 
-      {/* ── 4. PHOTO SPLIT ── */}
-      <section className="journey-container journey-section" aria-label={t("photoSplit.aria")}>
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-          <Image
-            src="/media/sections/2641.jpg"
-            alt={t("photoSplit.alt1")}
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
+      {/* ── 4. VIRTUAL SESSIONS ── */}
+      <section className="journey-container journey-section">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl md:order-2">
+            <Image
+              src="/media/sections/virtual-session.jpg"
+              alt={t("virtual.alt")}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="md:order-1">
+            <h2 className="journey-title">{t("virtual.title")}</h2>
+            <p className="mt-4 leading-relaxed text-secondary">{t("virtual.p1")}</p>
+            <p className="mt-3 leading-relaxed text-secondary">{t("virtual.p2")}</p>
+            <Link className="btn btn-primary mt-6" href="/contact">
+              {t("virtual.cta")}
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ── 5. WHAT IS SOUND HEALING ── */}
-      <section className="journey-container journey-section">
+      <section className="journey-container journey-section text-center">
         <h2 className="journey-title">{t("whatItIs.title")}</h2>
-        <p className="journey-sub">{t("whatItIs.sub")}</p>
-        <div className="journey-grid-2 mt-6 text-secondary leading-relaxed">
-          <p>{t("whatItIs.p1")}</p>
-          <p>{t("whatItIs.p2")}</p>
+        <p className="journey-sub mx-auto max-w-2xl">{t("whatItIs.sub")}</p>
+        <div className="mt-10 grid grid-cols-1 gap-10 text-left text-secondary leading-relaxed md:grid-cols-2">
+          <div className="max-w-prose space-y-4">
+            {t("whatItIs.p1")
+              .split(/\n{2,}/)
+              .map((paragraph) => paragraph.trim())
+              .filter(Boolean)
+              .map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+          </div>
+          <div className="max-w-prose space-y-4">
+            {t("whatItIs.p2")
+              .split(/\n{2,}/)
+              .map((paragraph) => paragraph.trim())
+              .filter(Boolean)
+              .map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+          </div>
         </div>
       </section>
 
