@@ -6,7 +6,7 @@ export async function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-5xl px-6 py-10 text-muted-foreground sm:px-8 md:px-10">
+      <div className="mx-auto max-w-5xl px-6 py-10 text-muted sm:px-8 md:px-10">
         <div className="ds-glass rounded-2xl p-6 flex flex-wrap items-center justify-between gap-5">
           <p className="max-w-2xl">{t("ctaText")}</p>
           <div className="btn-row !mb-0">
