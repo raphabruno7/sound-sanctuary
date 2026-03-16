@@ -140,7 +140,7 @@ export default async function Home() {
   const t = await getTranslations("home");
 
   return (
-    <main className="min-h-dvh pb-24">
+    <main className="min-h-dvh pb-10">
       {/* ── 1. HERO ── */}
       <section className="home-hero">
         <Image
@@ -199,15 +199,9 @@ export default async function Home() {
           <div>
             <h2 className="journey-title">{t("whatItIs.title")}</h2>
             <p className="mt-3 journey-sub">{t("whatItIs.sub")}</p>
-            <div className="mt-4 space-y-3 text-secondary leading-relaxed">
-              {t("whatItIs.p1")
-                .split(/\n{2,}/)
-                .map((paragraph) => paragraph.trim())
-                .filter(Boolean)
-                .map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
-            </div>
+            <p className="mt-4 text-secondary leading-relaxed">
+              {t("whatItIs.p1").split(/\n{2,}/)[0]}
+            </p>
             <Link className="btn btn-primary mt-6" href="/sound-healing">
               {t("whatItIs.cta")}
             </Link>
