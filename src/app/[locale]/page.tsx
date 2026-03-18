@@ -187,21 +187,24 @@ export default async function Home() {
       {/* ── 4. WHAT IS SOUND HEALING ── */}
       <section className="journey-container journey-section">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
-            <Image
-              src="/media/sections/2641.jpg"
-              alt={t("whatItIs.alt")}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+          <div className="relative aspect-square overflow-hidden rounded-2xl">
+            <video
+              src="/media/sound-bath-session.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-full w-full object-cover"
             />
           </div>
           <div>
             <h2 className="journey-title">{t("whatItIs.title")}</h2>
             <p className="mt-3 journey-sub">{t("whatItIs.sub")}</p>
-            <p className="mt-4 text-secondary leading-relaxed">
-              {t("whatItIs.p1").split(/\n{2,}/)[0]}
-            </p>
+            {t("whatItIs.p1").split(/\n{2,}/).map((paragraph, i) => (
+              <p key={i} className="mt-4 text-secondary leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
             <Link className="btn btn-primary mt-6" href="/sound-healing">
               {t("whatItIs.cta")}
             </Link>
@@ -234,6 +237,21 @@ export default async function Home() {
 
       {/* ── 6. TESTIMONIALS ── */}
       <TestimonialsPreview />
+
+      {/* ── 7. FINAL CTA ── */}
+      <section className="mx-auto max-w-5xl px-6 md:px-10 pb-20 pt-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border pt-10">
+          <p className="ds-font-display ds-size-lg text-foreground">{t("finalCta.title")}</p>
+          <a
+            href="https://wa.me/message/A4JJZNWV3FSNG1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary shrink-0"
+          >
+            {t("finalCta.cta")}
+          </a>
+        </div>
+      </section>
 
     </main>
   );

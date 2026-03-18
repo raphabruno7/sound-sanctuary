@@ -106,9 +106,9 @@
     "whatItIs": {
       "label": "Upstream Care",
       "title": "What is a Sound Bath?",
-      "sub": "Sound Healing uses resonance, rhythm, and guided rest to help the nervous system downshift without performance.",
-      "p1": "It is simple: you arrive, you settle, sound creates a field, and your body has room to integrate. Nothing to achieve.",
-      "p2": "The promise is not medical treatment. It is training capacity: downshifting, returning to rhythm, and leaving with more space inside.",
+      "sub": "We live in an era of relentless speed and noise. The body absorbs the pressure of daily life in silence — and over time, that tension settles deep, into the tissues, into the breath, into the quality of sleep.",
+      "p1": "A Sound Bath is a therapeutic sound vibration experience that brings you, almost instantly, into deep relaxation.\n\nThe experience is simple and direct: you lie down, close your eyes. Sound vibration has unique qualities — it reaches layers of the body and nervous system that nothing else could touch — and the sound knows exactly where to go: to the exact point where your body begins to repair itself.\n\nJust be open to receive the highly energetic sounds of Tibetan singing bowls, gong, flutes, kalimbas, harp and voice.",
+      "p2": "",
       "alt": "Sound bath session in nature with gong and singing bowls",
       "cta": "Learn More"
     },
@@ -174,6 +174,10 @@
       "cta_primary": "Join the loop",
       "cta_secondary": "See sessions"
     },
+    "finalCta": {
+      "title": "Ready to give sound meditation a try?",
+      "cta": "Book a Sound Bath"
+    },
     "contact": {
       "label": "Contact",
       "title": "Book a 1:1",
@@ -210,7 +214,60 @@
   "testimonialsPreview": {
     "title": "Words",
     "sub": "Short reflections from sessions and collaborations.",
-    "loading": "Loading..."
+    "items": [
+      {
+        "text": "Hey, yes I did! Two days ago I was very restless with insomnia. Last night I slept wonderfully and woke up feeling much more energised! Thank you so much!! 🙏🙏",
+        "platform": "instagram",
+        "time": "14:50",
+        "storyReply": true
+      },
+      {
+        "text": "There was a moment when I simply entered a deep state of relaxation. I could feel the vibration through my whole body, it felt heavy, and I had a restorative experience. Right after, my body just wanted to stay there, and I rested. When I came back I felt like I'd slept for 3 days — that's how restored I felt. Gratitude 💖",
+        "name": "Valentina Gastelu",
+        "platform": "whatsapp",
+        "time": "11:53"
+      },
+      {
+        "text": "Oh my god, I passed out. Slept for 12 hours with vivid dreams. It felt like I went on a long journey. And I woke up with the sensation of the music's vibration. Bruno, does vibration have colour? With each instrument my mind perceived a colour. It was magical. I woke up super energised.",
+        "platform": "instagram",
+        "storyReply": true
+      },
+      {
+        "text": "Good morning Raphael, how are you? I want to thank you for last night's Sound Bath. I slept 6 hours straight — something I hadn't done in years. So grateful. I think you've found the cure for insomnia. Let's spread the word so more people can benefit too. 🔥🙏",
+        "name": "Cely Sena",
+        "platform": "whatsapp",
+        "time": "08:19"
+      },
+      {
+        "text": "Thank you Rapha, I think I fell asleep in the first minute, I really needed it.. my body and my subconscious received the sound bath.",
+        "platform": "whatsapp",
+        "time": "13:13"
+      },
+      {
+        "text": "So amazing Raphael Bruno. My sister-in-law said she had an extra-sensory experience. With her eyes closed, she said she saw the vibration of sound in colours and a circular energy. My parents and siblings felt peace and deep relaxation. Long life, brother.",
+        "name": "Alysson Maciel Pinto",
+        "platform": "facebook",
+        "likes": 81
+      },
+      {
+        "text": "Different. The vision of colours, the relaxation alternating with thoughts that made no sense, and visions of places I don't remember ever knowing. Then a deep relaxation. Thank you so much for the experience.",
+        "name": "Isabela Cortez",
+        "handle": "isabelascortez",
+        "platform": "instagram",
+        "time": "21:12"
+      },
+      {
+        "text": "Hi Raphael, good morning! I loved the experience! I was so relaxed that I cried, I was completely stunned not knowing what was happening haha so cool! Thank you and good morning",
+        "name": "Aline Coutinho",
+        "platform": "whatsapp",
+        "time": "10:31"
+      },
+      {
+        "text": "By the way, yesterday's meditation was incredible — I'd never gone that far. I was literally taken to another dimension. I was even scared I wouldn't be able to come back. It was very intense. Loved it. Gratitude.",
+        "platform": "instagram",
+        "storyReply": true
+      }
+    ]
   },
 	  "newsletterForm": {
 	    "label": "Newsletter (quiet updates)",

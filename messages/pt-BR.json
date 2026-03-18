@@ -107,7 +107,7 @@
 	      "label": "Cuidado preventivo",
 	      "title": "O Que é Banho de Som?",
 	      "sub": "Vivemos numa época de velocidade e ruído sem precedentes. O corpo absorve a pressão do dia a dia de forma silenciosa — e com o tempo, essa tensão se instala fundo, nos tecidos, no ritmo da respiração, na qualidade do sono.",
-	      "p1": "O Banho de Som é uma experiência de vibração sonora terapêutica que transporta você, quase instantaneamente, a um relaxamento profundo. Quando o sistema nervoso finalmente descansa, a energia que estava sendo consumida pelo estresse se libera — e você a sente como um aumento de vitalidade.\n\nA experiência é simples e direta: você deita, fecha os olhos. Por ter qualidades únicas, a vibração sonora alcança camadas do corpo e do sistema nervoso que de nenhuma outra forma poderiam ser tocadas — e você não precisa fazer nada. Apenas estar aberta para receber os sons altamente energéticos das taças tibetanas, gongo, flautas, kalimbas, harpa e voz.",
+	      "p1": "O Banho de Som é uma experiência de vibração sonora terapêutica que transporta você, quase instantaneamente, a um relaxamento profundo.\n\nA experiência é simples e direta: você deita, fecha os olhos. Por ter qualidades únicas, a vibração sonora alcança camadas do corpo e do sistema nervoso que de nenhuma outra forma poderiam ser tocadas — e você não precisa fazer nada. Apenas estar aberta para receber os sons altamente energéticos das taças tibetanas, gongo, flautas, kalimbas, harpa e voz.",
 	      "p2": "",
 	      "alt": "Sessão de banho de som na natureza com gong e tigelas",
 	      "cta": "Saber Mais"
@@ -174,6 +174,10 @@
       "cta_primary": "Entrar no loop",
       "cta_secondary": "Ver sessões"
     },
+    "finalCta": {
+      "title": "Pronto para experimentar uma meditação sonora?",
+      "cta": "Agendar um Banho de Som"
+    },
     "contact": {
       "label": "Contato",
       "title": "Agendar 1:1",
@@ -210,7 +214,60 @@
   "testimonialsPreview": {
     "title": "Palavras",
     "sub": "Breves reflexões de sessões e colaborações.",
-    "loading": "Carregando..."
+    "items": [
+      {
+        "text": "Oiee, participei sim! Há 2 dias estava muito agitada e com insônia. Esta noite dormi maravilhosamente bem, além de acordar mais disposta! Muito obrigada!! 🙏🙏",
+        "platform": "instagram",
+        "time": "14:50",
+        "storyReply": true
+      },
+      {
+        "text": "Teve um momento que eu simplesmente entrei em um relaxamento profundo, sentia toda a vibração pelo meu corpo, ele inteiro pesava e tive uma experiência restauradora. Logo após o final meu corpo quis ficar ali e repousei. Quando voltei tive a sensação que dormi uns 3 dias de tão restaurada que fiquei. Gratidão 💖",
+        "name": "Valentina Gastelu",
+        "platform": "whatsapp",
+        "time": "11:53"
+      },
+      {
+        "text": "Nosssaaaa apaguei. Dormi por 12h com muitos sonhos. Parece que fiz uma longa viagem. E acordei com a sensação da vibração da música. Bruno, vibração tem cor? A cada instrumento a mente emitia uma cor. Foi mágico. Acordei super energizada.",
+        "platform": "instagram",
+        "storyReply": true
+      },
+      {
+        "text": "Bom dia Raphael, tudo bem? Eu quero te agradecer pelo Banho de Som de ontem a noite. Eu dormi 6 horas seguidas como não dormia há anos. Muito grata. Acho que você descobriu a cura para a insônia. Vamos divulgar para que mais pessoas se beneficiem também. Abs 🔥🙏",
+        "name": "Cely Sena",
+        "platform": "whatsapp",
+        "time": "08:19"
+      },
+      {
+        "text": "Gratidão Rapha, acho q dormi já no primeiro minuto, precisava disso.. meu corpo e meu inconsciente receberam o banho de som.",
+        "platform": "whatsapp",
+        "time": "13:13"
+      },
+      {
+        "text": "Massa demais Raphael Bruno. Minha cunhada disse que teve uma experiência extra-sensorial. De olhos fechados, ela disse ter visto a Vibração do som em cores e uma energia circular. Meus pais e irmãos sentiram paz e relaxamento profundo. Vida longa mano.",
+        "name": "Alysson Maciel Pinto",
+        "platform": "facebook",
+        "likes": 81
+      },
+      {
+        "text": "Diferente. A visão de cores, o relaxamento alternado com pensamentos meio sem sentido e a visão de lugares que eu não lembro de ter conhecido. Agora um relaxamento profundo. Muito obrigada pela experiência.",
+        "name": "Isabela Cortez",
+        "handle": "isabelascortez",
+        "platform": "instagram",
+        "time": "21:12"
+      },
+      {
+        "text": "Oi Raphael bom dia! Amei a experiência! Eu fiquei tão relaxada que chorei, fiquei toda boba sem saber o que ia acontecendo rsrsrs muito legal! Obrigada e bom dia",
+        "name": "Aline Coutinho",
+        "platform": "whatsapp",
+        "time": "10:31"
+      },
+      {
+        "text": "By the way, a meditação de ontem foi incrível, nunca tinha ido tão distante. Fui levada literalmente a outra dimensão. Me deu até medo de não conseguir retornar. Foi muito intensa. Ameiiiiii. Gratidão.",
+        "platform": "instagram",
+        "storyReply": true
+      }
+    ]
   },
 	  "newsletterForm": {
 	    "label": "Newsletter (atualizações tranquilas)",

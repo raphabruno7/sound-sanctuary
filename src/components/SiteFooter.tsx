@@ -7,21 +7,6 @@ export async function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-background">
-      {/* CTA banner */}
-      <div className="mx-auto max-w-5xl px-6 pt-12 sm:px-8 md:px-10">
-        <div className="ds-glass rounded-2xl p-6 flex flex-wrap items-center justify-between gap-5 text-center md:text-left">
-          <p className="max-w-2xl text-muted">{t("ctaText")}</p>
-          <div className="btn-row !mb-0">
-            <Link className="btn btn-primary" href="/contact">
-              {t("ctaPrimary")}
-            </Link>
-            <Link className="btn btn-secondary" href="/newsletter">
-              {t("ctaSecondary")}
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main footer grid */}
       <div className="mx-auto max-w-5xl px-6 py-12 sm:px-8 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
