@@ -110,7 +110,7 @@
 	      "p1": "O Banho de Som é uma experiência de vibração sonora terapêutica que transporta você, quase instantaneamente, a um relaxamento profundo.\n\nA experiência é simples e direta: você deita, fecha os olhos. Por ter qualidades únicas, a vibração sonora alcança camadas do corpo e do sistema nervoso que de nenhuma outra forma poderiam ser tocadas — e você não precisa fazer nada. Apenas estar aberta para receber os sons altamente energéticos das taças tibetanas, gongo, flautas, kalimbas, harpa e voz.",
 	      "p2": "",
 	      "alt": "Sessão de banho de som na natureza com gong e tigelas",
-	      "cta": "Saber Mais"
+	      "cta": "Saiba Mais"
 	    },
     "whyItWorks": {
       "label": "Som e Sistema Nervoso",
@@ -200,9 +200,8 @@
     "workplace": "Empresas",
     "tasterSession": "Sessão Gratuita",
     "soundHealing": "Sound Healing",
-    "contact": "Contacto",
-    "privacy": "Privacidade",
-    "terms": "Termos",
+    "contact": "Contato",
+    "privacy": "Privacidade e Termos",
     "newsletter": "Newsletter"
   },
   "portfolioPreview": {
@@ -337,8 +336,8 @@
     "title": "Escolha a profundidade",
     "sub": "Disponibilidade e fuso horário aparecem no fluxo de agendamento, não na navegação global.",
     "decisionLabel": "Pontos de decisão",
-    "decisionTitle": "Agendar 1:1 ou Entrar no Live",
-    "decisionSub": "Brilho no hover, resposta gentil no clique. Cada botão é uma sinapse.",
+    "decisionTitle": "Quatro formatos, uma intenção",
+    "decisionSub": "Presencial ou online, sozinho ou em grupo — escolha o que combina com o seu momento.",
     "oneOnOneTitle": "Sound Bath",
     "oneOnOneMeta": "Sessão individual · 60 min",
     "oneOnOneBody": "Tigelas Peter Hess sobre o corpo. O som encontra a água.",
@@ -349,6 +348,16 @@
     "groupBody": "Descanso coletivo e conexão sem performance.",
     "groupCtaPrimary": "Entrar no Live",
     "groupCtaSecondary": "Contato",
+    "liveTitle": "Sound Healing Ao Vivo",
+    "liveMeta": "Transmissão ao vivo · 45 min",
+    "liveBody": "Uma performance imersiva, transmitida em tempo real. Sintonize de onde você estiver.",
+    "liveCtaPrimary": "Reservar Vaga",
+    "liveCtaSecondary": "Contato",
+    "virtualTitle": "Sessão Virtual",
+    "virtualMeta": "1:1 online · 60 min",
+    "virtualBody": "Fone de ouvido, um ambiente tranquilo e a disposição de deitar e escutar — o som chega até você onde estiver.",
+    "virtualCtaPrimary": "Agendar Sessão Virtual",
+    "virtualCtaSecondary": "Como funciona",
     "timelineLabel": "O que acontece",
     "timelineTitle": "Quatro fases de uma sessão",
     "timelineArrivalTitle": "Chegada",

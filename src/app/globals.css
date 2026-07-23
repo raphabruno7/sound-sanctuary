@@ -280,6 +280,10 @@
   padding: 0 1.5rem;
 }
 
+#taster {
+  scroll-margin-top: 5rem;
+}
+
 .journey-section {
   margin: 5rem auto;
 }

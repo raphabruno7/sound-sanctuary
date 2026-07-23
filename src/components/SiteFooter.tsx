@@ -32,7 +32,7 @@ export async function SiteFooter() {
             <nav className="flex flex-col gap-2 text-muted">
               <Link href="/sound-healing" className="transition-colors hover:text-foreground">{t("soundHealing")}</Link>
               <Link href="/contact" className="transition-colors hover:text-foreground">{t("workplace")}</Link>
-              <Link href="/contact" className="transition-colors hover:text-foreground">{t("tasterSession")}</Link>
+              <Link href="/#taster" className="transition-colors hover:text-foreground">{t("tasterSession")}</Link>
               <Link href="/contact" className="transition-colors hover:text-foreground">{t("contact")}</Link>
             </nav>
           </div>
@@ -56,7 +56,6 @@ export async function SiteFooter() {
           <p>© {new Date().getFullYear()} Sound Sanctuary</p>
           <nav className="flex gap-4">
             <Link href="/privacy" className="transition-colors hover:text-foreground">{t("privacy")}</Link>
-            <Link href="/privacy" className="transition-colors hover:text-foreground">{t("terms")}</Link>
             <Link href="/contact" className="transition-colors hover:text-foreground">{t("contact")}</Link>
           </nav>
         </div>
