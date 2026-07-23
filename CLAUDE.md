@@ -75,8 +75,9 @@ Dark is the default theme; light is opt-in via `ThemeToggle` (class-based, not `
 - CTAs funnel to WhatsApp (`wa.me/message/...`). Keep contact paths consistent — don't introduce placeholder emails.
 - `framer-motion` is a dependency but **currently unused** (animations are CSS). Don't reach for it without a real need, or drop it.
 - `src/middleware.ts` triggers a Next 16 deprecation warning — rename to `proxy.ts` when convenient.
-- Multiple lockfiles on the machine make Next infer the wrong workspace root (harmless warning); set `turbopack.root` if it becomes noise.
+- Multiple lockfiles on the machine make Next infer the wrong workspace root — a harmless warning, **leave it alone**. Setting `turbopack.root` (e.g. `import.meta.dirname`) to silence it caused a runaway `postcss.js` process storm (500+ processes) in dev on this machine; if you need to revisit this, test carefully and watch `ps aux | grep postcss` while the dev server runs.
 - **Branch + PR for every change; never commit directly to `main`.**
+- `SiteHeader`'s mobile-nav breakpoint is `1024px`, not the usual `768px` — the desktop nav (5 links + 2 toggles + CTA) overlaps the brand wordmark below that width. Keep the CSS media query in `globals.css` and the `matchMedia` call in `SiteHeader.tsx` in sync if either changes.
 
 ## Orchestration & status (source of truth — don't duplicate here)
 
