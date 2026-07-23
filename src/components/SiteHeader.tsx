@@ -23,7 +23,7 @@ export function SiteHeader() {
   /* Close menu on route change / resize past mobile */
   useEffect(() => {
     if (!menuOpen) return;
-    const mq = window.matchMedia("(min-width: 769px)");
+    const mq = window.matchMedia("(min-width: 1025px)");
     function close() { setMenuOpen(false); }
     mq.addEventListener("change", close);
     return () => mq.removeEventListener("change", close);
