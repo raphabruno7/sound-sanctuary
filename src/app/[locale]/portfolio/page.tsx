@@ -4,6 +4,7 @@ import { useQuery } from "convex/react";
 import { useTranslations } from "next-intl";
 import { api } from "../../../../convex/_generated/api";
 import { ScapesEmpty } from "@/components/artwork/ScapesEmpty";
+import { Link } from "@/i18n/navigation";
 
 export default function Portfolio() {
   const t = useTranslations("portfolioPage");
@@ -56,6 +57,20 @@ export default function Portfolio() {
               />
             </div>
           ) : null}
+        </div>
+      </section>
+
+      <section className="journey-container journey-section">
+        <div className="ds-glass rounded-2xl p-6 flex flex-wrap items-center justify-between gap-5">
+          <p className="text-secondary">{t("ctaTitle")}</p>
+          <div className="btn-row !mb-0">
+            <Link className="btn btn-primary" href="/contact">
+              {t("ctaPrimary")}
+            </Link>
+            <Link className="btn btn-secondary" href="/sessions">
+              {t("ctaSecondary")}
+            </Link>
+          </div>
         </div>
       </section>
     </main>

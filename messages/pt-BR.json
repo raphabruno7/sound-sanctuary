@@ -299,7 +299,10 @@
     "approachTitle": "Abordagem",
     "approachBody": "Ritmo, ressonância e silêncio são usados com intenção para ajudar o sistema nervoso a assentar.",
     "sessionsTitle": "Sessões",
-    "sessionsBody": "Cada sessão é conduzida lentamente, com aberturas e encerramentos claros, para que a integração aconteça com naturalidade."
+    "sessionsBody": "Cada sessão é conduzida lentamente, com aberturas e encerramentos claros, para que a integração aconteça com naturalidade.",
+    "ctaTitle": "Pronto para viver essa experiência?",
+    "ctaPrimary": "Agendar 1:1",
+    "ctaSecondary": "Ver formatos"
   },
   "contactPage": {
     "meta": {
@@ -325,7 +328,10 @@
     "title": "Portfólio",
     "sub": "Sessões, eventos, retiros e colaborações.",
     "emptyTitle": "Portfólio em construção",
-    "emptyDescription": "Sessões, eventos e retiros — em breve."
+    "emptyDescription": "Sessões, eventos e retiros — em breve.",
+    "ctaTitle": "Quer fazer parte da próxima sessão?",
+    "ctaPrimary": "Agendar 1:1",
+    "ctaSecondary": "Ver formatos"
   },
   "sessionsPage": {
     "meta": {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { buildPageMetadata } from "@/i18n/metadata";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata({
   params,
@@ -107,6 +108,20 @@ export default async function About() {
               {t("sessionsTitle")}
             </h2>
             <p>{t("sessionsBody")}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="journey-container journey-section">
+        <div className="ds-glass rounded-2xl p-6 flex flex-wrap items-center justify-between gap-5">
+          <p className="text-secondary">{t("ctaTitle")}</p>
+          <div className="btn-row !mb-0">
+            <Link className="btn btn-primary" href="/contact">
+              {t("ctaPrimary")}
+            </Link>
+            <Link className="btn btn-secondary" href="/sessions">
+              {t("ctaSecondary")}
+            </Link>
           </div>
         </div>
       </section>
