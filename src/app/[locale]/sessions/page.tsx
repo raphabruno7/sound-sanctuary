@@ -123,11 +123,49 @@ export default async function SessionsPage() {
             <p className="mt-2 ds-size-sm text-secondary">{t("groupMeta")}</p>
             <p className="mt-3 text-secondary">{t("groupBody")}</p>
             <div className="btn-row mt-5">
-              <Link className="btn btn-secondary" href="/newsletter">
+              <a
+                className="btn btn-secondary"
+                href="https://wa.me/message/A4JJZNWV3FSNG1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t("groupCtaPrimary")}
-              </Link>
+              </a>
               <Link className="btn btn-ghost" href="/contact">
                 {t("groupCtaSecondary")}
+              </Link>
+            </div>
+          </article>
+
+          <article className="ds-glass journey-card">
+            <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("liveTitle")}</h3>
+            <p className="mt-2 ds-size-sm text-secondary">{t("liveMeta")}</p>
+            <p className="mt-3 text-secondary">{t("liveBody")}</p>
+            <div className="btn-row mt-5">
+              <a
+                className="btn btn-secondary"
+                href="https://wa.me/message/A4JJZNWV3FSNG1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("liveCtaPrimary")}
+              </a>
+              <Link className="btn btn-ghost" href="/contact">
+                {t("liveCtaSecondary")}
+              </Link>
+            </div>
+          </article>
+
+          <article className="ds-glass journey-card">
+            <h3 className="ds-font-display ds-size-2xl ds-weight-light">{t("virtualTitle")}</h3>
+            <p className="mt-2 ds-size-sm text-secondary">{t("virtualMeta")}</p>
+            <p className="mt-3 text-secondary">{t("virtualBody")}</p>
+            <div className="btn-row mt-5">
+              <Link className="btn btn-primary" href="/contact">
+                {t("virtualCtaPrimary")}
+              </Link>
+              <Link className="btn btn-ghost" href="/sound-healing">
+                {t("virtualCtaSecondary")}
               </Link>
             </div>
           </article>
