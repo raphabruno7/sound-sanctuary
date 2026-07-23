@@ -299,7 +299,10 @@
     "approachTitle": "Approach",
     "approachBody": "Rhythm, resonance, and silence are used intentionally to help the nervous system settle.",
     "sessionsTitle": "Sessions",
-    "sessionsBody": "Each session is paced slowly with clear openings and closings so integration feels natural."
+    "sessionsBody": "Each session is paced slowly with clear openings and closings so integration feels natural.",
+    "ctaTitle": "Ready to experience it yourself?",
+    "ctaPrimary": "Book 1:1",
+    "ctaSecondary": "See formats"
   },
   "contactPage": {
     "meta": {
@@ -325,7 +328,10 @@
     "title": "Portfolio",
     "sub": "Sessions, events, retreats, and collaborations.",
     "emptyTitle": "Portfolio in progress",
-    "emptyDescription": "Sessions, events, and retreats — coming soon."
+    "emptyDescription": "Sessions, events, and retreats — coming soon.",
+    "ctaTitle": "Want to be part of the next session?",
+    "ctaPrimary": "Book 1:1",
+    "ctaSecondary": "See formats"
   },
   "sessionsPage": {
     "meta": {
